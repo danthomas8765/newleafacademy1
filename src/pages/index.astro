@@ -1,0 +1,26 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>New Leaf Academy</h1>
+			<p>
+			- Grow with Confidence
+			</p>
+			<p>
+			Unlock potential with expert online tutoring. 🎓 Personalized, confidence-building tuition in Maths, English, Science, & more, from KS3 to A-level.
+			<p>
+		</main>
+		<Footer />
+	</body>
+</html>
