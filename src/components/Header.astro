@@ -5,7 +5,12 @@ import { SITE_TITLE } from '../consts';
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<h2>
+			<a href="/">
+				<img src="/logo.png" alt="New Leaf Academy Logo" class="logo" />
+				{SITE_TITLE}
+			</a>
+		</h2>
 		<div class="internal-links">
     <HeaderLink href="/">Home</HeaderLink>
     <HeaderLink href="/contact">Contact Us</HeaderLink>
@@ -32,7 +37,7 @@ import { SITE_TITLE } from '../consts';
 	}
 	h2 {
 		margin: 0;
-		font-size: 1em;
+		font-size: 2em;
 	}
 
 	h2 a,
@@ -46,7 +51,7 @@ import { SITE_TITLE } from '../consts';
 	}
 	nav a {
 		padding: 1em 0.5em;
-		color: var(--black);
+		color: #4169E1;
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
 	}
@@ -62,5 +67,9 @@ import { SITE_TITLE } from '../consts';
 		.social-links {
 			display: none;
 		}
+	}
+	img.logo {
+		height: 1em; /* Adjust this value to change the size of your logo */
+		margin-right: 0.5em;
 	}
 </style>

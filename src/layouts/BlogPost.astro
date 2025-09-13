@@ -33,7 +33,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				max-width: calc(100% - 2em);
 				margin: auto;
 				padding: 1em;
-				color: rgb(var(--gray-dark));
+				color: #2c4fb9; /* This is the fix! */
 			}
 			.title {
 				margin-bottom: 1em;
@@ -43,6 +43,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}
 			.title h1 {
 				margin: 0 0 0.5em 0;
+				color: #2c4fb9; /* And here */
 			}
 			.date {
 				margin-bottom: 0.5em;
