@@ -94,7 +94,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		border: 1px solid #ddd;
 		border-radius: 8px;
 		margin: 0 10px;
-		box-sizing: border-box; /* ADDED for consistent width calculation */
+		box-sizing: border-box; 
+		background-color: #F0F8FF; /* Very very light baby blue */
 	}
 	
 	.testimonial-slide p {
@@ -137,16 +138,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 	}
 
-	/* --- Mobile Responsive Styles (UPDATED) --- */
+	/* --- Mobile Responsive Styles --- */
 	@media (max-width: 480px) {
 		.carousel-container {
-			/* Add padding here to create space on the sides */
 			padding: 0 20px;
 		}
 		.testimonial-slide {
-			/* Make the slide fill the container's padded area */
 			flex-basis: 100%; 
-			/* Remove the margin, as padding on the container now handles spacing */
 			margin: 0;
 		}
 	}
