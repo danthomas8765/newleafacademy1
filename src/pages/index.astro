@@ -76,9 +76,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 	/* --- Carousel Styles --- */
 	.carousel-container {
-		/* REMOVED max-width and margin: auto to make it full-width */
 		width: 100%; 
-		margin: 2em 0; /* Changed to top/bottom margin only */
+		margin: 2em 0;
 		overflow: hidden;
 		box-sizing: border-box;
 	}
@@ -88,14 +87,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	}
 
 	.testimonial-slide {
-		/* UPDATED flex-basis to control slide width more explicitly */
-		flex: 0 0 60%; /* Each slide is 60% of the viewport width */
-		max-width: 600px; /* Added max-width for very large screens */
+		flex: 0 0 60%;
+		max-width: 600px;
 		padding: 1.5em;
 		text-align: center;
 		border: 1px solid #ddd;
 		border-radius: 8px;
-		margin: 0 10px; /* CHANGED to have margin on both sides */
+		margin: 0 10px;
+		box-sizing: border-box; /* ADDED for consistent width calculation */
 	}
 	
 	.testimonial-slide p {
@@ -133,16 +132,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	/* --- Tablet Responsive Styles --- */
 	@media (max-width: 768px) {
 		.testimonial-slide {
-			flex-basis: 80%; /* Slide is wider on tablets */
+			flex-basis: 80%;
 			margin: 0 10px;
 		}
 	}
 
-	/* --- Mobile Responsive Styles --- */
+	/* --- Mobile Responsive Styles (UPDATED) --- */
 	@media (max-width: 480px) {
+		.carousel-container {
+			/* Add padding here to create space on the sides */
+			padding: 0 20px;
+		}
 		.testimonial-slide {
-			flex-basis: 90%; /* Slide is almost full-width on mobile */
-			margin: 0 5px;
+			/* Make the slide fill the container's padded area */
+			flex-basis: 100%; 
+			/* Remove the margin, as padding on the container now handles spacing */
+			margin: 0;
 		}
 	}
 </style>
