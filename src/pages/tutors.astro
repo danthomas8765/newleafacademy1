@@ -1,0 +1,93 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Meet Our Tutors" description="Meet the experienced and specialist tutors at New Leaf Academy." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Meet Our Tutors</h1>
+			<p>Our team is made up of passionate, specialist tutors who are dedicated to your success. Each tutor brings a wealth of experience and a fresh approach to education, ensuring every session is engaging and effective.</p>
+
+			<div class="tutor-card">
+				<img src="/danthomas.png" alt="Dan Thomas Headshot" class="tutor-headshot" />
+				<div class="tutor-info">
+					<h2>Dan Thomas</h2>
+					<p>Specialising in <strong>mathematics</strong> and <strong>science</strong> for GCSE with <strong>A level physics</strong> and <strong>mathematics</strong>.</p>
+				</div>
+			</div>
+
+			<div class="tutor-card">
+				<img src="/kai-headshot.jpg" alt="Kai McKim Headshot" class="tutor-headshot" />
+				<div class="tutor-info">
+					<h2>Kai McKim</h2>
+					<p>Specialising in <strong>English literature</strong> and <strong>language</strong> for GCSE and A level.</p>
+				</div>
+			</div>
+
+			<div class="tutor-card">
+				<img src="/marcus-headshot.jpg" alt="Marcus Rees Headshot" class="tutor-headshot" />
+				<div class="tutor-info">
+					<h2>Marcus Rees</h2>
+					<p>Specialising in <strong>business studies</strong>, <strong>economics</strong>, <strong>mathematics</strong> and <strong>science</strong> for GCSE and <strong>A level mathematics</strong> and <strong>economics</strong>.</p>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		color: #2c4fb9;
+		max-width: 800px;
+		margin: 2em auto;
+		padding: 0 1em;
+	}
+	h1 {
+		color: #2c4fb9 !important;
+		font-size: 2.5em;
+		text-align: center;
+		margin-bottom: 0.5em;
+	}
+	p {
+		margin-bottom: 1em;
+	}
+	.tutor-card {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		margin: 2em 0;
+		padding: 1.5em;
+		border: 1px solid #ddd;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+	}
+	.tutor-headshot {
+		width: 150px;
+		height: 150px;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+	.tutor-info h2 {
+		color: #2c4fb9;
+		margin: 0 0 0.5em 0;
+	}
+	.tutor-info p {
+		margin: 0;
+	}
+
+	@media (max-width: 600px) {
+		.tutor-card {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+</style>
