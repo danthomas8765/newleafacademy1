@@ -38,141 +38,74 @@ import { SITE_TITLE } from '../consts';
 </header>
 
 <style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-		position: sticky;
-		top: 0;
-		z-index: 100;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		height: 4.5rem; /* Set a fixed height for the nav bar */
-	}
-	.logo-container a {
-		text-decoration: none;
-		display: flex;
-		align-items: center;
-		font-size: 1.5em; /* Adjusted size */
-		font-weight: bold;
-		color: #2c4fb9;
-		margin: 0;
-	}
-	img.logo {
-		height: 1.5em; /* Slightly larger logo */
-		margin-right: 0.5em;
-	}
-	.site-title {
-		white-space: nowrap; /* Prevent title from wrapping */
-	}
-	.nav-links {
-		display: flex;
-		align-items: center;
-		gap: 1.5em; /* Add space between internal and social links */
-	}
-	.internal-links {
-		display: flex;
-		gap: 0.5em;
-	}
-	.social-links {
-		display: flex;
-		gap: 0.5em;
-	}
-	.nav-links a {
-		padding: 0.5em;
-		color: #2c4fb9;
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-		font-weight: 500;
-		white-space: nowrap;
-	}
-	.nav-links a:hover,
-	.nav-links a.active {
-		border-bottom-color: var(--accent);
-	}
-	.social-links svg {
-		color: #2c4fb9;
-	}
+header {
+    margin: 0;
+    padding: 0 1em;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4.5rem;
+  }
+  .logo-container a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2c4fb9;
+    margin: 0;
+  }
+  img.logo {
+    height: 1.5em; /* This line controls the logo's size */
+    margin-right: 0.5em;
+  }
+  .site-title {
+    white-space: nowrap; /* Prevent title from wrapping */
+  }
 
-	/* Hamburger Menu Button Styling */
-	.menu-toggle {
-		display: none; /* Hidden on large screens */
-		background: none;
-		border: none;
-		cursor: pointer;
-		padding: 0;
-		z-index: 110; /* Ensure it's above the nav links panel */
-	}
-	.close-icon {
-		display: none;
-	}
-	
-	/* --- Mobile and Tablet Styles --- */
-	@media (max-width: 768px) {
-		.menu-toggle {
-			display: block; /* Show the button on small screens */
-			color: #2c4fb9;
-		}
-		
-		.nav-links {
-			display: none; /* Hide the links container by default */
-			position: absolute;
-			top: 4.5rem; /* Position it right below the header */
-			right: 0;
-			background: white;
-			width: 100%;
-			box-shadow: 0 8px 8px -4px rgba(0, 0, 0, 0.1);
+ /* --- Default Desktop Styles --- */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+  }
 
-			/* Animate the dropdown */
-			transform: translateY(-10px);
-			opacity: 0;
-			pointer-events: none;
-			transition: transform 0.3s ease, opacity 0.3s ease;
+  .social-links a {
+    text-decoration: none; /* Now it applies to all screen sizes */
+  }
 
-			/* Change layout to vertical */
-			flex-direction: column;
-			align-items: center;
-			padding: 2em 0;
-			gap: 2em;
-		}
+  .menu-toggle {
+    display: none;
+  }
+.internal-links {
+    display: flex;
+    align-items: center;
+    gap: 1em; /* Adjust gap if needed */
+  }
 
-		.nav-links.is-open {
-			display: flex;
-			transform: translateY(0);
-			opacity: 1;
-			pointer-events: auto;
-		}
+  /* Add this rule for the separators */
+  .internal-links > a {
+    border-left: 1px solid #ddd; /* A light grey border */
+    padding-left: 1em;
+  }
 
-		.internal-links {
-			flex-direction: column;
-			text-align: center;
-			gap: 1.5em;
-		}
-
-		.social-links {
-			margin-top: 1em;
-			gap: 1.5em;
-		}
-
-		/* Toggle between hamburger and close icons */
-		.menu-toggle[aria-expanded="true"] .hamburger-icon {
-			display: none;
-		}
-		.menu-toggle[aria-expanded="true"] .close-icon {
-			display: block;
-		}
-	}
-	
-	/* For very small screens, hide the site title text to save space */
-	@media (max-width: 375px) {
-		.site-title {
-			display: none;
-		}
-	}
+  /* Add this rule to remove the border from the first link */
+  .internal-links > a:first-child {
+    border-left: none;
+    padding-left: 0;
+  }
+  /* --- Mobile and Tablet Styles --- */
+  @media (max-width: 1024px) {
+    /* ... your other mobile styles ... */
+    /* The .social-links a rule should NOT be in here anymore */
+  }
 </style>
 
 <script>
