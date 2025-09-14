@@ -19,7 +19,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				At New Leaf Academy, we believe that every student has the potential to succeed. We understand that a great tutor does more than just teach; they build confidence, inspire curiosity, and tailor their approach to each individual. Our commitment is to provide a supportive and effective learning environment that leads to lasting academic success.
 			</p>
 			<h2>Our Commitment to Your Success:</h2>
-			<ul class="reasons-list">
+			<ul>
 				<li>
 					<strong>Proven Results & Expert Tutors:</strong> We have a strong track record of helping students achieve top grades. Our specialist tutors are not only experts in their subjects but are also dedicated to helping you succeed.
 				</li>
@@ -41,12 +41,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	:root {
 		--primary-color: #2c4fb9;
 		--text-color: #333;
-		--font-family-body: sans-serif;
+		--card-bg-color: #f9f9f9;
+        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	}
 
 	body {
-		font-family: var(--font-family-body);
+		font-family: sans-serif;
 		line-height: 1.6;
+		color: var(--text-color);
 		margin: 0;
 		padding: 0;
 	}
@@ -56,25 +58,24 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		max-width: 800px;
 		margin: 2em auto;
 		padding: 0 1em;
+		box-sizing: border-box; /* Crucial for preventing horizontal overflow */
 	}
 
 	h1 {
 		color: var(--primary-color) !important;
-		font-size: 2.5em;
+		font-size: clamp(1.8em, 5vw, 2.5em); /* Fluid typography */
 		text-align: center;
-		margin-bottom: 0.5em;
-	}
-
-	p {
-		color: var(--text-color);
-		font-size: 1.1em;
 	}
 
 	h2 {
 		color: var(--primary-color) !important;
-		font-size: 1.8em;
+		font-size: clamp(1.5em, 4vw, 1.8em); /* Fluid typography */
 		margin-top: 2em;
-		margin-bottom: 1em;
+	}
+
+	p {
+		color: var(--text-color);
+		font-size: clamp(1em, 2vw, 1.1em);
 	}
 
 	ul {
@@ -85,64 +86,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	li {
 		margin-bottom: 1.5em;
 		line-height: 1.5;
-		background-color: #f9f9f9;
+		background-color: var(--card-bg-color);
 		padding: 1.5em;
 		border-radius: 10px;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		box-shadow: var(--box-shadow);
 	}
 
 	li strong {
 		display: block;
-		font-size: 1.2em;
+		font-size: clamp(1.1em, 2.5vw, 1.2em);
 		margin-bottom: 0.5em;
-		color: var(--primary-color);
-	}
-
-	/* Responsive Design with Media Queries */
-	@media (max-width: 768px) {
-		main {
-			padding: 0 1em;
-			margin: 1em auto;
-		}
-
-		h1 {
-			font-size: 2em;
-		}
-
-		h2 {
-			font-size: 1.5em;
-			margin-top: 1.5em;
-		}
-
-		p {
-			font-size: 1em;
-		}
-
-		li {
-			padding: 1em;
-			margin-bottom: 1em;
-		}
-
-		li strong {
-			font-size: 1.1em;
-		}
-	}
-
-	@media (max-width: 480px) {
-		main {
-			padding: 0 0.5em;
-		}
-
-		h1 {
-			font-size: 1.8em;
-		}
-
-		h2 {
-			font-size: 1.3em;
-		}
-
-		li {
-			padding: 0.8em;
-		}
 	}
 </style>
