@@ -69,34 +69,32 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	h1 {
 		color: #2c4fb9 !important;
 	}
-
 	.tagline {
 		font-size: 1.5em;
 		font-weight: bold;
 	}
 
-	/* START: UPDATED CAROUSEL STYLES */
+	/* --- Carousel Styles --- */
 	.carousel-container {
 		max-width: 1000px;
 		margin: 2em auto 0;
-		overflow: hidden; /* This hides the other slides */
-		padding: 0 40px;
+		overflow: hidden;
+		padding: 0 40px; /* Default padding for desktop to show slide edges */
 		box-sizing: border-box;
 	}
 
 	.testimonial-track {
-		display: flex; /* Lay out slides horizontally */
-		transition: transform 0.5s ease-in-out; /* Add smooth transition */
+		display: flex;
 	}
 
 	.testimonial-slide {
-		flex: 0 0 100%; /* Default: show one slide at a time on mobile */
-		width: 100%;
+		flex: 0 0 80%; /* Each slide is 80% wide on desktop */
+		width: 80%;
 		padding: 1.5em;
 		text-align: center;
 		border: 1px solid #ddd;
 		border-radius: 8px;
-		margin-right: 20px;
+		margin-right: 20px; /* Space between slides on desktop */
 	}
 	
 	.testimonial-slide p {
@@ -109,7 +107,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		margin-top: 1em;
 	}
 
-	/* Navigation buttons styling */
 	.carousel-nav {
 		text-align: center;
 		margin-top: 1em;
@@ -132,111 +129,153 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		background-color: #1a327b;
 	}
 
-	/* NEW: Media query for larger screens */
-	@media (min-width: 768px) {
+	/* --- NEW: Tablet Responsive Styles --- */
+	@media (max-width: 768px) {
+		.carousel-container {
+			/* Reduce side padding to give more room to the slide */
+			padding: 0 20px;
+		}
 		.testimonial-slide {
-			flex: 0 0 50%; /* Show two slides at a time on larger screens */
-			width: 50%;
+			/* Make the slide wider to be more readable */
+			flex-basis: 90%;
+			width: 90%;
+			margin-right: 15px; /* Reduce space between slides */
 		}
 	}
-	/* END: UPDATED CAROUSEL STYLES */
+
+	/* --- NEW: Mobile Responsive Styles --- */
+	@media (max-width: 480px) {
+		.carousel-container {
+			padding: 0 15px; /* Even less padding for small phones */
+		}
+		.testimonial-slide {
+			/* Slide now takes up almost the full screen for maximum readability */
+			flex-basis: 95%;
+			width: 95%;
+			margin-right: 10px; /* Minimal margin */
+			padding: 1.2em; /* Slightly reduce internal padding */
+		}
+	}
 </style>
 
 <script>
-	// START: UPDATED SCRIPT FOR INFINITE CAROUSEL
 	document.addEventListener('DOMContentLoaded', () => {
+		const container = document.querySelector('.carousel-container');
 		const track = document.querySelector('.testimonial-track');
 		const prevButton = document.getElementById('prevBtn');
 		const nextButton = document.getElementById('nextBtn');
 		
-		if (!track) return;
+		if (!track || !container) return;
 
 		let slides = Array.from(track.children);
 		const originalSlideCount = slides.length;
 		let isTransitioning = false;
 		
-		// 1. CLONE SLIDES for the infinite effect
-		// How many slides to clone on each side.
 		const clonesCount = 2;
 
-		// Prepend clones from the end
 		for (let i = 0; i < clonesCount; i++) {
 			const index = originalSlideCount - 1 - i;
 			const clone = slides[index].cloneNode(true);
 			clone.classList.add('clone');
 			track.insertBefore(clone, slides[0]);
 		}
-		// Append clones from the start
 		for (let i = 0; i < clonesCount; i++) {
 			const clone = slides[i].cloneNode(true);
 			clone.classList.add('clone');
 			track.appendChild(clone);
 		}
 
-		// Update our slides array to include the new clones
 		slides = Array.from(track.children);
-		
-		// Start at the first "real" slide, which is after the prepended clones
 		let currentIndex = clonesCount;
 
+		// --- NEW: Autoplay variables ---
+		let autoPlayInterval;
+		const autoPlayDelay = 10000; // 10 seconds
+
 		const getSlideWidth = () => {
-			return slides[0].clientWidth + 20; // slide width + 20px margin-right
+			const slide = slides[0];
+			if (!slide) return 0;
+			const slideStyle = window.getComputedStyle(slide);
+			const slideMarginRight = parseInt(slideStyle.marginRight, 10);
+			return slide.clientWidth + slideMarginRight;
 		};
 
-		// 2. POSITION the track to show the first real slide on load
 		const setPosition = (instant = false) => {
 			if (instant) track.style.transition = 'none';
 			
 			const offset = -currentIndex * getSlideWidth();
 			track.style.transform = `translateX(${offset}px)`;
 
-			// Use a timeout to re-enable transitions after an instant move
 			if (instant) {
 				setTimeout(() => {
 					track.style.transition = 'transform 0.5s ease-in-out';
 				}, 50);
 			}
 		};
-
-		// 3. EVENT LISTENERS for buttons
-		nextButton.addEventListener('click', () => {
+		
+		const moveToNext = () => {
 			if (isTransitioning) return;
 			isTransitioning = true;
 			currentIndex++;
 			setPosition();
-		});
-
-		prevButton.addEventListener('click', () => {
+		};
+		
+		const moveToPrev = () => {
 			if (isTransitioning) return;
 			isTransitioning = true;
 			currentIndex--;
 			setPosition();
+		};
+
+		// --- NEW: Autoplay functions ---
+		const startAutoPlay = () => {
+			// Clear any old interval to prevent it from running multiple times
+			clearInterval(autoPlayInterval);
+			// Start a new interval
+			autoPlayInterval = setInterval(() => {
+				moveToNext();
+			}, autoPlayDelay);
+		};
+
+		// --- UPDATED: Event listeners now reset the autoplay timer ---
+		nextButton.addEventListener('click', () => {
+			moveToNext();
+			startAutoPlay(); // Reset timer on manual click
 		});
 
-		// 4. THE MAGIC: Listen for the end of a transition
+		prevButton.addEventListener('click', () => {
+			moveToPrev();
+			startAutoPlay(); // Reset timer on manual click
+		});
+
 		track.addEventListener('transitionend', () => {
-			// Check if we've landed on a cloned slide at the end of the track
 			if (currentIndex >= originalSlideCount + clonesCount) {
-				// If so, jump back to the first "real" slide without an animation
 				currentIndex = clonesCount;
-				setPosition(true); // 'true' means instant jump
+				setPosition(true);
 			}
-
-			// Check if we've landed on a cloned slide at the beginning of the track
 			if (currentIndex < clonesCount) {
-				// If so, jump to the last "real" slide without an animation
 				currentIndex = originalSlideCount + clonesCount - 1;
-				setPosition(true); // 'true' means instant jump
+				setPosition(true);
 			}
-			
-			isTransitioning = false; // Allow the next click
+			isTransitioning = false;
 		});
 
-		// Set the correct initial position when the page loads
-		setPosition(true);
+		// --- NEW: Pause autoplay on hover ---
+		container.addEventListener('mouseenter', () => {
+			clearInterval(autoPlayInterval);
+		});
 
-		// Recalculate and reset position on window resize
-		window.addEventListener('resize', () => setPosition(true));
+		container.addEventListener('mouseleave', () => {
+			startAutoPlay();
+		});
+
+
+		// --- Initial setup ---
+		setPosition(true);
+		startAutoPlay(); // Start the automatic sliding when the page loads
+		window.addEventListener('resize', () => {
+			setPosition(true);
+			startAutoPlay(); // Reset on resize as well
+		});
 	});
-	// END: UPDATED SCRIPT
 </script>

@@ -5,87 +5,184 @@ import { SITE_TITLE } from '../consts';
 
 <header>
 	<nav>
-		<h2>
+		<div class="logo-container">
 			<a href="/">
 				<img src="/logo.png" alt="New Leaf Academy Logo" class="logo" />
-				{SITE_TITLE}
-			</a>
-		</h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/contact">Contact Us</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-		</div>
-		<div class="social-links">
-            <a href="https://www.facebook.com/newleafacademyuk" target="_blank" aria-label="Facebook">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-			</a>
-            <a href="https://wa.me/07599511507" target="_blank" aria-label="WhatsApp">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-whatsapp"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+				<span class="site-title">{SITE_TITLE}</span>
 			</a>
 		</div>
+
+		<div class="nav-links">
+			<div class="internal-links">
+				<HeaderLink href="/">Home</HeaderLink>
+				<HeaderLink href="/contact">Contact Us</HeaderLink>
+				<HeaderLink href="/about">About</HeaderLink>
+			</div>
+			<div class="social-links">
+				<a href="https://www.facebook.com/newleafacademyuk" target="_blank" aria-label="Facebook">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+				</a>
+				<a href="https://wa.me/447599511507" target="_blank" aria-label="WhatsApp">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+				</a>
+			</div>
+		</div>
+
+		<button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+			<svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+			<svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+		</button>
 	</nav>
 </header>
+
 <style>
 	header {
 		margin: 0;
 		padding: 0 1em;
 		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+		position: sticky;
+		top: 0;
+		z-index: 100;
 	}
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+		height: 4.5rem; /* Set a fixed height for the nav bar */
 	}
-    h2 {
-        margin: 0;
-        font-size: 2em;
-    }
-    h2 a, h2 a.active {
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        color: #2c4fb9; /* New: Sets the logo text to dark blue */
-    }
-    nav a {
-        padding: 1em 0.5em;
-        color: #2c4fb9; /* New: Sets the navigation links to dark blue */
-        border-bottom: 4px solid transparent;
-        text-decoration: none;
-    }
-    nav a.active {
-        text-decoration: none;
-        border-bottom-color: var(--accent);
-    }
-    img.logo {
-        height: 1em;
-        margin-right: 0.5em;
-    }
-    .internal-links {
-        display: flex;
-        align-items: center;
-    }
-    .social-links {
-        display: flex;
-        align-items: center;
-        margin-left: auto; /* Push to the right on small screens */
-    }
-    @media (max-width: 720px) {
-        nav {
-            flex-direction: column; /* Stack items on top of each other */
-            align-items: flex-start;
-        }
-        .internal-links {
-            width: 100%;
-            justify-content: center; /* Center the links */
-        }
-        .social-links {
-            width: 100%;
-            justify-content: center; /* Center the social links */
-            margin-top: 1em;
-            margin-left: 0;
-        }
-    }
+	.logo-container a {
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		font-size: 1.5em; /* Adjusted size */
+		font-weight: bold;
+		color: #2c4fb9;
+		margin: 0;
+	}
+	img.logo {
+		height: 1.5em; /* Slightly larger logo */
+		margin-right: 0.5em;
+	}
+	.site-title {
+		white-space: nowrap; /* Prevent title from wrapping */
+	}
+	.nav-links {
+		display: flex;
+		align-items: center;
+		gap: 1.5em; /* Add space between internal and social links */
+	}
+	.internal-links {
+		display: flex;
+		gap: 0.5em;
+	}
+	.social-links {
+		display: flex;
+		gap: 0.5em;
+	}
+	.nav-links a {
+		padding: 0.5em;
+		color: #2c4fb9;
+		border-bottom: 4px solid transparent;
+		text-decoration: none;
+		font-weight: 500;
+		white-space: nowrap;
+	}
+	.nav-links a:hover,
+	.nav-links a.active {
+		border-bottom-color: var(--accent);
+	}
+	.social-links svg {
+		color: #2c4fb9;
+	}
+
+	/* Hamburger Menu Button Styling */
+	.menu-toggle {
+		display: none; /* Hidden on large screens */
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		z-index: 110; /* Ensure it's above the nav links panel */
+	}
+	.close-icon {
+		display: none;
+	}
+	
+	/* --- Mobile and Tablet Styles --- */
+	@media (max-width: 768px) {
+		.menu-toggle {
+			display: block; /* Show the button on small screens */
+			color: #2c4fb9;
+		}
+		
+		.nav-links {
+			display: none; /* Hide the links container by default */
+			position: absolute;
+			top: 4.5rem; /* Position it right below the header */
+			right: 0;
+			background: white;
+			width: 100%;
+			box-shadow: 0 8px 8px -4px rgba(0, 0, 0, 0.1);
+
+			/* Animate the dropdown */
+			transform: translateY(-10px);
+			opacity: 0;
+			pointer-events: none;
+			transition: transform 0.3s ease, opacity 0.3s ease;
+
+			/* Change layout to vertical */
+			flex-direction: column;
+			align-items: center;
+			padding: 2em 0;
+			gap: 2em;
+		}
+
+		.nav-links.is-open {
+			display: flex;
+			transform: translateY(0);
+			opacity: 1;
+			pointer-events: auto;
+		}
+
+		.internal-links {
+			flex-direction: column;
+			text-align: center;
+			gap: 1.5em;
+		}
+
+		.social-links {
+			margin-top: 1em;
+			gap: 1.5em;
+		}
+
+		/* Toggle between hamburger and close icons */
+		.menu-toggle[aria-expanded="true"] .hamburger-icon {
+			display: none;
+		}
+		.menu-toggle[aria-expanded="true"] .close-icon {
+			display: block;
+		}
+	}
+	
+	/* For very small screens, hide the site title text to save space */
+	@media (max-width: 375px) {
+		.site-title {
+			display: none;
+		}
+	}
 </style>
+
+<script>
+	const menuToggle = document.querySelector('.menu-toggle');
+	const navLinks = document.querySelector('.nav-links');
+
+	menuToggle.addEventListener('click', () => {
+		// Toggle the 'is-open' class on the navigation links
+		navLinks.classList.toggle('is-open');
+		
+		// Update the aria-expanded attribute for accessibility
+		const isExpanded = navLinks.classList.contains('is-open');
+		menuToggle.setAttribute('aria-expanded', isExpanded.toString());
+	});
+</script>
