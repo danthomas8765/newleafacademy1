@@ -76,10 +76,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 	/* --- Carousel Styles --- */
 	.carousel-container {
-		max-width: 1000px;
-		margin: 2em auto 0;
+		/* REMOVED max-width and margin: auto to make it full-width */
+		width: 100%; 
+		margin: 2em 0; /* Changed to top/bottom margin only */
 		overflow: hidden;
-		padding: 0 40px; /* Default padding for desktop to show slide edges */
 		box-sizing: border-box;
 	}
 
@@ -88,13 +88,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	}
 
 	.testimonial-slide {
-		flex: 0 0 80%; /* Each slide is 80% wide on desktop */
-		width: 80%;
+		/* UPDATED flex-basis to control slide width more explicitly */
+		flex: 0 0 60%; /* Each slide is 60% of the viewport width */
+		max-width: 600px; /* Added max-width for very large screens */
 		padding: 1.5em;
 		text-align: center;
 		border: 1px solid #ddd;
 		border-radius: 8px;
-		margin-right: 20px; /* Space between slides on desktop */
+		margin: 0 10px; /* CHANGED to have margin on both sides */
 	}
 	
 	.testimonial-slide p {
@@ -129,31 +130,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		background-color: #1a327b;
 	}
 
-	/* --- NEW: Tablet Responsive Styles --- */
+	/* --- Tablet Responsive Styles --- */
 	@media (max-width: 768px) {
-		.carousel-container {
-			/* Reduce side padding to give more room to the slide */
-			padding: 0 20px;
-		}
 		.testimonial-slide {
-			/* Make the slide wider to be more readable */
-			flex-basis: 90%;
-			width: 90%;
-			margin-right: 15px; /* Reduce space between slides */
+			flex-basis: 80%; /* Slide is wider on tablets */
+			margin: 0 10px;
 		}
 	}
 
-	/* --- NEW: Mobile Responsive Styles --- */
+	/* --- Mobile Responsive Styles --- */
 	@media (max-width: 480px) {
-		.carousel-container {
-			padding: 0 15px; /* Even less padding for small phones */
-		}
 		.testimonial-slide {
-			/* Slide now takes up almost the full screen for maximum readability */
-			flex-basis: 95%;
-			width: 95%;
-			margin-right: 10px; /* Minimal margin */
-			padding: 1.2em; /* Slightly reduce internal padding */
+			flex-basis: 90%; /* Slide is almost full-width on mobile */
+			margin: 0 5px;
 		}
 	}
 </style>
