@@ -1,0 +1,69 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Why Choose Us?" description="Learn about the key benefits of New Leaf Academy's personalized tutoring services." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Why Choose Us?</h1>
+			<p>
+				At New Leaf Academy, we believe that every student has the potential to succeed. We understand that a great tutor does more than just teach; they build confidence, inspire curiosity, and tailor their approach to each individual. Our commitment is to provide a supportive and effective learning environment that leads to lasting academic success.
+			</p>
+			<h2>Our Commitment to Your Success:</h2>
+			<ul>
+				<li>
+					<strong>Proven Results & Expert Tutors:</strong> We have a strong track record of helping students achieve top grades. Our specialist tutors are not only experts in their subjects but are also dedicated to helping you succeed.
+				</li>
+				<li>
+					<strong>Empathetic & Personalized Learning:</strong> We have extensive experience helping students with neurodivergence, SEND, dyslexia, dyscalculia, autism, and ADHD. Our tutors build genuine rapport and trust, ensuring every session is a supportive space where students feel understood and confident.
+				</li>
+				<li>
+					<strong>Flexible & Student-Led Sessions:</strong> Your schedule matters. We offer flexible class scheduling seven days a week to fit your life. Our sessions are led by the student, ensuring you get help on exactly what you need, when you need it.
+				</li>
+				<li>
+					<strong>Modern & Effective Teaching:</strong> We use a blend of fresh teaching methods, cutting-edge techniques, and the newest technology. Our tutors create engaging lessons and utilize the most effective online resources to provide the best possible education.
+				</li>
+			</ul>
+		</main>
+		<Footer />
+	</body>
+</html>
+<style>
+	main {
+		color: #2c4fb9;
+		max-width: 800px;
+		margin: 2em auto;
+		padding: 0 1em;
+	}
+	h1 {
+		color: #2c4fb9 !important;
+		font-size: 2.5em;
+		text-align: center;
+	}
+    h2 {
+        color: #2c4fb9 !important;
+        font-size: 1.8em;
+        margin-top: 2em;
+    }
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+	li {
+		margin-bottom: 1.5em;
+		line-height: 1.5;
+	}
+	li strong {
+		display: block;
+		font-size: 1.2em;
+		margin-bottom: 0.5em;
+	}
+</style>
