@@ -3,7 +3,16 @@
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
+/* Add this to the top of global.css */
+html {
+  box-sizing: border-box;
+}
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 :root {
   --accent: #2337ff;
   --accent-dark: #000d8a;
@@ -44,8 +53,7 @@ body {
   line-height: 1.7;
 }
 main {
-  width: 720px;
-  max-width: calc(100% - 2em);
+  max-width: 720px; /* Changed from width to max-width */
   margin: auto;
   padding: 3em 1em;
 }
@@ -61,6 +69,7 @@ h6 {
 }
 h1 {
   font-size: 3.052em;
+  color: var(--accent);
 }
 h2 {
   font-size: 2.441em;
