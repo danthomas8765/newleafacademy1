@@ -159,123 +159,145 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 </style>
 
 <script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const container = document.querySelector('.carousel-container');
-		const track = document.querySelector('.testimonial-track');
-		const prevButton = document.getElementById('prevBtn');
-		const nextButton = document.getElementById('nextBtn');
-		
-		if (!track || !container) return;
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.carousel-container');
+    const track = document.querySelector('.testimonial-track');
+    const prevButton = document.getElementById('prevBtn');
+    const nextButton = document.getElementById('nextBtn');
+    
+    if (!track || !container) return;
 
-		let slides = Array.from(track.children);
-		const originalSlideCount = slides.length;
-		let isTransitioning = false;
-		
-		const clonesCount = 2;
+    let slides = Array.from(track.children);
+    const originalSlideCount = slides.length;
+    let isTransitioning = false;
+    
+    const clonesCount = 2;
 
-		for (let i = 0; i < clonesCount; i++) {
-			const index = originalSlideCount - 1 - i;
-			const clone = slides[index].cloneNode(true);
-			clone.classList.add('clone');
-			track.insertBefore(clone, slides[0]);
-		}
-		for (let i = 0; i < clonesCount; i++) {
-			const clone = slides[i].cloneNode(true);
-			clone.classList.add('clone');
-			track.appendChild(clone);
-		}
+    for (let i = 0; i < clonesCount; i++) {
+        const index = originalSlideCount - 1 - i;
+        const clone = slides[index].cloneNode(true);
+        clone.classList.add('clone');
+        track.insertBefore(clone, slides[0]);
+    }
+    for (let i = 0; i < clonesCount; i++) {
+        const clone = slides[i].cloneNode(true);
+        clone.classList.add('clone');
+        track.appendChild(clone);
+    }
 
-		slides = Array.from(track.children);
-		let currentIndex = clonesCount;
+    slides = Array.from(track.children);
+    let currentIndex = clonesCount;
 
-		// --- NEW: Autoplay variables ---
-		let autoPlayInterval;
-		const autoPlayDelay = 10000; // 10 seconds
+    // --- Autoplay variables ---
+    let autoPlayInterval;
+    const autoPlayDelay = 10000; // 10 seconds
 
-		const getSlideWidth = () => {
-			const slide = slides[0];
-			if (!slide) return 0;
-			const slideStyle = window.getComputedStyle(slide);
-			const slideMarginRight = parseInt(slideStyle.marginRight, 10);
-			return slide.clientWidth + slideMarginRight;
-		};
+    // --- NEW: Touch variables ---
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const swipeThreshold = 50; // Minimum horizontal pixel distance for a swipe to register
 
-		const setPosition = (instant = false) => {
-			if (instant) track.style.transition = 'none';
-			
-			const offset = -currentIndex * getSlideWidth();
-			track.style.transform = `translateX(${offset}px)`;
+    const getSlideWidth = () => {
+        const slide = slides[0];
+        if (!slide) return 0;
+        const slideStyle = window.getComputedStyle(slide);
+        const slideMarginRight = parseInt(slideStyle.marginRight, 10);
+        return slide.clientWidth + slideMarginRight;
+    };
 
-			if (instant) {
-				setTimeout(() => {
-					track.style.transition = 'transform 0.5s ease-in-out';
-				}, 50);
-			}
-		};
-		
-		const moveToNext = () => {
-			if (isTransitioning) return;
-			isTransitioning = true;
-			currentIndex++;
-			setPosition();
-		};
-		
-		const moveToPrev = () => {
-			if (isTransitioning) return;
-			isTransitioning = true;
-			currentIndex--;
-			setPosition();
-		};
+    const setPosition = (instant = false) => {
+        if (instant) track.style.transition = 'none';
+        
+        const offset = -currentIndex * getSlideWidth();
+        track.style.transform = `translateX(${offset}px)`;
 
-		// --- NEW: Autoplay functions ---
-		const startAutoPlay = () => {
-			// Clear any old interval to prevent it from running multiple times
-			clearInterval(autoPlayInterval);
-			// Start a new interval
-			autoPlayInterval = setInterval(() => {
-				moveToNext();
-			}, autoPlayDelay);
-		};
+        if (instant) {
+            setTimeout(() => {
+                track.style.transition = 'transform 0.5s ease-in-out';
+            }, 50);
+        }
+    };
+    
+    const moveToNext = () => {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentIndex++;
+        setPosition();
+    };
+    
+    const moveToPrev = () => {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentIndex--;
+        setPosition();
+    };
 
-		// --- UPDATED: Event listeners now reset the autoplay timer ---
-		nextButton.addEventListener('click', () => {
-			moveToNext();
-			startAutoPlay(); // Reset timer on manual click
-		});
+    const startAutoPlay = () => {
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = setInterval(() => {
+            moveToNext();
+        }, autoPlayDelay);
+    };
 
-		prevButton.addEventListener('click', () => {
-			moveToPrev();
-			startAutoPlay(); // Reset timer on manual click
-		});
+    // --- UPDATED: Event listeners now reset the autoplay timer ---
+    nextButton.addEventListener('click', () => {
+        moveToNext();
+        startAutoPlay();
+    });
 
-		track.addEventListener('transitionend', () => {
-			if (currentIndex >= originalSlideCount + clonesCount) {
-				currentIndex = clonesCount;
-				setPosition(true);
-			}
-			if (currentIndex < clonesCount) {
-				currentIndex = originalSlideCount + clonesCount - 1;
-				setPosition(true);
-			}
-			isTransitioning = false;
-		});
+    prevButton.addEventListener('click', () => {
+        moveToPrev();
+        startAutoPlay();
+    });
 
-		// --- NEW: Pause autoplay on hover ---
-		container.addEventListener('mouseenter', () => {
-			clearInterval(autoPlayInterval);
-		});
+    // --- NEW: Touch Event Handlers ---
+    container.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
 
-		container.addEventListener('mouseleave', () => {
-			startAutoPlay();
-		});
+    container.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const deltaX = touchEndX - touchStartX;
 
+        // Check if the swipe is significant enough
+        if (Math.abs(deltaX) > swipeThreshold) {
+            if (deltaX > 0) {
+                // Swipe to the right for "previous" slide
+                moveToPrev();
+            } else {
+                // Swipe to the left for "next" slide
+                moveToNext();
+            }
+            startAutoPlay(); // Reset autoplay timer after a manual swipe
+        }
+    });
 
-		// --- Initial setup ---
-		setPosition(true);
-		startAutoPlay(); // Start the automatic sliding when the page loads
-		window.addEventListener('resize', () => {
-			setPosition(true);
-			startAutoPlay(); // Reset on resize as well
-		});
-	});
+    track.addEventListener('transitionend', () => {
+        if (currentIndex >= originalSlideCount + clonesCount) {
+            currentIndex = clonesCount;
+            setPosition(true);
+        }
+        if (currentIndex < clonesCount) {
+            currentIndex = originalSlideCount + clonesCount - 1;
+            setPosition(true);
+        }
+        isTransitioning = false;
+    });
+
+    container.addEventListener('mouseenter', () => {
+        clearInterval(autoPlayInterval);
+    });
+
+    container.addEventListener('mouseleave', () => {
+        startAutoPlay();
+    });
+
+    // --- Initial setup ---
+    setPosition(true);
+    startAutoPlay();
+    window.addEventListener('resize', () => {
+        setPosition(true);
+        startAutoPlay();
+    });
+});
 </script>
