@@ -8,25 +8,34 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title=`Contact Us - ${SITE_TITLE}` description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
 		<main>
 			<h1>Get in Touch</h1>
 			<p>We're here to help! You can reach us using any of the methods below.</p>
+			
 			<ul class="contact-list">
 				<li>
-					<strong>Email:</strong> <a href="mailto:info@new-leaf-academy.co.uk">info@new-leaf-academy.co.uk</a>
+					<a href="mailto:info@new-leaf-academy.co.uk">
+						<strong>Email:</strong> info@new-leaf-academy.co.uk
+					</a>
 				</li>
 				<li>
-					<strong>Phone:</strong> <a href="tel:07599511507">07599511507</a>
+					<a href="tel:07599511507">
+						<strong>Phone:</strong> 07599 511507
+					</a>
 				</li>
 				<li>
-					<strong>WhatsApp:</strong> <a href="https://wa.me/07599511507" target="_blank">Chat with us on WhatsApp</a>
+					<a href="https://wa.me/447599511507" target="_blank">
+						<strong>WhatsApp:</strong> Chat with us
+					</a>
 				</li>
 				<li>
-					<strong>Facebook:</strong> <a href="https://www.facebook.com/newleafacademyuk" target="_blank">Message us on Facebook</a>
+					<a href="https://www.facebook.com/newleafacademyuk" target="_blank">
+						<strong>Facebook:</strong> Message us
+					</a>
 				</li>
 			</ul>
 		</main>
@@ -35,26 +44,52 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 </html>
 
 <style>
+	main {
+		color: #333; /* Adjusted for better readability on white */
+		text-align: center;
+		padding: 1rem;
+	}
+	h1 {
+		color: #2c4fb9;
+		margin-bottom: 0.5rem;
+	}
+	p {
+		margin-bottom: 2rem;
+		font-size: 1.1rem;
+	}
+
+	/* --- Contact Button Styles --- */
 	ul.contact-list {
-		list-style: none;
+		list-style: none; /* Removes bullet points */
 		padding: 0;
 		max-width: 600px;
 		margin: 2rem auto;
 	}
 
 	ul.contact-list li {
-		margin-bottom: 1rem;
-		font-size: 1.1rem;
+		margin-bottom: 1rem; /* Space between buttons */
 	}
 
-	ul.contact-list strong {
-		display: inline-block;
-		width: 100px;
+	ul.contact-list a {
+		display: block; /* Makes the entire area clickable */
+		text-decoration: none; /* Removes the underline */
+		color: white;
+		background-color: #2c4fb9; /* Main brand color */
+		padding: 1rem;
+		border-radius: 8px; /* Rounded corners */
+		font-size: 1.1rem;
+		font-weight: 500;
+		transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
 	}
-	main {
-		color: #2c4fb9;
+
+	/* Hover effect for interactivity */
+	ul.contact-list a:hover {
+		background-color: #223f94; /* A slightly darker blue */
+		transform: translateY(-2px); /* Lifts the button slightly */
 	}
-	h1 {
-		color: #2c4fb9;
+
+	ul.contact-list a strong {
+		font-weight: 700;
+		margin-right: 0.5em; /* Space between label and contact info */
 	}
 </style>
