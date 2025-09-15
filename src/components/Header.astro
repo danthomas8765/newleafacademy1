@@ -38,86 +38,165 @@ import { SITE_TITLE } from '../consts';
 </header>
 
 <style>
-header {
-    margin: 0;
-    padding: 0 1em;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 4.5rem;
-  }
-  .logo-container a {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #2c4fb9;
-    margin: 0;
-  }
-  img.logo {
-    height: 1.5em; /* This line controls the logo's size */
-    margin-right: 0.5em;
-  }
-  .site-title {
-    white-space: nowrap; /* Prevent title from wrapping */
-  }
+	/* --- Global Header Styles --- */
+	header {
+		margin: 0;
+		padding: 0 1em;
+		background: white;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+		position: sticky;
+		top: 0;
+		z-index: 1000; 
+	}
 
- /* --- Default Desktop Styles --- */
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 1.5em;
-  }
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 4.5rem;
+	}
 
-  .social-links a {
-    text-decoration: none; /* Now it applies to all screen sizes */
-  }
+	.logo-container a {
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		font-size: 1.5em;
+		font-weight: bold;
+		color: #2c4fb9;
+		margin: 0;
+	}
 
-  .menu-toggle {
-    display: none;
-  }
-.internal-links {
-    display: flex;
-    align-items: center;
-    gap: 1em; /* Adjust gap if needed */
-  }
+	img.logo {
+		height: 1.5em;
+		width: auto;
+		margin-right: 0.5em;
+	}
 
-  /* Add this rule for the separators */
-  .internal-links > a {
-    border-left: 1px solid #ddd; /* A light grey border */
-    padding-left: 1em;
-  }
+	.site-title {
+		white-space: nowrap;
+	}
 
-  /* Add this rule to remove the border from the first link */
-  .internal-links > a:first-child {
-    border-left: none;
-    padding-left: 0;
-  }
-  /* --- Mobile and Tablet Styles --- */
-  @media (max-width: 1024px) {
-    /* ... your other mobile styles ... */
-    /* The .social-links a rule should NOT be in here anymore */
-  }
+	/* --- Default Desktop Styles --- */
+	.nav-links {
+		display: flex;
+		align-items: center;
+		gap: 1.5em;
+	}
+
+	.internal-links {
+		display: flex;
+		align-items: center;
+		gap: 1em;
+	}
+	
+	.social-links a {
+		color: #2c4fb9;
+		transition: color 0.3s ease;
+		text-decoration: none;
+	}
+
+	.social-links a:hover {
+		color: #5d7fe9;
+	}
+
+	.internal-links > :global(a) { 
+		border-left: 1px solid #ddd;
+		padding-left: 1em;
+	}
+
+	.internal-links > :global(a:first-child) {
+		border-left: none;
+		padding-left: 0;
+	}
+
+	.menu-toggle {
+		display: none; 
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		z-index: 1001; 
+	}
+
+	.close-icon {
+		display: none; 
+	}
+
+	/* --- Mobile and Tablet Styles --- */
+	@media (max-width: 1150px) { /* 👈 CHANGED THIS VALUE */
+		.menu-toggle {
+			display: block; 
+		}
+
+		.nav-links {
+			position: fixed;
+			top: 0;
+			right: 0;
+			width: 80%;
+			height: 100vh;
+			background: white;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 2em;
+			transform: translateX(100%);
+			transition: transform 0.3s ease-in-out;
+		}
+
+		.nav-links.is-open {
+			transform: translateX(0);
+		}
+
+		.internal-links {
+			flex-direction: column; 
+			gap: 1.5em;
+			width: 100%;
+			text-align: center;
+		}
+
+		.internal-links > :global(a) {
+			border-left: none;
+			padding-left: 0;
+			padding: 0.5em 0;
+			width: 100%;
+			border-bottom: 1px solid #eee;
+		}
+		
+		.internal-links > :global(a:first-child) {
+			border-top: 1px solid #eee;
+		}
+
+		.social-links {
+			margin-top: 1em; 
+			display: flex;
+			gap: 1.5em;
+		}
+	}
 </style>
 
 <script>
 	const menuToggle = document.querySelector('.menu-toggle');
 	const navLinks = document.querySelector('.nav-links');
+	const hamburgerIcon = document.querySelector('.hamburger-icon');
+	const closeIcon = document.querySelector('.close-icon');
 
 	menuToggle.addEventListener('click', () => {
 		// Toggle the 'is-open' class on the navigation links
 		navLinks.classList.toggle('is-open');
 		
-		// Update the aria-expanded attribute for accessibility
+		// Check if the menu is now open
 		const isExpanded = navLinks.classList.contains('is-open');
-		menuToggle.setAttribute('aria-expanded', isExpanded.toString());
+		
+		// Update ARIA attribute for accessibility
+		menuToggle.setAttribute('aria-expanded', isExpanded);
+
+		// Toggle which icon is visible
+		if (isExpanded) {
+			hamburgerIcon.style.display = 'none';
+			closeIcon.style.display = 'block';
+		} else {
+			hamburgerIcon.style.display = 'block';
+			closeIcon.style.display = 'none';
+		}
 	});
 </script>
