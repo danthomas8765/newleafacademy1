@@ -33,7 +33,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				max-width: calc(100% - 2em);
 				margin: auto;
 				padding: 1em;
-				color: #2c4fb9; /* This is the fix! */
+				color: var(--accent); /* This is the fix! */
 			}
 			.title {
 				margin-bottom: 1em;
@@ -43,7 +43,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}
 			.title h1 {
 				margin: 0 0 0.5em 0;
-				color: #2c4fb9; /* And here */
+				color: var(--accent);
 			}
 			.date {
 				margin-bottom: 0.5em;
@@ -52,13 +52,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.last-updated-on {
 				font-style: italic;
 			}
-			<style is:global>
-	body {
-		background-color: #f0f8ff; /* This is a light blue called AliceBlue */
-		margin: 0; /* Also good to ensure no default margin */
-		font-family: system-ui, sans-serif; /* Sets a nice default font */
-	}
-</style>
+			
 		</style>
 	</head>
 

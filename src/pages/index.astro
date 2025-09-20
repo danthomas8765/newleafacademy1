@@ -123,9 +123,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	}
 
 	.carousel-button {
-		background-color: var(--accent);
-		color: white;
-		border: none;
+    background-color: transparent;   
+    color: var(--accent);             
+    border: 2px solid var(--accent);  
 		font-size: 1.5em;
 		cursor: pointer;
 		border-radius: 50%;
@@ -133,10 +133,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		height: 45px;
 		margin: 0 10px;
 		transition: background-color 0.3s;
+		transition: all 0.3s ease;
 	}
 	
 	.carousel-button:hover {
-		background-color: var(--accent-dark);
+    background-color: var(--accent);  
+    color: white;                     
+    transform: translateY(-2px);
+	}
+
+	.carousel-button:active {
+    transform: translateY(-1px) scale(0.98);
 	}
 
 	/* --- Tablet Responsive Styles --- */

@@ -1,0 +1,29 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title="Thank You!" description="Your message has been sent." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Thank You!</h1>
+			<p>Your message has been successfully sent. We'll get back to you shortly.</p>
+			<a href="/" class="home-link">← Back to Home</a>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.home-link {
+		display: inline-block;
+		margin-top: 1.5em;
+		text-decoration: none;
+		font-weight: bold;
+	}
+</style>

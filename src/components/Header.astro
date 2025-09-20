@@ -1,40 +1,49 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
+import { Image } from 'astro:assets';
+import logoImage from '../assets/logo.png'; // 1. Import the logo
+
 ---
 
 <header>
 	<nav>
-		<div class="logo-container">
-			<a href="/">
-				<img src="/logo.png" alt="New Leaf Academy Logo" class="logo" />
-				<span class="site-title">{SITE_TITLE}</span>
-			</a>
-		</div>
+    <div class="logo-container">
+        <a href="/">
+            <Image
+                src={logoImage}
+                alt="New Leaf Academy Logo"
+                class="logo"
+                width={50}   
+                height={50}  
+            />
+            <span class="site-title">{SITE_TITLE}</span>
+        </a>
+    </div>
 
-		<div class="nav-links">
-			<div class="internal-links">
-	<HeaderLink href="/">Home</HeaderLink>
-	<HeaderLink href="/tutors">Tutors</HeaderLink>
-	<HeaderLink href="/why-choose-us">Why Choose Us?</HeaderLink>
-	<HeaderLink href="/contact">Contact Us</HeaderLink>
-	<HeaderLink href="/about">About</HeaderLink>
-</div>
-			<div class="social-links">
-				<a href="https://www.facebook.com/newleafacademyuk" target="_blank" aria-label="Facebook">
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-				</a>
-				<a href="https://wa.me/447599511507" target="_blank" aria-label="WhatsApp">
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-				</a>
-			</div>
-		</div>
+    <div class="nav-links">
+        <div class="internal-links">
+            <HeaderLink href="/">Home</HeaderLink>
+            <HeaderLink href="/tutors">Tutors</HeaderLink>
+            <HeaderLink href="/why-choose-us">Why Choose Us?</HeaderLink>
+            <HeaderLink href="/contact">Contact Us</HeaderLink>
+            <HeaderLink href="/about">About</HeaderLink>
+        </div>
+        <div class="social-links">
+            <a href="https://www.facebook.com/newleafacademyuk" target="_blank" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://wa.me/447599511507" target="_blank" aria-label="WhatsApp">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </a>
+        </div>
+    </div>
 
-		<button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
-			<svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-			<svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-		</button>
-	</nav>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    </nav>
 </header>
 
 <style>
