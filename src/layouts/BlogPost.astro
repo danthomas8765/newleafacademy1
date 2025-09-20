@@ -52,6 +52,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.last-updated-on {
 				font-style: italic;
 			}
+			<style is:global>
+	body {
+		background-color: #f0f8ff; /* This is a light blue called AliceBlue */
+		margin: 0; /* Also good to ensure no default margin */
+		font-family: system-ui, sans-serif; /* Sets a nice default font */
+	}
+</style>
 		</style>
 	</head>
 

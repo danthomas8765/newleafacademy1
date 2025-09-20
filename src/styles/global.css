@@ -14,7 +14,7 @@ html {
   box-sizing: inherit;
 }
 :root {
-  --accent: #2337ff;
+  --accent: #3b549d;
   --accent-dark: #000d8a;
   --black: 15, 18, 25;
   --gray: 96, 115, 159;
@@ -91,7 +91,7 @@ a {
   color: var(--accent);
 }
 a:hover {
-  color: var(--accent);
+  color: var(--accent-dark);
 }
 p {
   margin-bottom: 1em;

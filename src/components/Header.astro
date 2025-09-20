@@ -62,9 +62,23 @@ import { SITE_TITLE } from '../consts';
 		align-items: center;
 		font-size: 1.5em;
 		font-weight: bold;
-		color: #2c4fb9;
+		color: var(--accent);
 		margin: 0;
 	}
+.menu-toggle .hamburger-icon {
+    display: block;
+}
+.menu-toggle .close-icon {
+    display: none;
+}
+
+/* When the menu is open, swap the icons */
+.menu-toggle[aria-expanded="true"] .hamburger-icon {
+    display: none;
+}
+.menu-toggle[aria-expanded="true"] .close-icon {
+    display: block;
+}
 
 	img.logo {
 		height: 1.5em;
@@ -90,7 +104,7 @@ import { SITE_TITLE } from '../consts';
 	}
 	
 	.social-links a {
-		color: #2c4fb9;
+		color: var(--accent);
 		transition: color 0.3s ease;
 		text-decoration: none;
 	}
@@ -123,7 +137,7 @@ import { SITE_TITLE } from '../consts';
 	}
 
 	/* --- Mobile and Tablet Styles --- */
-	@media (max-width: 1150px) { /* 👈 CHANGED THIS VALUE */
+	@media (max-width: 1150px) {
 		.menu-toggle {
 			display: block; 
 		}
@@ -172,31 +186,20 @@ import { SITE_TITLE } from '../consts';
 			gap: 1.5em;
 		}
 	}
+	
 </style>
 
-<script>
+<script is:inline>
 	const menuToggle = document.querySelector('.menu-toggle');
 	const navLinks = document.querySelector('.nav-links');
 	const hamburgerIcon = document.querySelector('.hamburger-icon');
 	const closeIcon = document.querySelector('.close-icon');
 
 	menuToggle.addEventListener('click', () => {
-		// Toggle the 'is-open' class on the navigation links
-		navLinks.classList.toggle('is-open');
-		
-		// Check if the menu is now open
-		const isExpanded = navLinks.classList.contains('is-open');
-		
-		// Update ARIA attribute for accessibility
-		menuToggle.setAttribute('aria-expanded', isExpanded);
+    navLinks.classList.toggle('is-open');
+    const isExpanded = navLinks.classList.contains('is-open');
+    menuToggle.setAttribute('aria-expanded', String(isExpanded)); // Use String() for clarity
 
-		// Toggle which icon is visible
-		if (isExpanded) {
-			hamburgerIcon.style.display = 'none';
-			closeIcon.style.display = 'block';
-		} else {
-			hamburgerIcon.style.display = 'block';
-			closeIcon.style.display = 'none';
-		}
-	});
+    // The if/else block for icon display is no longer needed!
+});
 </script>

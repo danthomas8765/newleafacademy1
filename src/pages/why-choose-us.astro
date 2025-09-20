@@ -39,8 +39,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 </html>
 <style>
 	:root {
-		--primary-color: #2c4fb9;
-		--text-color: #2c4fb9;
+		--primary-color: var(--accent);
+		--text-color: var(--accent);
 		--card-bg-color: #f9f9f9;
         --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	}
@@ -48,7 +48,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	body {
 		font-family: sans-serif;
 		line-height: 1.6;
-		color: #2c4fb9;
+		color: var(--accent);
 		margin: 0;
 		padding: 0;
 	}
@@ -62,13 +62,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	}
 
 	h1 {
-		color: var(--primary-color) !important;
+		color: var(--primary-color);
 		font-size: clamp(1.8em, 5vw, 2.5em);
 		text-align: center;
 	}
 
 	h2 {
-		color: var(--primary-color) !important;
+		color: var(--primary-color);
 		font-size: clamp(1.5em, 4vw, 1.8em);
 		margin-top: 2em;
 	}
