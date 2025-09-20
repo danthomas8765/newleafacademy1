@@ -1,6 +1,52 @@
+<div class="carousel-container">
+			<div class="testimonial-track">
+				<div class="testimonial-slide">
+					<p>"Dan has been an excellent help for me as I am studying A-Level engineering. He helped me to understand the mathematics involved with the subject that I couldnt understand from just the college lessons alone. His teaching methods are very clear and easy to follow and he can explain things in multiple different ways to make things easier to understand."</p>
+					<p class="author">- Dan M.</p>
+				</div>
+				<div class="testimonial-slide">
+					<p>"Kai has been tutoring my daughter, who is currently in Year 10, to prepare her for GCSE English for the past few months. I have found him to be highly motivated, meticulous, and knowledgeable. My daughter thoroughly enjoys his lessons and I can already see a positive impact on her understanding and confidence in such a short period. I am more than happy to recommend him as an excellent tutor."</p>
+					<p class="author">- Thoibe T.</p>
+				</div>
+				<div class="testimonial-slide">
+					<p>"Dan is tutoring both my sons. He has built up a positive relationship with them and they both feel they are benefiting from their sessions. Both my sons have additional needs and present very differently to each other. Dan has adapted how he delivers the sessions to meet their needs. Dan has been very communicative with me in terms of how they are doing and flexible when I need to postpone a session or add an extra one. I highly recommend his sessions."</p>
+					<p class="author">- Lyn R.</p>
+				</div>
+				<div class="testimonial-slide">
+					<p>"I've really enjoyed working with Dan as my maths tutor over the past couple of months. The sessions have been really helpful and supportive, and I feel so much more confident in my maths now. I'm really grateful for the progress I've made and would definitely recommend Dan to anyone looking for a great maths tutor."</p>
+					<p class="author">- Vi L.</p>
+				</div>
+				<div class="testimonial-slide">
+					<p>"I enjoyed my sessions with Dan a lot, he really helped with my general understanding of physics as well as how to answer exam questions. Overall I would definitely recommend Dan as he is also a very nice person to talk to as work with."</p>
+					<p class="author">- Callum C.</p>
+				</div>
+				<div class="testimonial-slide">
+					<p>"I achieved grade 4 for both English language and literature. Thank you so much for your really helpful lessons. Although Kai didn't teach me for long, his lessons really helped me develop a lot in terms of results. Thank you so much."</p>
+					<p class="author">- Linh</p>
+				</div>
+				<div class="testimonial-slide">
+					<p>"Dan has been tutoring me for a few months now, and he's been amazing. We cover all the sciences and maths, which is really helpful when the teachers at school aren’t very clear. Each lesson, I choose one of the four subjects to focus on, and we go over things I find difficult or that would be useful for future exams. What I like most is that he never makes me feel bad for not knowing something or getting a question wrong. Instead, we work together to find ways to help me remember how to solve it or structure an answer."</p>
+					<p class="author">- Mina J.</p>
+				</div>
+				<div class="testimonial-slide">
+					<p>"During my GCSEs Dan was an absolute life-saver! I was really struggling with my physics at GCSE level however once Dan came along I started to understand the content more and even delve into more information my teacher hadn’t introduced me to. Without him I really struggled with physics and couldn’t get my head round it however over time he helped me grasp the idea of physics and the content within, eventually resulting to my 9-9 in physics. He’s an amazing tutor and such a lovely person we always have great conversations alongside my learning! I can’t wait to continue working with him at a levels I couldn’t recommend him anymore!"</p>
+					<p class="author">- Evan C.</p>
+				</div>
+				<div class="testimonial-slide">
+					<p>"Thank-you for all your help running up to my A level. You were able to make me understand things clearer and I felt more confident going into my exam. I was able to achieve 2 grades higher than what I was predicted. Thanks again and I would highly recommend you to other students."</p>
+					<p class="author">- Evie D.</p>
+				</div>
+			</div>
+		</div>
+		<div class="carousel-nav">
+			<button id="prevBtn" class="carousel-button">‹</button>
+			<button id="nextBtn" class="carousel-button">›</button>
+		</div>
+
 <style>
+	/* --- Carousel Styles --- */
 	.carousel-container {
-		width: 100%; 
+		width: 100%;
 		margin: 2em 0;
 		overflow: hidden;
 		box-sizing: border-box;
@@ -18,7 +64,7 @@
 		border: 1px solid #ddd;
 		border-radius: 8px;
 		margin: 0 10px;
-		box-sizing: border-box; 
+		box-sizing: border-box;
 		background-color: #F0F8FF; /* Very very light baby blue */
 	}
 	
@@ -38,20 +84,26 @@
 	}
 
 	.carousel-button {
-		background-color: var(--accent);
-		color: white;
-		border: none;
+		background-color: transparent;
+		color: var(--accent);
+		border: 2px solid var(--accent);
 		font-size: 1.5em;
 		cursor: pointer;
 		border-radius: 50%;
 		width: 45px;
 		height: 45px;
 		margin: 0 10px;
-		transition: background-color 0.3s;
+		transition: all 0.3s ease; /* ✅ FIXED: Removed duplicate transition */
 	}
 	
 	.carousel-button:hover {
-		background-color: var(--accent-dark);
+		background-color: var(--accent);
+		color: white;
+		transform: translateY(-2px);
+	}
+
+	.carousel-button:active {
+		transform: translateY(-1px) scale(0.98);
 	}
 
 	/* --- Tablet Responsive Styles --- */
@@ -68,7 +120,7 @@
 			padding: 0 20px;
 		}
 		.testimonial-slide {
-			flex-basis: 100%; 
+			flex-basis: 100%;
 			margin: 0;
 		}
 	}
@@ -76,144 +128,164 @@
 
 <script is:inline>
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.carousel-container');
-    const track = document.querySelector('.testimonial-track');
-    const prevButton = document.getElementById('prevBtn');
-    const nextButton = document.getElementById('nextBtn');
-    
-    if (!track || !container) return;
+	// ✅ ADDED: Debounce helper function for performance
+	function debounce(func, wait) {
+		let timeout;
+		return function executedFunction(...args) {
+			const later = () => {
+				clearTimeout(timeout);
+				func(...args);
+			};
+			clearTimeout(timeout);
+			timeout = setTimeout(later, wait);
+		};
+	}
 
-    let slides = Array.from(track.children);
-    const originalSlideCount = slides.length;
-    let isTransitioning = false;
-    
-    const clonesCount = 2;
+	const container = document.querySelector('.carousel-container');
+	const track = document.querySelector('.testimonial-track');
+	const prevButton = document.getElementById('prevBtn');
+	const nextButton = document.getElementById('nextBtn');
+	
+	if (!track || !container) return;
 
-    for (let i = 0; i < clonesCount; i++) {
-        const index = originalSlideCount - 1 - i;
-        const clone = slides[index].cloneNode(true);
-        clone.classList.add('clone');
-        track.insertBefore(clone, slides[0]);
+	let slides = Array.from(track.children);
+	const originalSlideCount = slides.length;
+	let isTransitioning = false;
+	
+	const clonesCount = 2;
+
+	for (let i = 0; i < clonesCount; i++) {
+		const index = originalSlideCount - 1 - i;
+		const clone = slides[index].cloneNode(true);
+		clone.classList.add('clone');
+		track.insertBefore(clone, slides[0]);
+	}
+	for (let i = 0; i < clonesCount; i++) {
+		const clone = slides[i].cloneNode(true);
+		clone.classList.add('clone');
+		track.appendChild(clone);
+	}
+
+	slides = Array.from(track.children);
+	let currentIndex = clonesCount;
+
+	// --- Autoplay variables ---
+	let autoPlayInterval;
+	const autoPlayDelay = 10000; // 10 seconds
+
+	// --- Touch variables ---
+	let touchStartX = 0;
+	let touchEndX = 0;
+	const swipeThreshold = 50;
+
+	const getSlideWidth = () => {
+		const slide = slides[0];
+		if (!slide) return 0;
+		const slideStyle = window.getComputedStyle(slide);
+		const slideMarginRight = parseInt(slideStyle.marginRight, 10);
+		return slide.clientWidth + slideMarginRight;
+	};
+
+	const setPosition = (instant = false) => {
+    if (instant) track.style.transition = 'none';
+
+    // 1. Get the width of the main container and a single slide
+    const containerWidth = container.clientWidth;
+    const slideWidth = slides[0] ? slides[0].clientWidth : 0;
+
+    // 2. Calculate the space needed on the left to center the slide
+    const centeringOffset = (containerWidth - slideWidth) / 2;
+
+    // 3. Apply the centering offset to the original calculation
+    const offset = -(currentIndex * getSlideWidth()) + centeringOffset;
+    
+    track.style.transform = `translateX(${offset}px)`;
+
+    if (instant) {
+        setTimeout(() => {
+            track.style.transition = 'transform 0.5s ease-in-out';
+        }, 50);
     }
-    for (let i = 0; i < clonesCount; i++) {
-        const clone = slides[i].cloneNode(true);
-        clone.classList.add('clone');
-        track.appendChild(clone);
-    }
+};
+	
+	const moveToNext = () => {
+		if (isTransitioning) return;
+		isTransitioning = true;
+		currentIndex++;
+		setPosition();
+	};
+	
+	const moveToPrev = () => {
+		if (isTransitioning) return;
+		isTransitioning = true;
+		currentIndex--;
+		setPosition();
+	};
 
-    slides = Array.from(track.children);
-    let currentIndex = clonesCount;
+	const startAutoPlay = () => {
+		clearInterval(autoPlayInterval);
+		autoPlayInterval = setInterval(() => {
+			moveToNext();
+		}, autoPlayDelay);
+	};
 
-    // --- Autoplay variables ---
-    let autoPlayInterval;
-    const autoPlayDelay = 10000; // 10 seconds
+	// --- Event listeners ---
+	nextButton.addEventListener('click', () => {
+		moveToNext();
+		startAutoPlay();
+	});
 
-    // --- NEW: Touch variables ---
-    let touchStartX = 0;
-    let touchEndX = 0;
-    const swipeThreshold = 50; // Minimum horizontal pixel distance for a swipe to register
+	prevButton.addEventListener('click', () => {
+		moveToPrev();
+		startAutoPlay();
+	});
 
-    const getSlideWidth = () => {
-        const slide = slides[0];
-        if (!slide) return 0;
-        const slideStyle = window.getComputedStyle(slide);
-        const slideMarginRight = parseInt(slideStyle.marginRight, 10);
-        return slide.clientWidth + slideMarginRight;
-    };
+	container.addEventListener('touchstart', (e) => {
+		touchStartX = e.changedTouches[0].screenX;
+	});
 
-    const setPosition = (instant = false) => {
-        if (instant) track.style.transition = 'none';
-        
-        const offset = -currentIndex * getSlideWidth();
-        track.style.transform = `translateX(${offset}px)`;
+	container.addEventListener('touchend', (e) => {
+		touchEndX = e.changedTouches[0].screenX;
+		const deltaX = touchEndX - touchStartX;
 
-        if (instant) {
-            setTimeout(() => {
-                track.style.transition = 'transform 0.5s ease-in-out';
-            }, 50);
-        }
-    };
-    
-    const moveToNext = () => {
-        if (isTransitioning) return;
-        isTransitioning = true;
-        currentIndex++;
-        setPosition();
-    };
-    
-    const moveToPrev = () => {
-        if (isTransitioning) return;
-        isTransitioning = true;
-        currentIndex--;
-        setPosition();
-    };
+		if (Math.abs(deltaX) > swipeThreshold) {
+			if (deltaX > 0) {
+				moveToPrev();
+			} else {
+				moveToNext();
+			}
+			startAutoPlay();
+		}
+	});
 
-    const startAutoPlay = () => {
-        clearInterval(autoPlayInterval);
-        autoPlayInterval = setInterval(() => {
-            moveToNext();
-        }, autoPlayDelay);
-    };
+	track.addEventListener('transitionend', () => {
+		if (currentIndex >= originalSlideCount + clonesCount) {
+			currentIndex = clonesCount;
+			setPosition(true);
+		}
+		if (currentIndex < clonesCount) {
+			currentIndex = originalSlideCount + clonesCount - 1;
+			setPosition(true);
+		}
+		isTransitioning = false;
+	});
 
-    // --- UPDATED: Event listeners now reset the autoplay timer ---
-    nextButton.addEventListener('click', () => {
-        moveToNext();
-        startAutoPlay();
-    });
+	container.addEventListener('mouseenter', () => {
+		clearInterval(autoPlayInterval);
+	});
 
-    prevButton.addEventListener('click', () => {
-        moveToPrev();
-        startAutoPlay();
-    });
+	container.addEventListener('mouseleave', () => {
+		startAutoPlay();
+	});
 
-    // --- NEW: Touch Event Handlers ---
-    container.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    });
+	// --- Initial setup ---
+	setPosition(true);
+	startAutoPlay();
 
-    container.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        const deltaX = touchEndX - touchStartX;
-
-        // Check if the swipe is significant enough
-        if (Math.abs(deltaX) > swipeThreshold) {
-            if (deltaX > 0) {
-                // Swipe to the right for "previous" slide
-                moveToPrev();
-            } else {
-                // Swipe to the left for "next" slide
-                moveToNext();
-            }
-            startAutoPlay(); // Reset autoplay timer after a manual swipe
-        }
-    });
-
-    track.addEventListener('transitionend', () => {
-        if (currentIndex >= originalSlideCount + clonesCount) {
-            currentIndex = clonesCount;
-            setPosition(true);
-        }
-        if (currentIndex < clonesCount) {
-            currentIndex = originalSlideCount + clonesCount - 1;
-            setPosition(true);
-        }
-        isTransitioning = false;
-    });
-
-    container.addEventListener('mouseenter', () => {
-        clearInterval(autoPlayInterval);
-    });
-
-    container.addEventListener('mouseleave', () => {
-        startAutoPlay();
-    });
-
-    // --- Initial setup ---
-    setPosition(true);
-    startAutoPlay();
-    window.addEventListener('resize', () => {
-        setPosition(true);
-        startAutoPlay();
-    });
+	// ✅ FIXED: The resize listener is now debounced for better performance
+	window.addEventListener('resize', debounce(() => {
+		setPosition(true);
+		startAutoPlay();
+	}, 250));
 });
 </script>
