@@ -3,79 +3,58 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-
-// 1. Import the Image component AND your headshot images
-import { Image } from 'astro:assets';
-import danThomasImage from '../assets/danthomas.png';
-import kaiMcKimImage from '../assets/kaimckim.png';
-import marcusReesImage from '../assets/marcusrees.png';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title="Meet Our Tutors" description="Meet the experienced and specialist tutors at New Leaf Academy." />
+		<BaseHead title="Why Choose Us?" description="Learn about the key benefits of New Leaf Academy's personalized tutoring services." />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>Meet Our Tutors</h1>
-			<p>Our team is made up of passionate, specialist tutors who are dedicated to your success. Each tutor brings a wealth of experience and a fresh approach to education, ensuring every session is engaging and effective.</p>
-
-			<div class="tutor-card">
-				<Image
-					src={danThomasImage}  
-					alt="Dan Thomas Headshot"
-					class="tutor-headshot"
-					width={150}
-					height={150}
-				/>
-				<div class="tutor-info">
-					<h2>Dan Thomas</h2>
-					<p>Specialising in <strong>mathematics</strong> and <strong>science</strong> for GCSE with <strong>A level physics</strong> and <strong>mathematics</strong>.</p>
-				</div>
-			</div>
-
-			<div class="tutor-card">
-				<Image
-					src={kaiMcKimImage}  
-					alt="Kai McKim Headshot"
-					class="tutor-headshot"
-					width={150}
-					height={150}
-				/>
-				<div class="tutor-info">
-					<h2>Kai McKim</h2>
-					<p>Specialising in <strong>English literature</strong> and <strong>language</strong> for GCSE and A level.</p>
-				</div>
-			</div>
-
-			<div class="tutor-card">
-				<Image
-					src={marcusReesImage} 
-					alt="Marcus Rees Headshot"
-					class="tutor-headshot"
-					width={150}
-					height={150}
-				/>
-				<div class="tutor-info">
-					<h2>Marcus Rees</h2>
-					<p>Specialising in <strong>mathematics</strong>, <strong>further mathematics</strong>, <strong>business studies</strong> and <strong>science</strong> for GCSE and <strong>A level mathematics</strong> and <strong>economics</strong>.</p>
-				</div>
-			</div>
+			<h1>Why Choose Us?</h1>
+			<p>
+				At New Leaf Academy, we believe every student has the potential to shine. We understand that in a traditional classroom, it’s easy for individual needs to be overlooked. That’s why we do more than just teach; we build confidence, inspire curiosity, and tailor our approach to fit each unique learner. Our commitment is to create a supportive and effective environment where your child can truly succeed, on their own terms.
+			</p>
+			<h2>Our Commitment to Your Success:</h2>
+			<ul>
+				<li>
+					<strong>Safety-First Approach:</strong> Your child's safety is our top priority. Every New Leaf Academy tutor undergoes a comprehensive vetting process, including an DBS check and thorough interviews, so you can have complete peace of mind.
+				</li>
+				<li>
+					<strong>Proven Results & Expert Tutors:</strong> We have a strong track record of helping students achieve top grades. Our specialist tutors are not only experts in their subjects but are also dedicated to helping you succeed.
+				</li>
+				<li>
+					<strong>Empathetic & Personalized Learning:</strong> We have extensive experience helping students with neurodivergence, SEND, dyslexia, dyscalculia, autism, and ADHD. Our tutors build genuine rapport and trust, ensuring every session is a supportive space where students feel understood and confident.
+				</li>
+				<li>
+					<strong>Freedom from the Classroom Clock:</strong> We break free from the rigid timetables and fixed curriculum of traditional schooling. Unconstrained by a one-size-fits-all approach, we adapt every lesson to the student's immediate needs. Whether it's tackling a tough homework problem or exploring a topic in greater depth, our teaching is always relevant, effective, and perfectly paced for them.
+				</li>
+				<li>
+					<strong>Fostering Lifelong Confidence:</strong> Our goal extends beyond exam results. We work to transform a student's relationship with learning, turning anxiety and self-doubt into curiosity and unshakeable confidence that will serve them long after their time with us.
+				</li>
+				<li>
+					<strong>Collaborative Parent Partnership:</strong> We believe in keeping you in the loop. You'll receive regular, detailed feedback on your child's progress, including areas of strength and opportunities for growth, ensuring we're working together as a team.
+				</li>
+				<li>
+					<strong>Modern & Effective Teaching:</strong> We use a blend of fresh teaching methods, cutting-edge techniques, and the newest technology. Our tutors create engaging lessons and utilize the most effective online resources to provide the best possible education.
+				</li>
+				<li>
+					<strong>Free, No-Obligation Consultation:</strong> We want to ensure we're the perfect fit for your family. That's why we offer a complimentary consultation to discuss your child's needs, answer your questions, and introduce you to our approach before you make any commitment.
+				</li>
+			</ul>
 		</main>
 		<Footer />
 	</body>
 </html>
-
 <style>
-
-    :root {
+	:root {
 		--primary-color: var(--accent);
 		--text-color: var(--accent);
 		--card-bg-color: #f9f9f9;
-        --border-color: #ddd;
-        --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	}
 
 	body {
@@ -87,6 +66,7 @@ import marcusReesImage from '../assets/marcusrees.png';
 	}
 
 	main {
+		color: var(--accent);
 		max-width: 800px;
 		margin: 2em auto;
 		padding: 0 1em;
@@ -95,69 +75,40 @@ import marcusReesImage from '../assets/marcusrees.png';
 
 	h1 {
 		color: var(--accent);
-		font-size: clamp(2em, 5vw, 2.5em);
+		font-size: clamp(1.8em, 5vw, 2.5em);
 		text-align: center;
-		margin-bottom: 0.5em;
 	}
-	
-    p {
-        font-size: clamp(1em, 2vw, 1.1em);
-        color: var(--accent);
-    }
 
-	.tutor-card {
-		display: flex;
-		align-items: center;
-		gap: 20px;
-		margin: 2em 0;
-		padding: 1.5em;
+	h2 {
+		color: var(--accent);
+		font-size: clamp(1.5em, 4vw, 1.8em);
+		margin-top: 2em;
+	}
+
+	p {
+		color: var(--accent);
+		font-size: clamp(1em, 2vw, 1.1em);
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	li {
+		margin-bottom: 1.5em;
+		line-height: 1.5;
 		background-color: var(--card-bg-color);
-		border: 1px solid var(--border-color);
+		padding: 1.5em;
 		border-radius: 10px;
 		box-shadow: var(--box-shadow);
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
-	}
-
-    .tutor-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-    }
-    
-	.tutor-headshot {
-		width: clamp(100px, 25vw, 150px);
-		height: clamp(100px, 25vw, 150px);
-		object-fit: cover;
-		border-radius: 50%;
-		border: 4px solid var(--accent);
-		flex-shrink: 0;
-	}
-	
-	.tutor-info {
-		flex-grow: 1;
-	}
-	
-	.tutor-info h2 {
-		color: var(--accent);
-		margin: 0 0 0.5em 0;
-		font-size: clamp(1.5em, 4vw, 2em);
-	}
-	
-	.tutor-info p {
-		margin: 0;
-		color: var(--accent);
 		word-break: break-word; /* Force long words to wrap */
 	}
-	
-	/* --- Media Query for Mobile/Tablet Optimization --- */
-    @media (max-width: 650px) {
-		.tutor-card {
-			flex-direction: column;
-			text-align: center;
-			gap: 15px;
-		}
 
-		.tutor-headshot {
-			margin-bottom: 0.5em;
-		}
+	li strong {
+		display: block;
+		font-size: clamp(1.1em, 2.5vw, 1.2em);
+		margin-bottom: 0.5em;
 	}
 </style>
+
