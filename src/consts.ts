@@ -2,4 +2,4 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = "New Leaf Academy";
-export const SITE_DESCRIPTION = "Grow with Confidence";
+export const SITE_DESCRIPTION = "Expert online tutoring in Maths, English, and Science. Personalized, confidence-building tuition from KS3 to A-Level. Grow with confidence.";
