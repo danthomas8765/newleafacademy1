@@ -1,3 +1,6 @@
+---
+---
+
 <div class="carousel-container">
 	<div class="testimonial-track">
 		<div class="testimonial-slide">
@@ -70,7 +73,7 @@
 		border-radius: 8px;
 		margin: 0 10px;
 		box-sizing: border-box;
-		background-color: #F0F8FF;
+		background-color: #ffffffff;
 		transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 	}
 	
@@ -86,6 +89,8 @@
 
 	.testimonial-slide p {
 		font-style: italic;
+		/* ✅ ADDED: Set the text color to the site's accent color */
+		color: var(--accent);
 	}
 
 	.testimonial-slide .author {
