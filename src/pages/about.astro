@@ -1,15 +1,86 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout
-	title="About Us"
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="About Us" description="Learn about the mission and story behind New Leaf Academy." />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>About New Leaf Academy</h1>
+			<p class="intro">
+				Welcome to New Leaf Academy. We're more than just a tutoring service; we're a community built on the belief that every student deserves the chance to grow with confidence and discover their own potential. This is our story.
+			</p>
 
-	
->
-	<p>
-		At New Leaf Academy, we are dedicated to helping students achieve top grades and build lasting confidence. Our team of expert tutors has a proven track record of helping students succeed by delivering personalized lessons that adapt to their unique learning styles. We combine cutting-edge teaching techniques with efficient digital resources to deliver the highest quality education and reinforce key knowledge for exam success. With the flexibility to schedule classes seven days a week, our tutors ensure every session is a powerful step toward a brighter academic future.
-		</p>
+			<section>
+				<h2>Our Story</h2>
+				<p>
+					New Leaf Academy was founded by [Founder's Name] out of a personal experience with the challenges of the traditional education system. After seeing [briefly describe the problem, e.g., a bright student struggling to keep up in a large class, or the frustration of a one-size-fits-all curriculum], it became clear that a more personal, adaptive approach was needed. We started this academy to create a space where learning is not about memorization, but about understanding, and where every student's unique way of thinking is celebrated.
+				</p>
+			</section>
 
-	
-</Layout>
+			<section>
+				<h2>Our Mission</h2>
+				<p>
+					Our mission is simple: to empower students to become confident, capable, and curious lifelong learners. We believe that the right support can transform a student's relationship with education, turning "I can't" into "I can." We are committed to providing high-quality, personalized tutoring that not only improves grades but also builds the self-esteem and resilience needed to succeed far beyond the classroom.
+				</p>
+			</section>
+
+			<section>
+				<h2>Our Tutors</h2>
+				<p>
+					Our team is the heart of New Leaf Academy. We are a group of passionate, experienced, and fully-vetted educators who share a common dedication to student success. Each tutor is not only an expert in their subject but is also a mentor skilled in connecting with students on an individual level. They are chosen for their empathy, their patience, and their ability to make learning feel engaging and inspiring.
+				</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+<style>
+	main {
+		color: var(--accent);
+		max-width: 800px;
+		margin: 2em auto;
+		padding: 0 1em;
+		box-sizing: border-box;
+	}
+
+	h1, h2 {
+		color: var(--accent);
+		text-align: center;
+	}
+
+	h1 {
+		font-size: clamp(1.8em, 5vw, 2.5em);
+		margin-bottom: 0.5em;
+	}
+
+	p.intro {
+		font-size: clamp(1.1em, 2.5vw, 1.2em);
+		text-align: center;
+		margin-bottom: 3em;
+	}
+
+	h2 {
+		font-size: clamp(1.5em, 4vw, 1.8em);
+		margin-top: 2.5em;
+		border-bottom: 2px solid rgba(var(--gray-light), 1);
+		padding-bottom: 0.5em;
+		margin-bottom: 1em;
+	}
+
+	p {
+		font-size: clamp(1em, 2vw, 1.1em);
+		line-height: 1.7;
+	}
+
+	section {
+		margin-bottom: 2em;
+	}
+</style>
