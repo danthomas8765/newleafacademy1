@@ -2,47 +2,69 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title="About Us" description="Learn about the mission and story behind New Leaf Academy." />
+		<BaseHead title="Why Choose Us?" description="Learn about the key benefits of New Leaf Academy's personalized tutoring services." />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>About New Leaf Academy</h1>
-			<p class="intro">
-				Welcome to New Leaf Academy. We're more than just a tutoring service; we're a community built on the belief that every student deserves the chance to grow with confidence and discover their own potential. This is our story.
+			<h1>Why Choose Us?</h1>
+			<p>
+				At New Leaf Academy, we believe every student has the potential to shine. We understand that in a traditional classroom, it’s easy for individual needs to be overlooked. That’s why we do more than just teach; we bring a fresh energy to learning, building confidence, inspiring curiosity, and tailoring our approach to fit each unique learner. Our commitment is to create a supportive and dynamic environment where your child can truly succeed, on their own terms.
 			</p>
-
-			<section>
-				<h2>Our Story</h2>
-				<p>
-					New Leaf Academy was founded by a small group of young experienced tutors out of a personal experience with the challenges of the traditional education system. After seeing so many bright and talented students struggling in the classroom, it became clear that a more personal, adaptive approach was needed. We started this academy to create a space where learning is not about memorization, but about understanding, and where every student's unique way of thinking is celebrated.
-				</p>
-			</section>
-
-			<section>
-				<h2>Our Mission</h2>
-				<p>
-					Our mission is simple: to empower students to become confident, capable, and curious lifelong learners. We believe that the right support can transform a student's relationship with education, turning "I can't" into "I can." We are committed to providing high-quality, personalized tutoring that not only improves grades but also builds the self-esteem and resilience needed to succeed far beyond the classroom.
-				</p>
-			</section>
-
-			<section>
-				<h2>Our Tutors</h2>
-				<p>
-					Our team is the heart of New Leaf Academy. We are a group of passionate, experienced, and fully-vetted educators who share a common dedication to student success. Each tutor is not only an expert in their subject but is also a mentor skilled in connecting with students on an individual level. They are chosen for their empathy, their patience, and their ability to make learning feel engaging and inspiring.
-				</p>
-			</section>
+			<h2>Our Commitment to Your Success:</h2>
+			<ul>
+				<li>
+					<strong>Safety-First Approach:</strong> Your child's safety is our top priority. Every New Leaf Academy tutor undergoes a comprehensive vetting process, including an enhanced DBS check and thorough interviews, so you can have complete peace of mind.
+				</li>
+				<li>
+					<strong>Proven Results & Expert Tutors:</strong> We have a strong track record of helping students achieve top grades. Our specialist tutors are not only experts in their subjects but are also dedicated to helping you succeed.
+				</li>
+				<li>
+					<strong>Empathetic & Personalized Learning:</strong> We have extensive experience helping students with neurodivergence, SEND, dyslexia, dyscalculia, autism, and ADHD. Our tutors build genuine rapport and trust, ensuring every session is a supportive space where students feel understood and confident.
+				</li>
+				<li>
+					<strong>Freedom from the Classroom Clock:</strong> We break free from the rigid timetables and fixed curriculum of traditional schooling. Unconstrained by a one-size-fits-all approach, our passionate tutors adapt every lesson to the student's immediate needs. Whether it's tackling a tough homework problem or exploring a topic in greater depth, our teaching is always relevant, effective, and perfectly paced for them.
+				</li>
+				<li>
+					<strong>Fostering Lifelong Confidence:</strong> Our goal extends beyond exam results. Through energetic and supportive mentoring, we work to transform a student's relationship with learning, turning anxiety and self-doubt into curiosity and unshakeable confidence that will serve them long after their time with us.
+				</li>
+				<li>
+					<strong>Collaborative Parent Partnership:</strong> We believe in keeping you in the loop. You'll receive regular, detailed feedback on your child's progress, including areas of strength and opportunities for growth, ensuring we're working together as a team.
+				</li>
+				<li>
+					<strong>Modern & Effective Teaching:</strong> As a young and energetic team, we are passionate about using the latest research-driven strategies. We use a blend of fresh teaching methods, cutting-edge techniques, and the newest technology to create engaging lessons that make learning feel relevant and exciting.
+				</li>
+				<li>
+					<strong>Free, No-Obligation Consultation:</strong> We want to ensure we're the perfect fit for your family. That's why we offer a complimentary consultation to discuss your child's needs, answer your questions, and introduce you to our approach before you make any commitment.
+				</li>
+			</ul>
 		</main>
 		<Footer />
 	</body>
 </html>
 <style>
+	:root {
+		--primary-color: var(--accent);
+		--text-color: var(--accent);
+		--card-bg-color: #f9f9f9;
+        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	body {
+		font-family: sans-serif;
+		line-height: 1.6;
+		color: var(--accent);
+		margin: 0;
+		padding: 0;
+	}
+
 	main {
 		color: var(--accent);
 		max-width: 800px;
@@ -51,36 +73,42 @@ import Footer from '../components/Footer.astro';
 		box-sizing: border-box;
 	}
 
-	h1, h2 {
-		color: var(--accent);
-		text-align: center;
-	}
-
 	h1 {
+		color: var(--accent);
 		font-size: clamp(1.8em, 5vw, 2.5em);
-		margin-bottom: 0.5em;
-	}
-
-	p.intro {
-		font-size: clamp(1.1em, 2.5vw, 1.2em);
 		text-align: center;
-		margin-bottom: 3em;
 	}
 
 	h2 {
+		color: var(--accent);
 		font-size: clamp(1.5em, 4vw, 1.8em);
-		margin-top: 2.5em;
-		border-bottom: 2px solid rgba(var(--gray-light), 1);
-		padding-bottom: 0.5em;
-		margin-bottom: 1em;
+		margin-top: 2em;
 	}
 
 	p {
+		color: var(--accent);
 		font-size: clamp(1em, 2vw, 1.1em);
-		line-height: 1.7;
 	}
 
-	section {
-		margin-bottom: 2em;
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	li {
+		margin-bottom: 1.5em;
+		line-height: 1.5;
+		background-color: var(--card-bg-color);
+		padding: 1.5em;
+		border-radius: 10px;
+		box-shadow: var(--box-shadow);
+		word-break: break-word; /* Force long words to wrap */
+	}
+
+	li strong {
+		display: block;
+		font-size: clamp(1.1em, 2.5vw, 1.2em);
+		margin-bottom: 0.5em;
 	}
 </style>
+
