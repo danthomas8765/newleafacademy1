@@ -5,7 +5,6 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import TestimonialCarousel from '../components/TestimonialCarousel.astro';
 
-// 1. Import the Image component and your banner image
 import { Image } from 'astro:assets';
 import bannerImage from '../assets/banner.png';
 ---
@@ -18,14 +17,12 @@ import bannerImage from '../assets/banner.png';
 	<body>
 		<Header />
 		<main>
-			<!-- The banner is now the first element inside main -->
 			<Image
 				src={bannerImage}
 				alt="An engaging banner for New Leaf Academy showing students learning"
 				class="banner-image"
 			/>
 
-			<!-- The main heading is now the tagline -->
 			<h1 class="tagline">
 				Grow with Confidence
 			</h1>
@@ -35,6 +32,15 @@ import bannerImage from '../assets/banner.png';
 			<a href="/consultations" class="cta-button">
 				Book your free consultation and taster session now!
 			</a>
+
+			<!-- ✅ NEW: "Our Promise" Section -->
+			<section class="our-promise">
+				<h2>Our Promise to You</h2>
+				<p>
+					We see the potential in every student. Our mission is to create a space where curiosity thrives, confidence grows, and learning is tailored to the individual, not the textbook. We're here to turn "I can't" into a proud "I can."
+				</p>
+			</section>
+
 		</main>
 
 		<TestimonialCarousel />
@@ -43,30 +49,26 @@ import bannerImage from '../assets/banner.png';
 </html>
 
 <style>
-	/* Simplify styles as global.css now handles the main layout */
 	main {
-		/* Center all content within the main content block */
 		text-align: center;
 		color: var(--accent);
 	}
 
 	.banner-image {
-		/* Make it smaller and centered */
-		max-width: 430px; /* Adjust this value as needed */
-		width: 100%; /* Ensures it's responsive on smaller screens */
+		max-width: 430px;
+		width: 100%;
 		height: auto;
 		display: block;
-		margin: 0 auto 2em; /* Centers horizontally, adds space below */
-		border-radius: 12px; /* Adds soft corners */
-		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+		margin: 0 auto 2em;
+		border-radius: 12px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 	}
 
-	/* Style for the new, larger tagline */
 	.tagline {
-		font-size: clamp(1.6em, 4vw, 2.2em); /* Responsive font size */
+		font-size: clamp(1.6em, 4vw, 2.2em);
 		line-height: 1.2;
 		margin-bottom: 0.5em;
-		font-weight: 700; /* Make it bold */
+		font-weight: 700;
 	}
 
 	.cta-button {
@@ -86,5 +88,27 @@ import bannerImage from '../assets/banner.png';
 		transform: translateY(-5px);
 		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 	}
+
+	/* ✅ NEW: Styles for the "Our Promise" section */
+	.our-promise {
+		max-width: 700px;
+		margin: 4em auto;
+		padding: 2em;
+		background-color: #f9f9f9;
+		border-radius: 12px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+	}
+
+	.our-promise h2 {
+		font-size: clamp(1.5em, 4vw, 1.8em);
+		margin-top: 0;
+		color: var(--accent);
+	}
+
+	.our-promise p {
+		font-size: clamp(1em, 2vw, 1.1em);
+		margin-bottom: 0;
+	}
+	
 </style>
 
