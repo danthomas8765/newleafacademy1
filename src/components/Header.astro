@@ -2,8 +2,7 @@
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 import { Image } from 'astro:assets';
-import logoImage from '../assets/logo.png'; // 1. Import the logo
-
+import logoImage from '../assets/logo.png';
 ---
 
 <header>
@@ -71,7 +70,7 @@ import logoImage from '../assets/logo.png'; // 1. Import the logo
 		text-decoration: none;
 		display: flex;
 		align-items: center;
-		font-size: 2em;
+		font-size: 1.8em;
 		font-weight: bold;
 		color: var(--accent);
 		margin: 0;
@@ -92,7 +91,7 @@ import logoImage from '../assets/logo.png'; // 1. Import the logo
 }
 
 	img.logo {
-		height: 1.4em;
+		height: 2em;
 		width: auto;
 		margin-right: 0.5em;
 	}
@@ -147,10 +146,19 @@ import logoImage from '../assets/logo.png'; // 1. Import the logo
 		display: none;
 	}
 
-	/* --- Mobile and Tablet Styles --- */
-	@media (max-width: 1150px) {
+	/* ✅ CHANGED: Using a more standard and effective breakpoint for mobile */
+	@media (max-width: 768px) {
 		.menu-toggle {
 			display: block;
+		}
+
+		/* ✅ ADDED: These rules will now correctly apply on mobile */
+		.logo-container a {
+			font-size: 1.3em;
+		}
+
+		img.logo {
+			height: 1.3em;
 		}
 
 		.nav-links {
