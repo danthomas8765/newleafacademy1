@@ -15,8 +15,8 @@ html {
   box-sizing: inherit;
 }
 :root {
-  --accent: #2b6bff;
-  --accent-dark: #000d8a;
+  --accent: #345bb6;
+  --accent-dark: #162293;
   --accent-pop: #0ab084;
   --black: 15, 18, 25;
   --gray: 96, 115, 159;
