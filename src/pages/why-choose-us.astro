@@ -54,7 +54,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		--primary-color: var(--accent);
 		--text-color: var(--accent);
 		--card-bg-color: #f9f9f9;
-        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		--box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	}
 
 	body {
@@ -103,6 +103,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		border-radius: 10px;
 		box-shadow: var(--box-shadow);
 		word-break: break-word; /* Force long words to wrap */
+		transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for smooth animation */
+	}
+
+	li:hover {
+		transform: translateY(-5px); /* Lifts the box on hover */
+		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Enhances the shadow on hover */
 	}
 
 	li strong {

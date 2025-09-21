@@ -21,14 +21,38 @@ import TestimonialCarousel from '../components/TestimonialCarousel.astro'; // 1.
 			<p>
 			Unlock potential with expert online tutoring. 🎓 Personalized, confidence-building tuition in Maths, English, Science, & more, from KS3 to A-level.
 			</p>
+			<a href="/consultations" class="cta-button">
+				Book your free consultation and taster session now!
+			</a>
 		</main>
 
-		<TestimonialCarousel /> <Footer />
+		<TestimonialCarousel /> 
+		<Footer />
 	</body>
 </html>
 
 <style>
 	main {
 		color: var(--accent);
+		text-align: center; /* Center align the content */
+	}
+
+	.cta-button {
+		display: inline-block; /* Allows for margin and padding */
+		margin-top: 2em; /* Space above the button */
+		padding: 1em 2em;
+		background-color: var(--accent);
+		color: white;
+		font-weight: bold;
+		text-decoration: none;
+		border-radius: 8px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.cta-button:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 	}
 </style>
+

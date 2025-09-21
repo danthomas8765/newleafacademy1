@@ -1,0 +1,120 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title="Free Consultation" description="Book your free consultation and taster session with New Leaf Academy." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Request Your Free Consultation</h1>
+			<p>We're excited to learn more about your needs. Please fill out the form below, and we'll be in touch shortly to schedule your free consultation and taster session.</p>
+
+			<form action="https://api.web3forms.com/submit" method="POST" class="consultation-form">
+
+				<input type="hidden" name="access_key" value="a5d9784e-6e34-43a8-b0ff-3473a68acbc6">
+				<input type="hidden" name="redirect" value="https://new-leaf-academy.co.uk/thank-you">
+				<input type="hidden" name="subject" value="New Consultation Request from your Website">
+
+				<div class="form-group">
+					<label for="name">Parent/Student Name</label>
+					<input type="text" id="name" name="name" required />
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" required />
+				</div>
+				<div class="form-group">
+					<label for="phone">Phone Number</label>
+					<input type="tel" id="phone" name="phone" required />
+				</div>
+				<div class="form-group">
+					<label for="year-group">Student's Current Year Group (e.g., GCSE, A-Level)</label>
+					<input type="text" id="year-group" name="year_group" required />
+				</div>
+				<div class="form-group">
+					<label for="subjects">Subject(s) of Interest</label>
+					<input type="text" id="subjects" name="subjects" required />
+				</div>
+				<div class="form-group">
+					<label for="details">A brief note on what you're looking for</label>
+					<textarea id="details" name="details" rows="5" required></textarea>
+				</div>
+				<div class="form-group">
+					<label for="availability">Let us know some good times to call you (Optional)</label>
+					<input type="text" id="availability" name="availability" />
+				</div>
+				<button type="submit" class="submit-btn">Submit Request</button>
+			</form>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		color: var(--accent);
+		max-width: 800px;
+		margin: 2em auto;
+		padding: 0 1em;
+	}
+
+	main > h1,
+	main > p {
+		text-align: center;
+	}
+	
+	.consultation-form {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5em;
+		margin-top: 2.5em;
+	}
+	.form-group {
+		display: flex;
+		flex-direction: column;
+	}
+	.form-group label {
+		margin-bottom: 0.5em;
+		font-weight: bold;
+		color: var(--accent);
+	}
+	.form-group input,
+	.form-group textarea {
+		padding: 0.8em;
+		border: 1px solid #ccc;
+		border-radius: 6px;
+		font-family: 'Atkinson', sans-serif;
+		font-size: 1rem;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	.form-group input:focus,
+	.form-group textarea:focus {
+		outline: none;
+		border-color: var(--accent);
+		box-shadow: 0 0 0 2px rgba(44, 79, 185, 0.2);
+	}
+	.submit-btn {
+		background-color: var(--accent);
+		color: white;
+		border: none;
+		padding: 1em 1.5em;
+		font-size: 1rem;
+		font-weight: bold;
+		border-radius: 6px;
+		cursor: pointer;
+		transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+		align-self: flex-start;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	}
+	.submit-btn:hover {
+		background-color: var(--accent-dark);
+		transform: translateY(-5px);
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+	}
+</style>
