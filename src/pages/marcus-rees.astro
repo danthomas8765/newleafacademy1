@@ -44,6 +44,13 @@ import marcusReesImage from '../assets/marcusrees.png';
 						Throughout all his endeavours, Marcus has consistently tutored a range of GCSE and A-Level students in the evenings. He has never let his busy life get in the way of his passion for helping others understand their way through school to academic success.
 					</p>
 				</div>
+                <div class="cta-section">
+                    <h2>Ready to Start Your Journey?</h2>
+                    <p>Dan is ready to help you or your child achieve academic success. Book a friendly, no-obligation chat today.</p>
+                    <a href="/consultations" class="cta-button">
+                        Book Your Free Consultation
+                    </a>
+                </div>
 			</div>
 		</main>
 		<Footer />
@@ -114,6 +121,43 @@ import marcusReesImage from '../assets/marcusrees.png';
 		font-size: clamp(1em, 2vw, 1.1em);
 		line-height: 1.8;
 		margin-bottom: 1.5em;
+	}
+
+        .cta-section {
+		text-align: center;
+		margin-top: 2em;
+		padding: 2em;
+		background-color: white;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
+		color: var(--accent);
+	}
+	
+	.cta-section h2 {
+		font-size: clamp(1.5em, 4vw, 1.8em);
+		margin-top: 0;
+		color: var(--accent);
+	}
+
+    .cta-section p {
+        margin-bottom: 1.5em;
+    }
+
+	.cta-button {
+		display: inline-block;
+		padding: 1em 2em;
+		background-color: var(--accent-pop);
+		color: white;
+		font-weight: bold;
+		text-decoration: none;
+		border-radius: 8px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.cta-button:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 	}
 
 	@media (min-width: 768px) {
