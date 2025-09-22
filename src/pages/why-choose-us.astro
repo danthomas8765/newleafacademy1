@@ -4,183 +4,194 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
+import BaseHead from '../components/BaseHead.astro'; import Header from '../components/Header.astro'; import Footer from '../components/Footer.astro';
 <!doctype html>
+
 <html lang="en">
-	<head>
-		<BaseHead title="Why Choose Us?" description="Learn about the key benefits of New Leaf Academy's personalized tutoring services." />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>Why Choose Us?</h1>
-			<p>
-				At New Leaf Academy, we believe every student has the potential to shine. We understand that in a traditional classroom, it’s easy for individual needs to be overlooked. That’s why we do more than just teach; we build confidence, inspire curiosity, and tailor our approach to fit each unique learner. Our commitment is to create a supportive and effective environment where your child can truly succeed, on their own terms.
-			</p>
-			<h2>Our Commitment to Your Success:</h2>
-			<ul>
-				<li>
-					<div class="icon-container">
-						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
-					</div>
-					<div class="text-container">
-						<strong>Safety-First Approach:</strong>
-						<p>Your child's safety is our top priority. Every New Leaf Academy tutor undergoes a comprehensive vetting process, including an enhanced DBS check and thorough interviews, so you can have complete peace of mind.</p>
-					</div>
-				</li>
-				<li>
-					<div class="icon-container">
-						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10l-10-5-10 5 10 5 10-5z"></path><path d="M6 12v5c0 1.7 1.3 3 3 3h6c1.7 0 3-1.3 3-3v-5"></path></svg>
-					</div>
-					<div class="text-container">
-						<strong>Proven Results & Expert Tutors:</strong>
-						<p>We have a strong track record of helping students achieve top grades. Our dynamic team of specialist tutors are not only experts in their subjects but are passionately dedicated to helping you succeed.</p>
-					</div>
-				</li>
-				<li>
-					<div class="icon-container">
-						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
-					</div>
-					<div class="text-container">
-						<strong>Empathetic & Personalized Learning:</strong>
-						<p>We have extensive experience helping students with neurodivergence, SEND, and other learning differences. Our tutors build genuine rapport and trust, ensuring every session is a supportive space where students feel understood and confident.</p>
-					</div>
-				</li>
-				<li>
-					<div class="icon-container">
-						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"></path><path d="m5 12 7-7 7 7"></path></svg>
-					</div>
-					<div class="text-container">
-						<strong>Fostering Lifelong Confidence:</strong>
-						<p>Our goal extends beyond exam results. We work to transform a student's relationship with learning, turning anxiety and self-doubt into curiosity and unshakeable confidence that will serve them long after their time with us.</p>
-					</div>
-				</li>
-				<li>
-					<div class="icon-container">
-						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><circle cx="12" cy="16" r="2"></circle><path d="M12 14v-2"></path></svg>
-					</div>
-					<div class="text-container">
-						<strong>Freedom from the Classroom Clock:</strong>
-						<p>We break free from the rigid timetables of traditional schooling. Unconstrained by a one-size-fits-all approach, we adapt every lesson to the student's immediate needs, making our teaching relevant and perfectly paced.</p>
-					</div>
-				</li>
-				<li>
-					<div class="icon-container">
-						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-					</div>
-					<div class="text-container">
-						<strong>Collaborative Parent Partnership:</strong>
-						<p>We believe in keeping you in the loop. You'll receive regular, detailed feedback on your child's progress, including areas of strength and opportunities for growth, ensuring we're working together as a team.</p>
-					</div>
-				</li>
-				<li>
-					<div class="icon-container">
-						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-					</div>
-					<div class="text-container">
-						<strong>Modern & Effective Teaching:</strong>
-						<p>We are a young, energetic team that uses a blend of fresh teaching methods and the newest technology, all grounded in proven educational research, to provide the best possible education.</p>
-					</div>
-				</li>
-				<li>
-					<div class="icon-container">
-						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 13V11z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg>
-					</div>
-					<div class="text-container">
-						<strong>Free, No-Obligation Consultation:</strong>
-						<p>We want to ensure we're the perfect fit for your family. That's why we offer a complimentary consultation to discuss your child's needs, answer your questions, and introduce you to our approach before you commit.</p>
-					</div>
-				</li>
-			</ul>
-		</main>
-		<Footer />
-	</body>
+<head>
+<BaseHead title="Why Choose Us?"
+description="Learn about the key benefits of New Leaf Academy's personalized tutoring services."
+/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<Header />
+<main>
+<h1>Why Choose Us?</h1>
+<p>
+At New Leaf Academy, we believe every student has the potential to shine.
+We understand that in a traditional classroom, it’s easy for individual needs to be overlooked.
+That’s why we do more than just teach; we build confidence, inspire curiosity, and tailor our approach to fit each unique learner.
+Our commitment is to create a supportive and effective environment where your child can truly succeed, on their own terms.
+</p>
+<h2>Our Commitment to Your Success:</h2>
+<ul>
+<li>
+<div class="icon-container">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+</div>
+<div class="text-container">
+<strong>Safety-First Approach:</strong>
+<p>Your child's safety is our top priority.
+Every New Leaf Academy tutor undergoes a comprehensive vetting process, including an enhanced DBS check and thorough interviews, so you can have complete peace of mind.</p>
+</div>
+</li>
+<li>
+<div class="icon-container">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10l-10-5-10 5 10 5 10-5z"></path><path d="M6 12v5c0 1.7 1.3 3 3 3h6c1.7 0 3-1.3 3-3v-5"></path></svg>
+</div>
+<div class="text-container">
+<strong>Proven Results & Expert Tutors:</strong>
+<p>We have a strong track record of helping students achieve top grades.
+Our dynamic team of specialist tutors are not only experts in their subjects but are passionately dedicated to helping you succeed.</p>
+</div>
+</li>
+<li>
+<div class="icon-container">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+</div>
+<div class="text-container">
+<strong>Empathetic & Personalized Learning:</strong>
+<p>We have extensive experience helping students with neurodivergence, SEND, and other learning differences.
+Our tutors build genuine rapport and trust, ensuring every session is a supportive space where students feel understood and confident.</p>
+</div>
+</li>
+<li>
+<div class="icon-container">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"></path><path d="m5 12 7-7 7 7"></path></svg>
+</div>
+<div class="text-container">
+<strong>Fostering Lifelong Confidence:</strong>
+<p>Our goal extends beyond exam results.
+We work to transform a student's relationship with learning, turning anxiety and self-doubt into curiosity and unshakeable confidence that will serve them long after their time with us.</p>
+</div>
+</li>
+<li>
+<div class="icon-container">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><circle cx="12" cy="16" r="2"></circle><path d="M12 14v-2"></path></svg>
+</div>
+<div class="text-container">
+<strong>Freedom from the Classroom Clock:</strong>
+<p>We break free from the rigid timetables of traditional schooling.
+Unconstrained by a one-size-fits-all approach, we adapt every lesson to the student's immediate needs, making our teaching relevant and perfectly paced.</p>
+</div>
+</li>
+<li>
+<div class="icon-container">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+</div>
+<div class="text-container">
+<strong>Modern & Effective Teaching:</strong>
+<p>We are a young, energetic team that uses a blend of fresh teaching methods and the newest technology, all grounded in proven educational research, to provide the best possible education.</p>
+</div>
+</li>
+<li>
+<div class="icon-container">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect><path d="m17 10 5-5v14l-5-5"></path></svg>
+</div>
+<div class="text-container">
+<strong>Flexible Learning & AI-Powered Notes:</strong>
+<p>To reinforce learning and aid with revision, we offer the option to record each session. This is accompanied by AI-generated notes with timestamps, which allows students to quickly access key moments and revisit topics at their convenience.</p></p>
+</div>
+</li>
+<li>
+<div class="icon-container">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 13V11z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg>
+</div>
+<div class="text-container">
+<strong>Free, No-Obligation Consultation:</strong>
+<p>We want to ensure we're the perfect fit for your family. That's why we offer a complimentary consultation to discuss your child's needs, answer your questions, and introduce you to our approach before you commit.</p>
+</div>
+</li>
+</ul>
+</main>
+<Footer />
+</body>
 </html>
 <style>
-	:root {
-		--primary-color: var(--accent);
-		--text-color: var(--accent);
-		--card-bg-color: #f9f9f9;
-        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	}
+:root {
+--primary-color: var(--accent);
+--text-color: var(--accent);
+--card-bg-color: #f9f9f9;
+--box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-	body {
-		font-family: sans-serif;
-		line-height: 1.6;
-		color: var(--accent);
-		margin: 0;
-		padding: 0;
-	}
+body {
+	font-family: sans-serif;
+	line-height: 1.6;
+	color: var(--accent);
+	margin: 0;
+	padding: 0;
+}
 
-	main {
-		color: var(--accent);
-		max-width: 800px;
-		margin: 2em auto;
-		padding: 0 1em;
-		box-sizing: border-box;
-	}
+main {
+	color: var(--accent);
+	max-width: 800px;
+	margin: 2em auto;
+	padding: 0 1em;
+	box-sizing: border-box;
+}
 
-	h1 {
-		color: var(--accent);
-		font-size: clamp(1.8em, 5vw, 2.5em);
+h1 {
+	color: var(--accent);
+	font-size: clamp(1.8em, 5vw, 2.5em);
+	text-align: center;
+}
+
+h2 {
+	color: var(--accent);
+	font-size: clamp(1.5em, 4vw, 1.8em);
+	margin-top: 2em;
+}
+
+p {
+	color: var(--accent);
+	font-size: clamp(1em, 2vw, 1.1em);
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+li {
+	display: flex;
+	align-items: flex-start;
+	gap: 1.5em;
+	margin-bottom: 1.5em;
+	line-height: 1.5;
+	background-color: var(--card-bg-color);
+	padding: 1.5em;
+	border-radius: 10px;
+	box-shadow: var(--box-shadow);
+	word-break: break-word;
+}
+
+.icon-container {
+	flex-shrink: 0;
+	color: var(--accent);
+}
+
+.icon-container svg {
+	width: 48px;
+	height: 48px;
+}
+
+.text-container strong {
+	display: block;
+	font-size: clamp(1.1em, 2.5vw, 1.2em);
+	margin-bottom: 0.5em;
+}
+
+.text-container p {
+	margin: 0;
+}
+
+@media (max-width: 600px) {
+	li {
+		flex-direction: column;
+		align-items: center;
 		text-align: center;
 	}
-
-	h2 {
-		color: var(--accent);
-		font-size: clamp(1.5em, 4vw, 1.8em);
-		margin-top: 2em;
-	}
-
-	p {
-		color: var(--accent);
-		font-size: clamp(1em, 2vw, 1.1em);
-	}
-
-	ul {
-		list-style: none;
-		padding: 0;
-	}
-
-	li {
-		display: flex;
-		align-items: flex-start;
-		gap: 1.5em;
-		margin-bottom: 1.5em;
-		line-height: 1.5;
-		background-color: var(--card-bg-color);
-		padding: 1.5em;
-		border-radius: 10px;
-		box-shadow: var(--box-shadow);
-		word-break: break-word;
-	}
-
-	.icon-container {
-		flex-shrink: 0;
-		color: var(--accent);
-	}
-
-	.icon-container svg {
-		width: 48px;
-		height: 48px;
-	}
-
-	.text-container strong {
-		display: block;
-		font-size: clamp(1.1em, 2.5vw, 1.2em);
-		margin-bottom: 0.5em;
-	}
-
-	.text-container p {
-		margin: 0;
-	}
-
-	@media (max-width: 600px) {
-		li {
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-		}
-	}
+}
 </style>
-

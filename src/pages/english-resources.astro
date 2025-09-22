@@ -1,0 +1,210 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+
+<html lang="en">
+<head>
+<BaseHead title="English Resources" description="Discover our curated collection of resources for English to help you learn and revise effectively." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<Header />
+<main>
+<div class="resource-intro-container">
+<h1>English Resources</h1>
+<p>
+English is a subject that empowers students to communicate and think critically. Our resources are designed to help you deconstruct complex literature and craft compelling written work. Dive in and find guides, videos, and tips to help you excel in your exams.
+</p>
+</div>
+
+		<div class="resources-container">
+			<section class="resource-section">
+				<h2 class="resource-heading">GCSE English</h2>
+				<ul class="resource-list">
+					<li>
+						<strong>Analysing Unseen Poetry</strong>
+						<p>A step-by-step guide to tackling unseen poetry in your exams, from initial reading to structuring your essay for top marks.</p>
+						<a href="#" class="resource-link">Read More →</a>
+					</li>
+					<li>
+						<strong>Creative Writing Prompts</strong>
+						<p>A collection of creative writing prompts to spark your imagination and practice your narrative and descriptive skills.</p>
+						<a href="#" class="resource-link">Get Inspired →</a>
+					</li>
+					<li>
+						<strong>Key Literary Terms Explained</strong>
+						<p>A comprehensive glossary of literary devices and terms you need to know for both English Language and Literature exams.</p>
+						<a href="#" class="resource-link">Learn the Terms →</a>
+					</li>
+				</ul>
+			</section>
+			
+			<section class="resource-section">
+				<h2 class="resource-heading">A-Level English</h2>
+				<ul class="resource-list">
+					<li>
+						<strong>Contextual Analysis Guide</strong>
+						<p>An in-depth article on how to effectively integrate historical, social, and political context into your A-Level literary essays.</p>
+						<a href="#" class="resource-link">Read More →</a>
+					</li>
+					<li>
+						<strong>Literary Theory Made Simple</strong>
+						<p>An introduction to key literary theories (e.g., Marxism, Feminism) and how to apply them to your set texts for a deeper analysis.</p>
+						<a href="#" class="resource-link">Start Learning →</a>
+					</li>
+					<li>
+						<strong>Essay Structuring for A-Level</strong>
+						<p>A resource focused on structuring sophisticated A-Level English essays, including techniques for building complex arguments and using evidence effectively.</p>
+						<a href="#" class="resource-link">Explore the Guide →</a>
+					</li>
+				</ul>
+			</section>
+		</div>
+
+		<div class="cta-section">
+			<h2>Need Personalized English Help?</h2>
+			<p>Our expert English tutors are ready to help you master challenging concepts. Book a free consultation today to create a customized learning plan.</p>
+			<a href="/consultations" class="cta-button">
+				Book Your Free Consultation
+			</a>
+		</div>
+	</main>
+	<Footer />
+</body>
+</html>
+
+<style>
+main {
+color: var(--accent);
+max-width: 900px;
+margin: 2em auto;
+padding: 0 1em;
+box-sizing: border-box;
+}
+
+.resource-intro-container {
+	text-align: center;
+	margin-bottom: 3em;
+}
+
+.resource-intro-container h1 {
+	font-size: clamp(1.8em, 5vw, 2.5em);
+	margin-bottom: 0.5em;
+}
+
+.resource-intro-container p {
+	max-width: 700px;
+	margin: 0 auto;
+	font-size: clamp(1em, 2vw, 1.1em);
+	line-height: 1.7;
+}
+
+.resources-container {
+	display: grid;
+	gap: 2.5em;
+	padding: 0 1em;
+}
+
+.resource-section {
+	border-bottom: 2px solid var(--gray-light);
+	padding-bottom: 2em;
+}
+
+.resource-section:last-of-type {
+	border-bottom: none;
+}
+
+.resource-heading {
+	font-size: clamp(1.5em, 4vw, 1.8em);
+	color: var(--accent);
+	margin-top: 0;
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+.resource-list {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	gap: 1.5em;
+}
+
+.resource-list li {
+	background-color: var(--card-bg-color);
+	padding: 1.5em;
+	border-radius: 12px;
+	box-shadow: var(--box-shadow);
+	background-color: white;
+}
+
+.resource-list li strong {
+	display: block;
+	font-size: clamp(1.1em, 2.5vw, 1.25em);
+	color: var(--accent);
+	margin-bottom: 0.5em;
+}
+
+.resource-list li p {
+	margin: 0 0 1em;
+	font-size: clamp(1em, 2vw, 1.1em);
+}
+
+.resource-link {
+	color: var(--accent-pop);
+	font-weight: bold;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.resource-link:hover {
+	color: var(--accent-dark);
+	text-decoration: underline;
+}
+
+/* Final CTA Section */
+.cta-section {
+	text-align: center;
+	margin-top: 4em;
+	padding: 2.5em;
+	background-color: white;
+	border-radius: 12px;
+	box-shadow: var(--box-shadow);
+	color: var(--accent);
+}
+
+.cta-section h2 {
+	font-size: clamp(1.5em, 4vw, 1.8em);
+	margin-top: 0;
+	color: var(--accent);
+}
+.cta-section p {
+    margin-bottom: 1.5em;
+}
+
+.cta-button {
+	display: inline-block;
+	padding: 1em 2em;
+	background-color: var(--accent-pop);
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 8px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+	.resources-container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+</style>

@@ -15,73 +15,37 @@ import Footer from '../components/Footer.astro';
 		<main>
 			<h1>Learning Resources</h1>
 			<p class="intro-text">
-				We believe that great learning extends beyond our one-to-one sessions. Here, you'll find a hand-picked selection of valuable tools, articles, and videos to support you in your studies, from revision techniques to in-depth subject guides.
+				We believe that great learning extends beyond our one-to-one sessions. Here, you'll find a hand-picked selection of valuable tools, articles, and videos to support you in your studies.
 			</p>
 
 			<div class="resources-container">
-				<section class="resource-section">
-					<h2 class="resource-heading">Mathematics</h2>
-					<ul class="resource-list">
-						<li>
-							<strong>Maths Revision Videos (GCSE)</strong>
-							<p>A curated playlist of videos covering key topics like algebra, geometry, and statistics to help with exam prep.</p>
-							<a href="#" class="resource-link">Watch Now →</a>
-						</li>
-						<li>
-							<strong>A-Level Pure Maths Guide</strong>
-							<p>An in-depth article breaking down complex concepts and providing practice questions for A-Level students.</p>
-							<a href="#" class="resource-link">Read More →</a>
-						</li>
-					</ul>
-				</section>
+				<a href="/maths-resources" class="resource-card-link">
+					<div class="resource-card">
+						<h2 class="resource-heading">Mathematics</h2>
+						<p>Explore revision videos, in-depth guides, and practice questions to master key mathematical concepts from GCSE to A-Level.</p>
+					</div>
+				</a>
 
-				<section class="resource-section">
-					<h2 class="resource-heading">Science</h2>
-					<ul class="resource-list">
-						<li>
-							<strong>GCSE Biology Practical Videos</strong>
-							<p>Step-by-step video demonstrations of required practicals for the AQA, Edexcel, and OCR specifications.</p>
-							<a href="#" class="resource-link">Explore Videos →</a>
-						</li>
-						<li>
-							<strong>Physics Equation Sheet Explained</strong>
-							<p>A detailed breakdown of all the key equations you need to know for GCSE Physics with examples.</p>
-							<a href="#" class="resource-link">Download Guide →</a>
-						</li>
-					</ul>
-				</section>
+				<a href="/science-resources" class="resource-card-link">
+					<div class="resource-card">
+						<h2 class="resource-heading">Science</h2>
+						<p>Find video demonstrations of practicals and detailed explanations of scientific principles for all GCSE and A-Level topics.</p>
+					</div>
+				</a>
 				
-				<section class="resource-section">
-					<h2 class="resource-heading">English</h2>
-					<ul class="resource-list">
-						<li>
-							<strong>Analysing Poetry for GCSE</strong>
-							<p>A guide to deconstructing unseen poetry and structuring your analytical essays for top marks.</p>
-							<a href="#" class="resource-link">Learn How →</a>
-						</li>
-						<li>
-							<strong>Creative Writing Prompts</strong>
-							<p>A collection of prompts and techniques to help spark your imagination and improve your narrative writing.</p>
-							<a href="#" class="resource-link">Get Inspired →</a>
-						</li>
-					</ul>
-				</section>
+				<a href="/english-resources" class="resource-card-link">
+					<div class="resource-card">
+						<h2 class="resource-heading">English</h2>
+						<p>Access guides on deconstructing poetry, creative writing prompts, and techniques to help you excel in English Literature and Language.</p>
+					</div>
+				</a>
 
-				<section class="resource-section">
-					<h2 class="resource-heading">General Learning & Revision</h2>
-					<ul class="resource-list">
-						<li>
-							<strong>The Feynman Technique for Revision</strong>
-							<p>An article explaining a powerful study method to help you master any subject by teaching it to someone else.</p>
-							<a href="#" class="resource-link">Read Article →</a>
-						</li>
-						<li>
-							<strong>Spaced Repetition Guide</strong>
-							<p>Learn how to use spaced repetition to make your revision more efficient and improve long-term memory recall.</p>
-							<a href="#" class="resource-link">Start Now →</a>
-						</li>
-					</ul>
-				</section>
+				<a href="/general-resources" class="resource-card-link">
+					<div class="resource-card">
+						<h2 class="resource-heading">General Learning & Revision</h2>
+						<p>Discover powerful study methods like the Feynman Technique and Spaced Repetition to make your revision more efficient and effective.</p>
+					</div>
+				</a>
 			</div>
 
 			<div class="cta-section">
@@ -127,59 +91,41 @@ import Footer from '../components/Footer.astro';
 		padding: 0 1em;
 	}
 
-	.resource-section {
-		border-bottom: 2px solid var(--gray-light);
-		padding-bottom: 1.5em;
-	}
-
-	.resource-section:last-of-type {
-		border-bottom: none;
+	.resource-card-link {
+		text-decoration: none;
+		color: inherit;
 	}
 	
+	.resource-card {
+		background-color: white;
+		padding: 2em;
+		border-radius: 12px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.resource-card-link:hover .resource-card {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+	}
+
 	.resource-heading {
 		font-size: clamp(1.5em, 4vw, 1.8em);
 		color: var(--accent);
 		margin-top: 0;
-		margin-bottom: 1em;
+		margin-bottom: 0.5em;
 		text-align: center;
 	}
 
-	.resource-list {
-		list-style: none;
-		padding: 0;
-		display: grid;
-		gap: 1.5em;
-	}
-
-	.resource-list li {
-		background-color: var(--card-bg-color);
-		padding: 1.5em;
-		border-radius: 12px;
-		box-shadow: var(--box-shadow);
-	}
-
-	.resource-list li strong {
-		display: block;
-		font-size: clamp(1.1em, 2.5vw, 1.25em);
-		color: var(--accent);
-		margin-bottom: 0.5em;
-	}
-
-	.resource-list li p {
-		margin: 0 0 1em;
+	.resource-card p {
 		font-size: clamp(1em, 2vw, 1.1em);
-	}
-
-	.resource-link {
-		color: var(--accent-pop);
-		font-weight: bold;
-		text-decoration: none;
-		transition: color 0.3s ease;
-	}
-
-	.resource-link:hover {
-		color: var(--accent-dark);
-		text-decoration: underline;
+		margin-bottom: 1.5em;
+		line-height: 1.6;
+		text-align: center;
 	}
 	
 	/* Final CTA Section */
@@ -189,7 +135,7 @@ import Footer from '../components/Footer.astro';
 		padding: 2.5em;
 		background-color: white;
 		border-radius: 12px;
-		box-shadow: var(--box-shadow);
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 		color: var(--accent);
 	}
 	
@@ -224,5 +170,4 @@ import Footer from '../components/Footer.astro';
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}
-
 </style>
