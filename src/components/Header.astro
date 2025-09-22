@@ -66,6 +66,13 @@ padding: 0 1em;
 		align-items: center;
 		justify-content: space-between;
 		height: 4.5rem;
+		flex-wrap: wrap; /* Allow items to wrap */
+	}
+
+	.logo-container {
+		display: flex; /* Use flexbox for the logo container */
+		align-items: center; /* Align items vertically */
+		flex-shrink: 0; /* Prevent the logo from shrinking */
 	}
 
 	.logo-container a {
@@ -107,12 +114,15 @@ width: auto;
 		display: flex;
 		align-items: center;
 		gap: 1.5em;
-}
+		flex-grow: 1; /* Allow nav links to take up available space */
+		justify-content: flex-end; /* Align links to the right */
+	}
 
 	.internal-links {
 		display: flex;
 		align-items: center;
 		gap: 1em;
+		flex-wrap: wrap; /* Allow internal links to wrap */
 	}
 	
 	.social-links a {
