@@ -6,7 +6,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import TestimonialCarousel from '../components/TestimonialCarousel.astro';
 
 import { Image } from 'astro:assets';
-import bannerImage from '../assets/banner.png';
 import logoimage from '../assets/logo.svg';
 ---
 
@@ -20,7 +19,7 @@ import logoimage from '../assets/logo.svg';
 		<main>
 			<Image
 				src={logoimage}
-				alt="An engaging banner for New Leaf Academy showing students learning"
+				alt="New Leaf Academy Logo"
 				class="banner-image"
 			/>
 
@@ -44,6 +43,7 @@ import logoimage from '../assets/logo.svg';
 
 		</main>
 
+		<h2 class="testimonial-heading">What our students and parents have to say</h2>
 		<TestimonialCarousel />
 		<Footer />
 	</body>
@@ -110,5 +110,11 @@ import logoimage from '../assets/logo.svg';
 		margin-bottom: 0;
 	}
 	
+	.testimonial-heading {
+		text-align: center;
+		color: var(--accent);
+		font-size: clamp(1.5em, 4vw, 1.8em);
+		margin: 3em 1em 1em;
+	}
 </style>
 
