@@ -149,12 +149,21 @@ width: auto;
 }
 
 	/* --- Mobile and Tablet Styles --- */
-	@media (max-width: 1150px) {
+	@media (max-width: 1250px) {
 		.site-title {
-			/* Allow the site title to wrap on smaller screens to prevent it from overlapping other elements. */
 			white-space: normal;
 		}
 
+		.internal-links {
+			gap: 0.8em; /* Reduce gap between links */
+		}
+
+		.logo-container a {
+			font-size: 1.5em; /* Slightly reduce logo font size */
+		}
+	}
+
+	@media (max-width: 1150px) {
 		.menu-toggle {
 			display: block;
 		}
