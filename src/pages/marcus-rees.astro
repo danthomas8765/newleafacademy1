@@ -5,166 +5,169 @@ import Footer from '../components/Footer.astro';
 import { Image } from 'astro:assets';
 import marcusReesImage from '../assets/marcusrees.png';
 ---
-
 <!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title="Marcus Rees - Tutor at New Leaf Academy" description="Meet Marcus Rees, a specialist tutor at New Leaf Academy." />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<div class="bio-container">
-				<div class="bio-header">
-					<Image
-						src={marcusReesImage}
-						alt="Marcus Rees, Tutor at New Leaf Academy"
-						class="bio-headshot"
-						width={200}
-						height={200}
-					/>
-					<div class="header-text">
-						<h1>Marcus Rees</h1>
-						<p class="role">Specialist Tutor</p>
-					</div>
-				</div>
 
-				<div class="bio-content">
-					<h2>About Marcus</h2>
-					<p>
-						Marcus's passion for teaching began at a young age while working for Kumon during his school years, where he tutored younger students. He has been teaching and tutoring in some form ever since. 
-					</p>
-					<p>
-						After achieving straight A's and A*'s at GCSE and A-Level, he went on to study Mathematics at the University of Bath, where he also completed his Master's degree. During his time at university, Marcus embraced a unique lifestyle, buying and living on a canal boat which he diligently restored. Alongside his studies, he worked at a farm and even ran his own market garden.
-					</p>
-					<p>
-						Currently, he is looking for a research job at Oxford University that would combine his interest in farming with his expertise in mathematics.
-					</p>
-					<p>
-						Throughout all his endeavours, Marcus has consistently tutored a range of GCSE and A-Level students in the evenings. He has never let his busy life get in the way of his passion for helping others understand their way through school to academic success.
-					</p>
-				</div>
-                <div class="cta-section">
-                    <h2>Ready to Start Your Journey?</h2>
-                    <p>Dan is ready to help you or your child achieve academic success. Book a friendly, no-obligation chat today.</p>
-                    <a href="/consultations" class="cta-button">
-                        Book Your Free Consultation
-                    </a>
-                </div>
+<html lang="en">
+<head>
+<BaseHead title="Marcus Rees - Tutor at New Leaf Academy" description="Meet Marcus Rees, a specialist tutor at New Leaf Academy." />
+</head>
+<body>
+<Header />
+<main>
+<div class="bio-container">
+<div class="bio-header">
+<Image
+src={marcusReesImage}
+alt="Marcus Rees, Tutor at New Leaf Academy"
+class="bio-headshot"
+width={200}
+height={200}
+/>
+<div class="header-text">
+<h1>Marcus Rees</h1>
+<p class="role">Specialist Tutor</p>
+</div>
+</div>
+
+			<div class="bio-content">
+				<h2>About Marcus</h2>
+				<p>
+					Marcus's passion for teaching began at a young age while working for Kumon during his school years, where he tutored younger students. He has been teaching and tutoring in some form ever since. 
+				</p>
+				<p>
+					After achieving straight A's and A*'s at GCSE and A-Level, he went on to study Mathematics at the University of Bath, where he also completed his Master's degree. During his time at university, Marcus embraced a unique lifestyle, buying and living on a canal boat which he diligently restored. Alongside his studies, he worked at a farm and even ran his own market garden.
+				</p>
+				<p>
+					He also completed a specific course on communicating mathematics during his time at university, which he credits as a key factor in becoming a highly effective and empathetic teacher.
+				</p>
+				<p>
+					Currently, he is looking for a research job at Oxford University that would combine his interest in farming with his expertise in mathematics.
+				</p>
+				<p>
+					Throughout all his endeavours, Marcus has consistently tutored a range of GCSE and A-Level students in the evenings. He has never let his busy life get in the way of his passion for helping others understand their way through school to academic success.
+				</p>
 			</div>
-		</main>
-		<Footer />
-	</body>
+			<div class="cta-section">
+				<h2>Ready to Start Your Journey?</h2>
+				<p>Dan is ready to help you or your child achieve academic success. Book a friendly, no-obligation chat today.</p>
+				<a href="/consultations" class="cta-button">
+					Book Your Free Consultation
+				</a>
+			</div>
+		</div>
+	</main>
+	<Footer />
+</body>
 </html>
 
 <style>
-	:root {
-		--card-bg-color: #f9f9f9;
-        --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-	}
+:root {
+--card-bg-color: #f9f9f9;
+--box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-	main {
-		max-width: 900px;
-		margin: 2em auto;
-		padding: 0 1em;
-		box-sizing: border-box;
-		color: var(--accent);
-	}
+main {
+	max-width: 900px;
+	margin: 2em auto;
+	padding: 0 1em;
+	box-sizing: border-box;
+	color: var(--accent);
+}
 
-	.bio-container {
-		background-color: var(--card-bg-color);
-		padding: 2em;
-		border-radius: 12px;
-		box-shadow: var(--box-shadow);
-	}
+.bio-container {
+	background-color: var(--card-bg-color);
+	padding: 2em;
+	border-radius: 12px;
+	box-shadow: var(--box-shadow);
+}
 
+.bio-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 2em;
+	gap: 1em;
+}
+
+.bio-headshot {
+	width: clamp(150px, 30vw, 200px);
+	height: clamp(150px, 30vw, 200px);
+	object-fit: cover;
+	border-radius: 50%;
+	border: 5px solid var(--accent);
+	box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.header-text h1 {
+	font-size: clamp(2em, 6vw, 2.8em);
+	margin: 0;
+	color: var(--accent);
+}
+
+.header-text .role {
+	font-size: clamp(1.1em, 3vw, 1.3em);
+	font-weight: bold;
+	color: var(--accent-pop);
+	margin-top: 0.25em;
+}
+
+.bio-content h2 {
+	font-size: clamp(1.5em, 5vw, 2em);
+	color: var(--accent);
+	border-bottom: 2px solid #e9eafc;
+	padding-bottom: 0.5em;
+	margin-bottom: 1em;
+}
+
+.bio-content p {
+	font-size: clamp(1em, 2vw, 1.1em);
+	line-height: 1.8;
+	margin-bottom: 1.5em;
+}
+
+	.cta-section {
+	text-align: center;
+	margin-top: 2em;
+	padding: 2em;
+	background-color: white;
+	border-radius: 12px;
+	box-shadow: var(--box-shadow);
+	color: var(--accent);
+}
+
+.cta-section h2 {
+	font-size: clamp(1.5em, 4vw, 1.8em);
+	margin-top: 0;
+	color: var(--accent);
+}
+
+.cta-section p {
+	margin-bottom: 1.5em;
+}
+
+.cta-button {
+	display: inline-block;
+	padding: 1em 2em;
+	background-color: var(--accent-pop);
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 8px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
 	.bio-header {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		margin-bottom: 2em;
-		gap: 1em;
+		flex-direction: row;
+		text-align: left;
+		gap: 2em;
 	}
-
-	.bio-headshot {
-		width: clamp(150px, 30vw, 200px);
-		height: clamp(150px, 30vw, 200px);
-		object-fit: cover;
-		border-radius: 50%;
-		border: 5px solid var(--accent);
-		box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-	}
-
-	.header-text h1 {
-		font-size: clamp(2em, 6vw, 2.8em);
-		margin: 0;
-		color: var(--accent);
-	}
-
-	.header-text .role {
-		font-size: clamp(1.1em, 3vw, 1.3em);
-		font-weight: bold;
-		color: var(--accent-pop);
-		margin-top: 0.25em;
-	}
-
-	.bio-content h2 {
-		font-size: clamp(1.5em, 5vw, 2em);
-		color: var(--accent);
-		border-bottom: 2px solid #e9eafc;
-		padding-bottom: 0.5em;
-		margin-bottom: 1em;
-	}
-
-	.bio-content p {
-		font-size: clamp(1em, 2vw, 1.1em);
-		line-height: 1.8;
-		margin-bottom: 1.5em;
-	}
-
-        .cta-section {
-		text-align: center;
-		margin-top: 2em;
-		padding: 2em;
-		background-color: white;
-		border-radius: 12px;
-		box-shadow: var(--box-shadow);
-		color: var(--accent);
-	}
-	
-	.cta-section h2 {
-		font-size: clamp(1.5em, 4vw, 1.8em);
-		margin-top: 0;
-		color: var(--accent);
-	}
-
-    .cta-section p {
-        margin-bottom: 1.5em;
-    }
-
-	.cta-button {
-		display: inline-block;
-		padding: 1em 2em;
-		background-color: var(--accent-pop);
-		color: white;
-		font-weight: bold;
-		text-decoration: none;
-		border-radius: 8px;
-		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
-	}
-
-	.cta-button:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-	}
-
-	@media (min-width: 768px) {
-		.bio-header {
-			flex-direction: row;
-			text-align: left;
-			gap: 2em;
-		}
-	}
+}
 </style>
