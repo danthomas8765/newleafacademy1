@@ -1,0 +1,228 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Learning Resources" description="Discover our curated collection of resources for Maths, English, Science, and more to help you learn and revise effectively." />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Learning Resources</h1>
+			<p class="intro-text">
+				We believe that great learning extends beyond our one-to-one sessions. Here, you'll find a hand-picked selection of valuable tools, articles, and videos to support you in your studies, from revision techniques to in-depth subject guides.
+			</p>
+
+			<div class="resources-container">
+				<section class="resource-section">
+					<h2 class="resource-heading">Mathematics</h2>
+					<ul class="resource-list">
+						<li>
+							<strong>Maths Revision Videos (GCSE)</strong>
+							<p>A curated playlist of videos covering key topics like algebra, geometry, and statistics to help with exam prep.</p>
+							<a href="#" class="resource-link">Watch Now →</a>
+						</li>
+						<li>
+							<strong>A-Level Pure Maths Guide</strong>
+							<p>An in-depth article breaking down complex concepts and providing practice questions for A-Level students.</p>
+							<a href="#" class="resource-link">Read More →</a>
+						</li>
+					</ul>
+				</section>
+
+				<section class="resource-section">
+					<h2 class="resource-heading">Science</h2>
+					<ul class="resource-list">
+						<li>
+							<strong>GCSE Biology Practical Videos</strong>
+							<p>Step-by-step video demonstrations of required practicals for the AQA, Edexcel, and OCR specifications.</p>
+							<a href="#" class="resource-link">Explore Videos →</a>
+						</li>
+						<li>
+							<strong>Physics Equation Sheet Explained</strong>
+							<p>A detailed breakdown of all the key equations you need to know for GCSE Physics with examples.</p>
+							<a href="#" class="resource-link">Download Guide →</a>
+						</li>
+					</ul>
+				</section>
+				
+				<section class="resource-section">
+					<h2 class="resource-heading">English</h2>
+					<ul class="resource-list">
+						<li>
+							<strong>Analysing Poetry for GCSE</strong>
+							<p>A guide to deconstructing unseen poetry and structuring your analytical essays for top marks.</p>
+							<a href="#" class="resource-link">Learn How →</a>
+						</li>
+						<li>
+							<strong>Creative Writing Prompts</strong>
+							<p>A collection of prompts and techniques to help spark your imagination and improve your narrative writing.</p>
+							<a href="#" class="resource-link">Get Inspired →</a>
+						</li>
+					</ul>
+				</section>
+
+				<section class="resource-section">
+					<h2 class="resource-heading">General Learning & Revision</h2>
+					<ul class="resource-list">
+						<li>
+							<strong>The Feynman Technique for Revision</strong>
+							<p>An article explaining a powerful study method to help you master any subject by teaching it to someone else.</p>
+							<a href="#" class="resource-link">Read Article →</a>
+						</li>
+						<li>
+							<strong>Spaced Repetition Guide</strong>
+							<p>Learn how to use spaced repetition to make your revision more efficient and improve long-term memory recall.</p>
+							<a href="#" class="resource-link">Start Now →</a>
+						</li>
+					</ul>
+				</section>
+			</div>
+
+			<div class="cta-section">
+				<h2>Still Need Help?</h2>
+				<p>Our expert tutors are ready to provide the one-to-one support your child needs. Book a free consultation to get started today!</p>
+				<a href="/consultations" class="cta-button">
+					Book Your Free Consultation
+				</a>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		color: var(--accent);
+		max-width: 900px;
+		margin: 2em auto;
+		padding: 0 1em;
+		box-sizing: border-box;
+		text-align: center;
+	}
+
+	h1 {
+		color: var(--accent);
+		font-size: clamp(1.8em, 5vw, 2.5em);
+		text-align: center;
+		margin-bottom: 0.5em;
+	}
+
+	.intro-text {
+		max-width: 700px;
+		margin: 0 auto 3em;
+		font-size: clamp(1em, 2vw, 1.1em);
+		line-height: 1.7;
+	}
+
+	.resources-container {
+		display: grid;
+		gap: 2.5em;
+		text-align: left;
+		padding: 0 1em;
+	}
+
+	.resource-section {
+		border-bottom: 2px solid var(--gray-light);
+		padding-bottom: 1.5em;
+	}
+
+	.resource-section:last-of-type {
+		border-bottom: none;
+	}
+	
+	.resource-heading {
+		font-size: clamp(1.5em, 4vw, 1.8em);
+		color: var(--accent);
+		margin-top: 0;
+		margin-bottom: 1em;
+		text-align: center;
+	}
+
+	.resource-list {
+		list-style: none;
+		padding: 0;
+		display: grid;
+		gap: 1.5em;
+	}
+
+	.resource-list li {
+		background-color: var(--card-bg-color);
+		padding: 1.5em;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
+	}
+
+	.resource-list li strong {
+		display: block;
+		font-size: clamp(1.1em, 2.5vw, 1.25em);
+		color: var(--accent);
+		margin-bottom: 0.5em;
+	}
+
+	.resource-list li p {
+		margin: 0 0 1em;
+		font-size: clamp(1em, 2vw, 1.1em);
+	}
+
+	.resource-link {
+		color: var(--accent-pop);
+		font-weight: bold;
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	.resource-link:hover {
+		color: var(--accent-dark);
+		text-decoration: underline;
+	}
+	
+	/* Final CTA Section */
+	.cta-section {
+		text-align: center;
+		margin-top: 4em;
+		padding: 2.5em;
+		background-color: white;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
+		color: var(--accent);
+	}
+	
+	.cta-section h2 {
+		font-size: clamp(1.5em, 4vw, 1.8em);
+		margin-top: 0;
+		color: var(--accent);
+	}
+	.cta-section p {
+        margin-bottom: 1.5em;
+    }
+
+	.cta-button {
+		display: inline-block;
+		padding: 1em 2em;
+		background-color: var(--accent-pop);
+		color: white;
+		font-weight: bold;
+		text-decoration: none;
+		border-radius: 8px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.cta-button:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+	}
+
+	@media (min-width: 768px) {
+		.resources-container {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+</style>

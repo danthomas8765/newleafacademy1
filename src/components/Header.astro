@@ -27,6 +27,7 @@ import logoImage from '../assets/logo.svg';
 				<HeaderLink href="/how-it-works">How it Works</HeaderLink>
 				<HeaderLink href="/tutors">Tutors</HeaderLink>
 				<HeaderLink href="/why-choose-us">Why Choose Us?</HeaderLink>
+				<HeaderLink href="/resources">Resources</HeaderLink>
 				<HeaderLink href="/contact">Contact Us</HeaderLink>
 				<HeaderLink href="/about">About</HeaderLink>
 				<HeaderLink href="/FAQs">FAQs</HeaderLink>
@@ -42,11 +43,11 @@ import logoImage from '../assets/logo.svg';
 		</div>
 
 		<button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
-			<svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" 
+			<svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
 			<svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
 		</button>
-		</nav>
+	</nav>
 </header>
 
 <style>
@@ -72,8 +73,7 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 		text-decoration: none;
 		display: flex;
 		align-items: center;
-		font-size: 1.8em;
-		font-weight: bold;
+		gap: 0.5em; /* Added gap to separate logo and title */
 		color: var(--accent);
 		margin: 0;
 	}
@@ -93,13 +93,13 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 	}
 
 	img.logo {
-		height: 2em;
+		height: 2.2em;
 		width: auto;
-		margin-right: 0.5em;
 	}
 
 	.site-title {
-		white-space: nowrap;
+		font-weight: bold;
+		font-size: 1.5em;
 	}
 
 	/* --- Default Desktop Styles --- */
@@ -112,7 +112,7 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 	.internal-links {
 		display: flex;
 		align-items: center;
-		gap: 1em;
+		gap: 0.8em;
 	}
 	
 	.social-links a {
@@ -128,6 +128,7 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 	.internal-links > :global(a) {
 		border-left: 1px solid #ddd;
 		padding-left: 1em;
+		font-size: 0.8em;
 	}
 
 	.internal-links > :global(a:first-child) {
@@ -151,7 +152,7 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 	/* --- Responsive Styles for smaller desktops / laptops --- */
 	@media (max-width: 1350px) {
 		.logo-container a {
-			font-size: 1.5em;
+			/* font-size: 1.5em; This is no longer needed as we size elements individually */
 		}
 		.internal-links > :global(a) {
 			font-size: 0.9em;
@@ -168,7 +169,7 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 		}
 
 		.logo-container a {
-			font-size: 1.3em;
+			/* font-size: 1.3em; This is no longer needed */
 		}
 
 		img.logo {
@@ -203,7 +204,7 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 		}
 		
 		.internal-links > :global(a) {
-			font-size: 1em; /* Reset font size for vertical menu */
+			font-size: 1em;
 			border-left: none;
 			padding-left: 0;
 			padding: 0.5em 0;
@@ -229,7 +230,6 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 	const navLinks = document.querySelector('.nav-links');
 	const hamburgerIcon = document.querySelector('.hamburger-icon');
 	const closeIcon = document.querySelector('.close-icon');
-
 	menuToggle.addEventListener('click', () => {
 		navLinks.classList.toggle('is-open');
 		const isExpanded = navLinks.classList.contains('is-open');
@@ -238,4 +238,3 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 		// The if/else block for icon display is no longer needed!
 	});
 </script>
-
