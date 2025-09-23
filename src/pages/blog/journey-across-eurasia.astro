@@ -2,6 +2,11 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import { Image } from 'astro:assets'; 
+import journey1 from '../../assets/journey-1.png';
+import journey2 from '../../assets/journey-2.png'; 
+import journey3 from '../../assets/journey-3.png'; 
+import journey4 from '../../assets/journey-4.png';
 ---
 
 <!doctype html>
@@ -23,24 +28,64 @@ import Footer from '../../components/Footer.astro';
 					<p>
 						My good friend Marcus, who is half-Vietnamese, had always dreamed of taking a significant trip to Vietnam to connect with his roots and extended family. When I got married in Thailand in January 2025, it gave us the perfect excuse. Kai, another close friend, joined us, and from there, the three of us planned a long journey back to the UK over land—or as much as possible, as we navigated around conflict and dangerous areas by air.
 					</p>
+					<div class="image-wrapper">
+						<Image
+							src={journey1}
+							alt="A picture of the tutors on their journey"
+							widths={[300, 600, 900]}
+							sizes="(max-width: 600px) 100vw, 600px"
+							loading="lazy"
+							decoding="async"
+						/>
+					</div>
 					<p>
 						After the wedding, we split up to explore different parts of Southeast Asia: I stayed with my new wife in Thailand, Kai headed to Cambodia to visit Angkor Wat, and Marcus went to Vietnam. In March 2025, we met up again in Kolkata, India, and the real trip began. Throughout the entire journey, we continued our online tutoring, which often led to tutoring sessions with ever-changing and surprising backgrounds for our students.
 					</p>
 					<p>
 						We spent two months immersing ourselves in India's incredible diversity. We visited the sacred ghats of Varanasi, where Kai and Marcus swam in the Ganges River. We marveled at the immense natural beauty of Hampi and the towering peaks of the Himalayas, and stood in awe of the magnificent architecture of the Taj Mahal and the Ellora Caves.
 					</p>
+					<div class="image-wrapper">
+						<Image
+							src={journey2}
+							alt="A picture of the tutors on their journey"
+							widths={[300, 600, 900]}
+							sizes="(max-width: 600px) 100vw, 600px"
+							loading="lazy"
+							decoding="async"
+						/>
+					</div>
 					<p>
 						Our original plan to travel through Pakistan was scuppered when the border was closed due to escalating conflict. We also found it impossible to apply for visas for China from inside India, so we pivoted and flew to Uzbekistan. Here, we experienced a completely alien culture in the "Russosphere," where nobody spoke English and Google Translate became our best friend—a great lesson in communicating with patience and creativity.
 					</p>
 					<p>
 						Next, we made our way to Kazakhstan, where we hired a car for a five-day road trip. The landscape was breathtaking and constantly changing. We drove from cityscapes to Australian-style outback, then to sand dunes taller than cathedrals, a dusty mesa, and vast open plains filled with wild horses. We finally reached vast, deep canyons and alpine mountains, where we stayed in a traditional yurt.
 					</p>
+					<div class="image-wrapper">
+						<Image
+							src={journey3}
+							alt="A picture of the tutors on their journey"
+							widths={[300, 600, 900]}
+							sizes="(max-width: 600px) 100vw, 600px"
+							loading="lazy"
+							decoding="async"
+						/>
+					</div>
 					<p>
 						Our journey in Kazakhstan continued with a 2000-kilometer train ride from Almaty to Aktau. We stopped in the strange city of Turkistan, which seemed large enough for a million people but was eerily empty. We visited the Aral Sea, a poignant site that had long since dried up due to Soviet mismanagement. Our final stop was Aktau on the Black Sea, the oil capital of the Soviet Union.
 					</p>
 					<p>
 						From Aktau, we flew to Georgia. The capital, Tbilisi, had a distinctly European vibe, and we felt a bit closer to home. We visited Borjomi, famous for its spring water, which we had been drinking in Kazakhstan. From there, we hiked around crumbling castles in rural Georgia before swimming in the Black Sea at Batumi.
 					</p>
+					<div class="image-wrapper">
+						<Image
+							src={journey4}
+							alt="A picture of the tutors on their journey"
+							widths={[300, 600, 900]}
+							sizes="(max-width: 600px) 100vw, 600px"
+							loading="lazy"
+							decoding="async"
+						/>
+					</div>
 					<p>
 						We then crossed the border into Turkey. After a bus ride to the ancient, lost Armenian city of Ani, we camped there and were warmly welcomed by locals. They taught us to ride horses bareback, but with a friendly warning to bring guns next time due to the presence of wolves. From Erzurum, we were invited to sleep in a madrasah instead of a mosque, a testament to the kindness of strangers.
 					</p>
@@ -49,6 +94,9 @@ import Footer from '../../components/Footer.astro';
 					</p>
 					<p>
 						Finally, we took a boat to Athens to see the Acropolis. We then headed to Albania for a much-needed beach holiday before making our way across the rest of Europe and eventually back to the UK, concluding an unforgettable journey that has undoubtedly shaped our lives and our approach to teaching.
+					</p>
+					<p>
+						- Dan Thomas, Founder of New Leaf Academy
 					</p>
 				</article>
 			</div>
@@ -95,6 +143,19 @@ import Footer from '../../components/Footer.astro';
 		font-size: clamp(1em, 2vw, 1.1em);
 		line-height: 1.8;
 		margin-bottom: 1.5em;
+	}
+
+	.image-wrapper {
+		margin: 2em auto;
+		max-width: 600px;
+		text-align: center;
+	}
+
+	.image-wrapper img {
+		max-width: 100%;
+		height: auto;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 	}
 	
 	/* Final CTA Section */
