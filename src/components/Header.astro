@@ -74,23 +74,9 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 		text-decoration: none;
 		display: flex;
 		align-items: center;
-		gap: 0.5em; /* Added gap to separate logo and title */
+		gap: 0.5em;
 		color: var(--accent);
 		margin: 0;
-	}
-	.menu-toggle .hamburger-icon {
-		display: block;
-	}
-	.menu-toggle .close-icon {
-		display: none;
-	}
-
-	/* When the menu is open, swap the icons */
-	.menu-toggle[aria-expanded="true"] .hamburger-icon {
-		display: none;
-	}
-	.menu-toggle[aria-expanded="true"] .close-icon {
-		display: block;
 	}
 
 	img.logo {
@@ -103,47 +89,43 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 		font-size: 1.5em;
 	}
 
-	/* --- Default Desktop Styles --- */
+	/* --- Desktop & Laptop Link Styles --- */
 	.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 1.5em;
-}
-
-.internal-links {
-    display: flex;
-    align-items: center;
--   gap: 0.8em;
-+   /* The gap will shrink from 0.8em to 0.4em between 1350px and 1150px */
-+   gap: clamp(0.4em, 3vw - 1.5em, 0.8em);
-}
-
-.social-links a {
-    color: var(--accent);
-    transition: color 0.3s ease;
-    text-decoration: none;
-}
-
-.social-links a:hover {
-    color: #5d7fe9;
-}
-
-.internal-links > :global(a) {
-
-    padding-left: 1em;
--   font-size: 0.8em;
-+   /* The font size will shrink from 0.9em to 0.75em between 1350px and 1150px */
-+   font-size: clamp(0.75em, 4vw - 2.2em, 0.9em);
-+   white-space: nowrap; /* Ensures text never wraps */
-}
-
-	.internal-links > :global(a:first-child) {
-		border-left: none;
-		padding-left: 0;
+		display: flex;
+		align-items: center;
+		gap: 1.5em;
+		min-width: 0; /* ✅ THE CRITICAL FIX: Allows this container to shrink */
 	}
 
+	.internal-links {
+		display: flex;
+		align-items: center;
+		flex-wrap: nowrap; /* Forces links to stay on one line */
+		gap: clamp(0.5em, 1.5vw, 1em); /* Dynamically shrinks space between links */
+	}
+
+	.internal-links > :global(a) {
+		white-space: nowrap; /* Prevents text like "Why Choose Us?" from breaking */
+		font-size: clamp(0.8em, 1.5vw, 0.9em); /* Dynamically shrinks font size */
+	}
+
+	.social-links {
+		display: flex; /* Ensures social links stay visible */
+	}
+
+	.social-links a {
+		color: var(--accent);
+		transition: color 0.3s ease;
+		text-decoration: none;
+	}
+
+	.social-links a:hover {
+		color: #5d7fe9;
+	}
+
+	/* --- Hamburger Menu & Icons --- */
 	.menu-toggle {
-		display: none;
+		display: none; /* Hidden on desktop */
 		background: none;
 		border: none;
 		cursor: pointer;
@@ -151,36 +133,24 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 		z-index: 1001;
 	}
 
-	.close-icon {
+	.menu-toggle .hamburger-icon {
+		display: block;
+	}
+	.menu-toggle .close-icon {
 		display: none;
 	}
 
-	/* --- Responsive Styles for smaller desktops / laptops --- */
-	@media (max-width: 1350px) {
-    .logo-container a {
-        /* font-size: 1.5em; This is no longer needed as we size elements individually */
-    }
--   .internal-links > :global(a) {
--       font-size: 0.9em;
--   }
--   .internal-links {
--       gap: 0.8em;
--   }
-+   /* No styles are needed here anymore! The clamp() function handles this range. */
-}
+	.menu-toggle[aria-expanded='true'] .hamburger-icon {
+		display: none;
+	}
+	.menu-toggle[aria-expanded='true'] .close-icon {
+		display: block;
+	}
 
 	/* --- Mobile and Tablet Styles --- */
 	@media (max-width: 1150px) {
 		.menu-toggle {
-			display: block;
-		}
-
-		.logo-container a {
-			/* font-size: 1.3em; This is no longer needed */
-		}
-
-		img.logo {
-			height: 1.3em;
+			display: block; /* Show hamburger */
 		}
 
 		.nav-links {
@@ -204,26 +174,28 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 		}
 
 		.internal-links {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap; /* This is the critical fix */
-    /* The gap will shrink from 0.8em down to 0.4em */
-    gap: clamp(0.4em, 2vw - 0.5em, 0.8em);
-}
+			flex-direction: column;
+			gap: 1.5em;
+			width: 100%;
+			text-align: center;
+		}
 
-.internal-links > :global(a) {
-    /* The font size will shrink from 0.9em down to 0.75em */
-    font-size: clamp(0.75em, 2vw - 0.6em, 0.9em);
-    white-space: nowrap; /* Ensures text inside a link (e.g. "Contact Us") doesn't wrap */
-}
+		.internal-links > :global(a) {
+			font-size: 1em; /* Reset font size for mobile menu */
+			padding: 0.5em 0;
+			width: 100%;
+			border-bottom: 1px solid #eee;
+		}
+
+		.internal-links > :global(a:first-child) {
+			border-top: 1px solid #eee;
+		}
 
 		.social-links {
 			margin-top: 1em;
-			display: flex;
 			gap: 1.5em;
 		}
 	}
-	
 </style>
 
 <script is:inline>
