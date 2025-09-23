@@ -1,0 +1,169 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { Image } from 'astro:assets'; 
+import kaiStudio1 from '../../assets/kai-studio-project-1.png'; 
+import kaiStudio4 from '../../assets/kai-studio-project-4.png';
+import kaiStudio5 from '../../assets/kai-studio-project-5.png';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Kai's Studio Building Project" description="Read about Kai's unique studio building project and how it shaped his approach to teaching." />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="blog-post-container">
+				<h1>My Studio Building Project</h1>
+				<p class="intro-text">
+					My architecture degree taught me how to think creatively and solve complex problems. I put those skills to the ultimate test when I decided to build my own studio from scratch in my garden.
+				</p>
+
+				<article>
+					<p>
+						In 2024, I began the journey of designing a studio to replace the old shed in my back garden. Drawing on my unique experience from architecture school, I created a detailed and creative design. I went through the process of gaining planning permission, which was an interesting challenge that I had some experience with from previous building projects.
+					</p>
+					<p>
+						A big part of the project was resourcefulness. I ordered all the necessary materials, but I made a point of recycling and repurposing older materials wherever I could. This not only helped save on costs but also added a unique character and history to the building.
+					</p>
+					<div class="image-wrapper">
+						<Image
+							src={kaiStudio1}
+							alt="A picture of Kai working on the studio project"
+							widths={[300, 600, 900]}
+							sizes="(max-width: 600px) 100vw, 600px"
+							loading="lazy"
+							decoding="async"
+						/>
+					</div>
+					<p>
+						With the help of my close friend Marcus, I built the studio from the ground up, bringing all its interesting features to life. The project was a physical manifestation of everything I've learned about design, problem-solving, and perseverance. It taught me invaluable lessons about taking a project from start to finish and seeing a vision become a reality through sheer hard work and patience.
+					</p>
+					<div class="image-wrapper">
+						<Image
+							src={kaiStudio4}
+							alt="A picture of the tutors on their journey"
+							widths={[300, 600, 900]}
+							sizes="(max-width: 600px) 100vw, 600px"
+							loading="lazy"
+							decoding="async"
+						/>
+					</div>
+					<p>
+						Building the studio was a perfect metaphor for education. Just as I had to carefully plan and construct the building, I approach teaching by helping students build a solid foundation of knowledge piece by piece. It reinforced my belief that with a clear vision, a bit of creativity, and a lot of dedication, any complex task is achievable. This is a mindset I strive to instill in every student I work with.
+					</p>
+					<div class="image-wrapper">
+						<Image
+							src={kaiStudio5}
+							alt="A picture of the tutors on their journey"
+							widths={[300, 600, 900]}
+							sizes="(max-width: 600px) 100vw, 600px"
+							loading="lazy"
+							decoding="async"
+						/>
+					</div>
+					<p>
+						- Kai McKim, Specialist English Tutor at New Leaf Academy
+					</p>
+				</article>
+			</div>
+			<div class="cta-section">
+				<h2>Inspired by Dedicated Teaching?</h2>
+				<p>Kai's passion for creative problem-solving and English is ready to help your child thrive. Book a free consultation to see how we can bring a global perspective to your child's learning journey.</p>
+				<a href="/consultations" class="cta-button">
+					Book Your Free Consultation
+				</a>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		color: var(--accent);
+		max-width: 900px;
+		margin: 2em auto;
+		padding: 0 1em;
+		box-sizing: border-box;
+	}
+
+	.blog-post-container {
+		text-align: left;
+	}
+
+	.blog-post-container h1 {
+		font-size: clamp(1.8em, 5vw, 2.5em);
+		margin-bottom: 0.5em;
+		text-align: center;
+	}
+
+	.intro-text {
+		max-width: 700px;
+		margin: 0 auto 3em;
+		font-size: clamp(1em, 2vw, 1.1em);
+		line-height: 1.7;
+		text-align: center;
+	}
+
+	article p {
+		font-size: clamp(1em, 2vw, 1.1em);
+		line-height: 1.8;
+		margin-bottom: 1.5em;
+	}
+
+	.image-wrapper {
+		margin: 2em auto;
+		max-width: 600px;
+		text-align: center;
+	}
+
+	.image-wrapper img {
+		max-width: 100%;
+		height: auto;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	}
+	
+	/* Final CTA Section */
+	.cta-section {
+		text-align: center;
+		margin-top: 4em;
+		padding: 2.5em;
+		background-color: white;
+		border-radius: 12px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		color: var(--accent);
+	}
+	
+	.cta-section h2 {
+		font-size: clamp(1.5em, 4vw, 1.8em);
+		margin-top: 0;
+		color: var(--accent);
+	}
+	.cta-section p {
+        margin-bottom: 1.5em;
+    }
+
+	.cta-button {
+		display: inline-block;
+		padding: 1em 2em;
+		background-color: var(--accent-pop);
+		color: white;
+		font-weight: bold;
+		text-decoration: none;
+		border-radius: 8px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.cta-button:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+	}
+
+</style>

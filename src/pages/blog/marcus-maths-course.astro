@@ -1,0 +1,122 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Marcus's Communicating Maths Course" description="Read about Marcus's specific university course on communicating mathematics and how it shaped his teaching approach." />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="blog-post-container">
+				<h1>My Communicating Maths Course</h1>
+				<p class="intro-text">
+					During my time at university, I took a course that fundamentally changed how I approach teaching mathematics. This is a reflection on how it reshaped my skills and made me a more effective tutor.
+				</p>
+
+				<article>
+					<p>
+						While at the University of Bath, studying for my Master's degree in Mathematics, I chose to take a special course focused entirely on the communication of mathematics. It wasn't just about problem-solving; it was about delving into **how** maths is taught and understood.
+					</p>
+					<p>
+						This course completely revolutionised my perspective on teaching. I learned that simply knowing the answer isn't enough; the key lies in being able to explain it in multiple ways, to different types of learners. It gave me a toolkit for breaking down complex ideas into manageable, relatable concepts.
+					</p>
+					<p>
+						I credit this course as a key factor in me becoming an empathetic and effective teacher. It opened my mind to the different ways students think and struggle, and it gave me the skills to meet them where they are. This is a skill I now use every day to help my students build confidence and truly grasp the subjects we work on together.
+					</p>
+					<p>
+						My passion for helping students isn't just about getting the right answers—it's about empowering them to feel confident and capable in their own mathematical abilities.
+					</p>
+					<p>
+						- Marcus Rees, Specialist Tutor at New Leaf Academy
+					</p>
+				</article>
+			</div>
+			<div class="cta-section">
+				<h2>Need Personalized Maths Help?</h2>
+				<p>Marcus's expertise in communicating complex ideas is ready to help your child thrive. Book a free consultation today to create a customized learning plan.</p>
+				<a href="/consultations" class="cta-button">
+					Book Your Free Consultation
+				</a>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		color: var(--accent);
+		max-width: 900px;
+		margin: 2em auto;
+		padding: 0 1em;
+		box-sizing: border-box;
+	}
+
+	.blog-post-container {
+		text-align: left;
+	}
+
+	.blog-post-container h1 {
+		font-size: clamp(1.8em, 5vw, 2.5em);
+		margin-bottom: 0.5em;
+		text-align: center;
+	}
+
+	.intro-text {
+		max-width: 700px;
+		margin: 0 auto 3em;
+		font-size: clamp(1em, 2vw, 1.1em);
+		line-height: 1.7;
+		text-align: center;
+	}
+
+	article p {
+		font-size: clamp(1em, 2vw, 1.1em);
+		line-height: 1.8;
+		margin-bottom: 1.5em;
+	}
+	
+	/* Final CTA Section */
+	.cta-section {
+		text-align: center;
+		margin-top: 4em;
+		padding: 2.5em;
+		background-color: white;
+		border-radius: 12px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		color: var(--accent);
+	}
+	
+	.cta-section h2 {
+		font-size: clamp(1.5em, 4vw, 1.8em);
+		margin-top: 0;
+		color: var(--accent);
+	}
+	.cta-section p {
+        margin-bottom: 1.5em;
+    }
+
+	.cta-button {
+		display: inline-block;
+		padding: 1em 2em;
+		background-color: var(--accent-pop);
+		color: white;
+		font-weight: bold;
+		text-decoration: none;
+		border-radius: 8px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.cta-button:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+	}
+
+</style>
