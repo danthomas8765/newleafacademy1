@@ -1,175 +1,178 @@
----
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { Image } from 'astro:assets';
-import danThomasImage from '../assets/danthomas.png';
----
+	---
+	import BaseHead from '../components/BaseHead.astro';
+	import Header from '../components/Header.astro';
+	import Footer from '../components/Footer.astro';
+	import { Image } from 'astro:assets';
+	import danThomasImage from '../assets/danthomas.png';
+	---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title="Dan Thomas - Founder of New Leaf Academy" description="Meet Dan Thomas, the founder of New Leaf Academy, and learn about his journey and passion for education." />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<div class="bio-container">
-				<div class="bio-header">
-					<Image
-						src={danThomasImage}
-						alt="Dan Thomas, Founder of New Leaf Academy"
-						class="bio-headshot"
-						width={200}
-						height={200}
-					/>
-					<div class="header-text">
-						<h1>Dan Thomas</h1>
-						<p class="role">Founder & Lead Tutor</p>
+	<!doctype html>
+	<html lang="en">
+		<head>
+			<BaseHead title="Dan Thomas - Founder of New Leaf Academy" description="Meet Dan Thomas, the founder of New Leaf Academy, and learn about his journey and passion for education." />
+		</head>
+		<body>
+			<Header />
+			<main>
+				<div class="bio-container">
+					<div class="bio-header">
+						<Image
+							src={danThomasImage}
+							alt="Dan Thomas, Founder of New Leaf Academy"
+							class="bio-headshot"
+							width={200}
+							height={200}
+						/>
+						<div class="header-text">
+							<h1>Dan Thomas</h1>
+							<p class="role">Founder & Lead Tutor</p>
+						</div>
+					</div>
+
+					<div class="bio-content">
+						<h2>Our Founder's Journey</h2>
+						<p>
+							After finishing my GCSEs and A-Levels with straight As and A*s, I went on to study at Nottingham University with an unconditional offer. Before settling into my final year, I decided to take a couple of years off to see a bit of the world and gain some life experience. I spent time backpacking and working, which ultimately led me to Thailand.					
+						</p>
+						<p>
+							It was there, in 2022, that I got my TEFL certification and discovered my genuine passion for teaching. I found immense joy in helping students learn, and I dedicated myself to becoming the best teacher I could be. I spent a lot of time researching evidence-backed teaching methods and even consulted with a family member who is a published author on teaching mathematics.
+						</p>
+						<p>
+							Soon after, I started teaching Maths, Science, and English as a Foreign Language at some of the local international and bilingual schools. At the same time, I began studying remotely for my degree in Mathematics and Physics with the Open University.					
+						</p>
+						<p>
+							My dedication to my students was recognised in 2023 when the Thai Ministry of Education awarded me a certificate for exceptional teaching. That same year, I started tutoring online, and I was amazed by the potential of digital tools—including AI—to make learning more engaging and effective. The feeling of helping a student one-on-one, and seeing them build confidence and achieve success, was incredibly rewarding.					
+						</p>
+						<p>
+							This is what inspired me to found New Leaf Academy in 2025. It’s a place where I hope to share my passion and help even more students discover their own potential, just as I've seen with so many of my students in their GCSEs and A-Levels.					
+						</p>
+						<p>
+						I started my teaching career with English as a foreign language. Having to simplify complex ideas for people who couldn't speak my language taught me the power of precision. This experience showed me that learning is most effective when it mirrors how we learn as children: by first seeing a useful context for a skill and then being given the tools to achieve it. I've carried this context-first approach into teaching math and science, treating them as new languages to be learned. The results have been incredible—this method has consistently helped students who previously struggled to find their footing.					
+					</p>
+					</div>
+					
+					<div class="cta-section">
+						<h2>Ready to Start Your Journey?</h2>
+						<p>Dan is ready to help you or your child achieve academic success. Book a friendly, no-obligation chat today.</p>
+						<a href="/consultations" class="cta-button">
+							Book Your Free Consultation and Taster Session
+						</a>
 					</div>
 				</div>
+			</main>
+			<Footer />
+		</body>
+	</html>
 
-				<div class="bio-content">
-					<h2>Our Founder's Journey</h2>
-					<p>
-						After finishing my GCSEs and A-Levels with straight As and A*s, I went on to study at Nottingham University with an unconditional offer. Before settling into my final year, I decided to take a couple of years off to see a bit of the world and gain some life experience. I spent time backpacking and working, which ultimately led me to Thailand.					
-					</p>
-					<p>
-						It was there, in 2022, that I got my TEFL certification and discovered my genuine passion for teaching. I found immense joy in helping students learn, and I dedicated myself to becoming the best teacher I could be. I spent a lot of time researching evidence-backed teaching methods and even consulted with a family member who is a published author on teaching mathematics.
-					</p>
-					<p>
-						Soon after, I started teaching Maths, Science, and English as a Foreign Language at some of the local international and bilingual schools. At the same time, I began studying remotely for my degree in Mathematics and Physics with the Open University.					
-					</p>
-					<p>
-						My dedication to my students was recognised in 2023 when the Thai Ministry of Education awarded me a certificate for exceptional teaching. That same year, I started tutoring online, and I was amazed by the potential of digital tools—including AI—to make learning more engaging and effective. The feeling of helping a student one-on-one, and seeing them build confidence and achieve success, was incredibly rewarding.					
-					</p>
-					<p>
-						This is what inspired me to found New Leaf Academy in 2025. It’s a place where I hope to share my passion and help even more students discover their own potential, just as I've seen with so many of my students in their GCSEs and A-Levels.					
-					</p>
-				</div>
-                
-                <div class="cta-section">
-                    <h2>Ready to Start Your Journey?</h2>
-                    <p>Dan is ready to help you or your child achieve academic success. Book a friendly, no-obligation chat today.</p>
-                    <a href="/consultations" class="cta-button">
-                        Book Your Free Consultation
-                    </a>
-                </div>
-			</div>
-		</main>
-		<Footer />
-	</body>
-</html>
-
-<style>
-	:root {
-		--card-bg-color: #f9f9f9;
-		--box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-	}
-
-	main {
-		max-width: 900px;
-		margin: 2em auto;
-		padding: 0 1em;
-		box-sizing: border-box;
-		color: var(--accent);
-	}
-
-	.bio-container {
-		background-color: var(--card-bg-color);
-		padding: 2em;
-		border-radius: 12px;
-		box-shadow: var(--box-shadow);
-	}
-
-	.bio-header {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		margin-bottom: 2em;
-		gap: 1em;
-	}
-
-	.bio-headshot {
-		width: clamp(150px, 30vw, 200px);
-		height: clamp(150px, 30vw, 200px);
-		object-fit: cover;
-		border-radius: 50%;
-		border: 5px solid var(--accent);
-		box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-	}
-
-	.header-text h1 {
-		font-size: clamp(2em, 6vw, 2.8em);
-		margin: 0;
-		color: var(--accent);
-	}
-
-	.header-text .role {
-		font-size: clamp(1.1em, 3vw, 1.3em);
-		font-weight: bold;
-		color: var(--accent-pop);
-		margin-top: 0.25em;
-	}
-
-	.bio-content h2 {
-		font-size: clamp(1.5em, 5vw, 2em);
-		color: var(--accent);
-		border-bottom: 2px solid #e9eafc;
-		padding-bottom: 0.5em;
-		margin-bottom: 1em;
-	}
-
-	.bio-content p {
-		font-size: clamp(1em, 2vw, 1.1em);
-		line-height: 1.8;
-		margin-bottom: 1.5em;
-	}
-
-    .cta-section {
-		text-align: center;
-		margin-top: 2em;
-		padding: 2em;
-		background-color: white;
-		border-radius: 12px;
-		box-shadow: var(--box-shadow);
-		color: var(--accent);
-	}
-	
-	.cta-section h2 {
-		font-size: clamp(1.5em, 4vw, 1.8em);
-		margin-top: 0;
-		color: var(--accent);
-	}
-
-    .cta-section p {
-        margin-bottom: 1.5em;
-    }
-
-	.cta-button {
-		display: inline-block;
-		padding: 1em 2em;
-		background-color: var(--accent-pop);
-		color: white;
-		font-weight: bold;
-		text-decoration: none;
-		border-radius: 8px;
-		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
-	}
-
-	.cta-button:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-	}
-
-	@media (min-width: 768px) {
-		.bio-header {
-			flex-direction: row;
-			text-align: left;
-			gap: 2em;
+	<style>
+		:root {
+			--card-bg-color: #f9f9f9;
+			--box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 		}
-	}
-</style>
+
+		main {
+			max-width: 900px;
+			margin: 2em auto;
+			padding: 0 1em;
+			box-sizing: border-box;
+			color: var(--accent);
+		}
+
+		.bio-container {
+			background-color: var(--card-bg-color);
+			padding: 2em;
+			border-radius: 12px;
+			box-shadow: var(--box-shadow);
+		}
+
+		.bio-header {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			margin-bottom: 2em;
+			gap: 1em;
+		}
+
+		.bio-headshot {
+			width: clamp(150px, 30vw, 200px);
+			height: clamp(150px, 30vw, 200px);
+			object-fit: cover;
+			border-radius: 50%;
+			border: 5px solid var(--accent);
+			box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+		}
+
+		.header-text h1 {
+			font-size: clamp(2em, 6vw, 2.8em);
+			margin: 0;
+			color: var(--accent);
+		}
+
+		.header-text .role {
+			font-size: clamp(1.1em, 3vw, 1.3em);
+			font-weight: bold;
+			color: var(--accent-pop);
+			margin-top: 0.25em;
+		}
+
+		.bio-content h2 {
+			font-size: clamp(1.5em, 5vw, 2em);
+			color: var(--accent);
+			border-bottom: 2px solid #e9eafc;
+			padding-bottom: 0.5em;
+			margin-bottom: 1em;
+		}
+
+		.bio-content p {
+			font-size: clamp(1em, 2vw, 1.1em);
+			line-height: 1.8;
+			margin-bottom: 1.5em;
+		}
+
+		.cta-section {
+			text-align: center;
+			margin-top: 2em;
+			padding: 2em;
+			background-color: white;
+			border-radius: 12px;
+			box-shadow: var(--box-shadow);
+			color: var(--accent);
+		}
+		
+		.cta-section h2 {
+			font-size: clamp(1.5em, 4vw, 1.8em);
+			margin-top: 0;
+			color: var(--accent);
+		}
+
+		.cta-section p {
+			margin-bottom: 1.5em;
+		}
+
+		.cta-button {
+			display: inline-block;
+			padding: 1em 2em;
+			background-color: var(--accent-pop);
+			color: white;
+			font-weight: bold;
+			text-decoration: none;
+			border-radius: 8px;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+
+		.cta-button:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+		}
+
+		@media (min-width: 768px) {
+			.bio-header {
+				flex-direction: row;
+				text-align: left;
+				gap: 2em;
+			}
+		}
+	</style>
 
