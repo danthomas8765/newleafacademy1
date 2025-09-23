@@ -3,139 +3,169 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
-
+import BaseHead from '../components/BaseHead.astro'; import Header from '../components/Header.astro'; import Footer from '../components/Footer.astro';
 <!doctype html>
+
 <html lang="en">
-	<head>
-		<BaseHead title="Subjects We Offer" description="Explore the wide range of subjects and levels offered at New Leaf Academy, from 11+ and GCSE to A-Level." />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>Subjects We Offer</h1>
-			<p class="intro-text">
-				We provide expert, one-to-one online tuition across a wide range of subjects and levels. Our tutors tailor each session to the individual student, focusing on building both subject mastery and confidence. Explore our offerings below to find the perfect fit for your needs.
-			</p>
+<head>
+<BaseHead title="Subjects We Offer" description="Explore the wide range of subjects and levels offered at New Leaf Academy, from 11+ and GCSE to A-Level." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<Header />
+<main>
+<h1>Subjects We Offer</h1>
+<p class="intro-text">
+We provide expert, one-to-one online tuition across a wide range of subjects and levels. Our tutors tailor each session to the individual student, focusing on building both subject mastery and confidence. Explore our offerings below to find the perfect fit for your needs.
+</p>
 
-			<div class="subjects-container">
-				<!-- Entrance Exams Section -->
-				<div class="subject-card">
-					<h2>Entrance Exams (11+ & 13+)</h2>
-					<p>Comprehensive preparation for selective school admissions, building core skills and exam technique.</p>
-					<ul class="subject-list">
-						<li>11+ & 13+ Preparation</li>
-						<li>English</li>
-						<li>Verbal Reasoning</li>
-						<li>Mathematics</li>
-						<li>Non-Verbal Reasoning</li>
-					</ul>
-				</div>
+        <div class="subjects-container">
+            <div class="subject-card">
+                <h2>Entrance Exams (11+ & 13+)</h2>
+                <p>Comprehensive preparation for selective school admissions, building core skills and exam technique.</p>
+                <ul class="subject-list">
+                    <li>11+ & 13+ Preparation</li>
+                    <li>English</li>
+                    <li>Verbal Reasoning</li>
+                    <li>Mathematics</li>
+                    <li>Non-Verbal Reasoning</li>
+                </ul>
+            </div>
 
-				<!-- GCSE Section -->
-				<div class="subject-card">
-					<h2>GCSE</h2>
-					<p>Targeted support to help students excel in their GCSEs and build a strong foundation for future studies.</p>
-					<ul class="subject-list">
-						<li>Mathematics</li>
-						<li>Further Mathematics</li>
-						<li>Triple Science (Biology, Chemistry, Physics)</li>
-						<li>Combined Science</li>
-						<li>English Literature</li>
-						<li>English Language</li>
-						<li>Business Studies</li>
-						<li>French</li>
-					</ul>
-				</div>
+            <div class="subject-card">
+                <h2>GCSE</h2>
+                <p>Targeted support to help students excel in their GCSEs and build a strong foundation for future studies.</p>
+                <div class="exam-boards-container">
+                    <span class="exam-board-tag">AQA</span>
+                    <span class="exam-board-tag">Edexcel</span>
+                    <span class="exam-board-tag">OCR</span>
+                    <span class="exam-board-tag">WJEC</span>
+                    <span class="exam-board-tag">CCEA</span>
+                </div>
+                <ul class="subject-list">
+                    <li>Mathematics</li>
+                    <li>Further Mathematics</li>
+                    <li>Triple Science (Biology, Chemistry, Physics)</li>
+                    <li>Combined Science</li>
+                    <li>English Literature</li>
+                    <li>English Language</li>
+                    <li>Business Studies</li>
+                    <li>French</li>
+                </ul>
+            </div>
 
-				<!-- A-Level Section -->
-				<div class="subject-card">
-					<h2>A-Level</h2>
-					<p>In-depth, specialist tutoring for A-Level students aiming to achieve top grades for university and beyond.</p>
-					<ul class="subject-list">
-						<li>Mathematics</li>
-						<li>Further Mathematics</li>
-						<li>Physics</li>
-						<li>English</li>
-						<li>Economics</li>
-					</ul>
-				</div>
-			</div>
-		</main>
-		<Footer />
-	</body>
+            <div class="subject-card">
+                <h2>A-Level</h2>
+                <p>In-depth, specialist tutoring for A-Level students aiming to achieve top grades for university and beyond.</p>
+                <div class="exam-boards-container">
+                    <span class="exam-board-tag">AQA</span>
+                    <span class="exam-board-tag">Edexcel</span>
+                    <span class="exam-board-tag">OCR</span>
+                    <span class="exam-board-tag">WJEC</span>
+                    <span class="exam-board-tag">CCEA</span>
+                </div>
+                <ul class="subject-list">
+                    <li>Mathematics</li>
+                    <li>Further Mathematics</li>
+                    <li>Physics</li>
+                    <li>English</li>
+                    <li>Economics</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <Footer />
+</body>
 </html>
 
 <style>
-	:root {
-		--card-bg-color: #f9f9f9;
-        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		--tag-bg-color: #e9eafc;
-	}
+:root {
+--card-bg-color: #f9f9f9;
+--box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+--tag-bg-color: #e9eafc;
+--exam-board-tag-bg: #d0e7ff; /* A different, subtle color for exam boards */
+}
 
-	main {
-		/* Adjusted max-width for wider desktop view */
-		max-width: 1500px;
-		margin: 2em auto;
-		padding: 0 2em;
-		box-sizing: border-box;
-		color: var(--accent);
-	}
+main {
+    max-width: 1500px;
+    margin: 2em auto;
+    padding: 0 2em;
+    box-sizing: border-box;
+    color: var(--accent);
+}
 
-	h1, .intro-text {
-		text-align: center;
-	}
+h1, .intro-text {
+    text-align: center;
+}
 
-	.intro-text {
-		max-width: 700px;
-		margin: 0 auto 2.5em;
-		font-size: clamp(1em, 2vw, 1.1em);
-	}
+.intro-text {
+    max-width: 700px;
+    margin: 0 auto 2.5em;
+    font-size: clamp(1em, 2vw, 1.1em);
+}
 
-	.subjects-container {
-		display: grid;
-		gap: 2em;
-	}
+.subjects-container {
+    display: grid;
+    gap: 2em;
+}
 
-	.subject-card {
-		background-color: var(--card-bg-color);
-		padding: 2em;
-		border-radius: 12px;
-		box-shadow: var(--box-shadow);
-	}
+.subject-card {
+    background-color: var(--card-bg-color);
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+}
 
-	.subject-card h2 {
-		color: var(--accent);
-		margin-top: 0;
-		font-size: clamp(1.5em, 4vw, 1.8em);
-	}
+.subject-card h2 {
+    color: var(--accent);
+    margin-top: 0;
+    font-size: clamp(1.5em, 4vw, 1.8em);
+}
 
-	.subject-card p {
-		margin-bottom: 1.5em;
-	}
+.subject-card p {
+    margin-bottom: 1.5em;
+}
 
-	.subject-list {
-		list-style: none;
-		padding: 0;
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.75em;
-	}
+.subject-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75em;
+}
 
-	.subject-list li {
-		background-color: var(--tag-bg-color);
-		color: var(--accent);
-		padding: 0.5em 1em;
-		border-radius: 20px;
-		font-size: 0.9em;
-		font-weight: 500;
-	}
+.subject-list li {
+    background-color: var(--tag-bg-color);
+    color: var(--accent);
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
 
-	/* Responsive Grid Layout */
-	@media (min-width: 768px) {
-		.subjects-container {
-			grid-template-columns: repeat(3, 1fr);
-		}
-	}
+/* New styles for the exam boards */
+.exam-boards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: -1em; /* Pulls the boards closer to the heading */
+    margin-bottom: 1.5em;
+}
+
+.exam-board-tag {
+    background-color: var(--exam-board-tag-bg);
+    color: var(--accent);
+    padding: 0.3em 0.8em;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: 600;
+    border: 1px solid #c0d7f0;
+}
+
+/* Responsive Grid Layout */
+@media (min-width: 768px) {
+    .subjects-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 </style>
-

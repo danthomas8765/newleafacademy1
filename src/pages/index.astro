@@ -11,110 +11,181 @@ import logoimage from '../assets/logo.svg';
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<Image
-				src={logoimage}
-				alt="New Leaf Academy Logo"
-				class="banner-image"
-			/>
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <Image
+                src={logoimage}
+                alt="New Leaf Academy Logo"
+                class="banner-image"
+            />
 
-			<h1 class="tagline">
-				Grow with Confidence
-			</h1>
-			<p>
-			Unlock potential with expert online tutoring. 🎓 Personalized, confidence-building tuition in Maths, English, Science, & more, from KS3 to A-level.
-			</p>
-			<a href="/consultations" class="cta-button">
-				Book your free consultation and taster session now!
-			</a>
+            <h1 class="tagline">
+                Grow with Confidence
+            </h1>
+            <p>
+                Unlock potential with expert online tutoring. 🎓 Personalized, confidence-building tuition in Maths, English, Science, & more, from KS3 to A-level.
+            </p>
+            <a href="/consultations" class="cta-button">
+                Book your free consultation and taster session now!
+            </a>
 
-			<!-- ✅ NEW: "Our Promise" Section -->
-			<section class="our-promise">
-				<h2>Our Promise to You</h2>
-				<p>
-					We see the potential in every student. Our mission is to create a space where curiosity thrives, confidence grows, and learning is tailored to the individual, not the textbook. We're here to turn "I can't" into a proud "I can."
-				</p>
-			</section>
+            <section class="our-promise">
+                <h2>Our Promise to You</h2>
+                <p>
+                    We see the potential in every student. Our mission is to create a space where curiosity thrives, confidence grows, and learning is tailored to the individual, not the textbook. We're here to turn "I can't" into a proud "I can."
+                </p>
+            </section>
+        </main>
+        
+        <div class="scroll-prompt" id="scroll-prompt">
+            <p>Scroll down to see <br> what our students <br> say about us</p>
+            <svg class="scroll-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 5v14m-7-7l7 7 7-7" />
+</svg>
+        </div>
 
-		</main>
-
-		<h2 class="testimonial-heading">What our students and parents have to say</h2>
-		<TestimonialCarousel />
-		<Footer />
-	</body>
+        <h2 class="testimonial-heading">What our students and parents have to say</h2>
+        <TestimonialCarousel />
+        <Footer />
+    </body>
 </html>
 
 <style>
-	main {
-		text-align: center;
-		color: var(--accent);
-	}
+    main {
+        text-align: center;
+        color: var(--accent);
+    }
 
-	.banner-image {
-		max-width: 300px;
-		width: 70%;
-		height: auto;
-		display: block;
-		margin: 0 auto 2em;
-		border-radius: 12px;
-	}
+    .banner-image {
+        max-width: 300px;
+        width: 70%;
+        height: auto;
+        display: block;
+        margin: 0 auto 2em;
+        border-radius: 12px;
+    }
 
-	.tagline {
-		font-size: clamp(1.6em, 4vw, 2.2em);
-		line-height: 1.2;
-		margin-bottom: 0.5em;
-		font-weight: 700;
-	}
+    .tagline {
+        font-size: clamp(1.6em, 4vw, 2.2em);
+        line-height: 1.2;
+        margin-bottom: 0.5em;
+        font-weight: 700;
+    }
 
-	.cta-button {
-		display: inline-block;
-		margin-top: 2em;
-		padding: 1em 2em;
-		background-color: var(--accent-pop);
-		color: white;
-		font-weight: bold;
-		text-decoration: none;
-		border-radius: 8px;
-		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
-	}
+    .cta-button {
+        display: inline-block;
+        margin-top: 2em;
+        padding: 1em 2em;
+        background-color: var(--accent-pop);
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-	.cta-button:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-	}
+    .cta-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
 
-	/* ✅ NEW: Styles for the "Our Promise" section */
-	.our-promise {
-		max-width: 700px;
-		margin: 4em auto;
-		padding: 2em;
-		background-color: #f9f9f9;
-		border-radius: 12px;
-		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-	}
+    /* ✅ NEW: Styles for the "Our Promise" section */
+    .our-promise {
+        max-width: 700px;
+        margin: 4em auto;
+        padding: 2em;
+        background-color: #f9f9f9;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
 
-	.our-promise h2 {
-		font-size: clamp(1.5em, 4vw, 1.8em);
-		margin-top: 0;
-		color: var(--accent);
-	}
+    .our-promise h2 {
+        font-size: clamp(1.5em, 4vw, 1.8em);
+        margin-top: 0;
+        color: var(--accent);
+    }
 
-	.our-promise p {
-		font-size: clamp(1em, 2vw, 1.1em);
-		margin-bottom: 0;
-	}
-	
-	.testimonial-heading {
-		text-align: center;
-		color: var(--accent);
-		font-size: clamp(1.5em, 4vw, 1.8em);
-		margin: 3em 1em 1em;
-	}
+    .our-promise p {
+        font-size: clamp(1em, 2vw, 1.1em);
+        margin-bottom: 0;
+    }
+    
+    .testimonial-heading {
+        text-align: center;
+        color: var(--accent);
+        font-size: clamp(1.5em, 4vw, 1.8em);
+        margin: 3em 1em 1em;
+    }
+
+    /* --- New Styles for Scroll Prompt --- */
+    .scroll-prompt {
+        position: fixed;
+        bottom: 2em;
+        left: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--accent-pop);
+        font-size: clamp(0.9em, 2vw, 1.1em);
+        font-weight: bold;
+        text-align: center;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .scroll-arrow {
+        width: 50px;
+        height: 50px;
+        margin-top: -0.5em;
+        animation: bounce 2s infinite;
+        color: var(--accent-pop);
+        /* REMOVE transform: rotate(90deg); from here */
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0); /* REMOVE rotate(90deg); */
+        }
+        40% {
+            transform: translateY(-20px); /* REMOVE rotate(90deg); */
+        }
+        60% {
+            transform: translateY(-10px); /* REMOVE rotate(90deg); */
+        }
+    }
+
+    /* Hide on Mobile and Tablet */
+    @media (max-width: 1024px) {
+        .scroll-prompt {
+            display: none;
+        }
+    }
 </style>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const scrollPrompt = document.getElementById('scroll-prompt');
+
+        if (scrollPrompt) {
+            let hasScrolled = false;
+            
+            const handleScroll = () => {
+                // Adjust this value based on how far you want the user to scroll before it disappears
+                if (window.scrollY > 700 && !hasScrolled) {
+                    scrollPrompt.style.opacity = '0';
+                    // Optional: remove the element from the DOM to prevent it from blocking clicks
+                    setTimeout(() => {
+                        scrollPrompt.remove();
+                    }, 500);
+                    hasScrolled = true;
+                }
+            };
+
+            window.addEventListener('scroll', handleScroll);
+        }
+    });
+</script>
