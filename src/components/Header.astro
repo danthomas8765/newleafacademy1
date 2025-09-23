@@ -181,11 +181,12 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 		}
 
 		.internal-links > :global(a) {
-			font-size: 1em; /* Reset font size for mobile menu */
-			padding: 0.5em 0;
-			width: 100%;
-			border-bottom: 1px solid #eee;
-		}
+        font-size: 1em;
+        padding: 0.5em 0;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        white-space: normal; /* ✅ ADD THIS LINE TO FIX THE MENU */
+    }
 
 		.internal-links > :global(a:first-child) {
 			border-top: 1px solid #eee;

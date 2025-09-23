@@ -35,6 +35,7 @@ import marcusReesImage from '../assets/marcusrees.png';
 						<h2>Dan Thomas</h2>
 						<p>Specialising in <strong>mathematics</strong> and <strong>science</strong> for GCSE with <strong>A level physics</strong> and <strong>mathematics</strong>.</p>
 					</div>
+					<span class="more-info-link">Click here for more →</span>
 				</div>
 			</a>
 
@@ -51,6 +52,7 @@ import marcusReesImage from '../assets/marcusrees.png';
 						<h2>Kai McKim</h2>
 						<p>Specialising in <strong>English literature</strong> and <strong>language</strong> for GCSE and A level.</p>
 					</div>
+					<span class="more-info-link">Click here for more →</span>
 				</div>
 			</a>
 
@@ -67,6 +69,7 @@ import marcusReesImage from '../assets/marcusrees.png';
 						<h2>Marcus Rees</h2>
 						<p>Specialising in <strong>mathematics</strong>, <strong>further mathematics</strong>, <strong>business studies</strong> and <strong>science</strong> for GCSE and <strong>A level mathematics</strong> and <strong>economics</strong>.</p>
 					</div>
+					<span class="more-info-link">Click here for more →</span>
 				</div>
 			</a>
 			<div class="cta-section">
@@ -113,10 +116,10 @@ import marcusReesImage from '../assets/marcusrees.png';
 		margin-bottom: 0.5em;
 	}
 	
-    p {
-        font-size: clamp(1em, 2vw, 1.1em);
-        color: var(--accent);
-    }
+	p {
+		font-size: clamp(1em, 2vw, 1.1em);
+		color: var(--accent);
+	}
 
 	.tutor-card-link {
 		text-decoration: none;
@@ -135,13 +138,14 @@ import marcusReesImage from '../assets/marcusrees.png';
 		border-radius: 10px;
 		box-shadow: var(--box-shadow);
 		transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
 	}
 
-    .tutor-card-link:hover .tutor-card {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-    }
-    
+	.tutor-card-link:hover .tutor-card {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+	}
+	
 	.tutor-headshot {
 		width: clamp(100px, 25vw, 150px);
 		height: clamp(100px, 25vw, 150px);
@@ -167,7 +171,21 @@ import marcusReesImage from '../assets/marcusrees.png';
 		color: var(--accent);
 		word-break: break-word; /* Force long words to wrap */
 	}
-	.cta-section {
+
+    .more-info-link {
+        position: absolute;
+        top: 1.5em; /* Position to top */
+        right: 1.5em; /* Position to right */
+        font-size: 0.8em;
+        color: var(--accent);
+        transition: color 0.3s ease;
+    }
+
+    .tutor-card-link:hover .more-info-link {
+        color: var(--accent-pop);
+    }
+
+    .cta-section {
 		text-align: center;
 		margin-top: 4em;
 		padding: 2.5em;
@@ -183,8 +201,8 @@ import marcusReesImage from '../assets/marcusrees.png';
 		color: var(--accent);
 	}
 	.cta-section p {
-        margin-bottom: 1.5em;
-    }
+		margin-bottom: 1.5em;
+	}
 
 	.cta-button {
 		display: inline-block;
@@ -204,16 +222,28 @@ import marcusReesImage from '../assets/marcusrees.png';
 	}
 	
 	/* --- Media Query for Mobile/Tablet Optimization --- */
-    @media (max-width: 650px) {
+	@media (max-width: 650px) {
 		.tutor-card {
 			flex-direction: column;
 			text-align: center;
 			gap: 15px;
+            padding-bottom: 3.5em;
 		}
 
 		.tutor-headshot {
 			margin-bottom: 0.5em;
 		}
+
+        .tutor-info {
+            padding-bottom: 0;
+        }
+
+        .more-info-link {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 1em;
+            width: fit-content;
+        }
 	}
 </style>
-
