@@ -50,7 +50,6 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 		</button>
 	</nav>
 </header>
-
 <style>
 	/* --- Global Header Styles --- */
 	header {
@@ -94,19 +93,21 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 		display: flex;
 		align-items: center;
 		gap: 1.5em;
-		min-width: 0; /* ✅ THE CRITICAL FIX: Allows this container to shrink */
+		min-width: 0; /* Allows this container to shrink */
 	}
 
 	.internal-links {
 		display: flex;
 		align-items: center;
 		flex-wrap: nowrap; /* Forces links to stay on one line */
-		gap: clamp(0.5em, 1.5vw, 1em); /* Dynamically shrinks space between links */
+		/* ✅ CORRECTED CLAMP: This now scales properly */
+		gap: clamp(0.4em, 1vw - 0.2em, 0.8em); 
 	}
 
 	.internal-links > :global(a) {
-		white-space: nowrap; /* Prevents text like "Why Choose Us?" from breaking */
-		font-size: clamp(0.8em, 1.5vw, 0.9em); /* Dynamically shrinks font size */
+		white-space: nowrap; /* Prevents text from breaking */
+		/* ✅ CORRECTED CLAMP: This now scales properly */
+		font-size: clamp(0.75em, 1vw - 0.1em, 0.9em); 
 	}
 
 	.social-links {
@@ -197,17 +198,3 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 		}
 	}
 </style>
-
-<script is:inline>
-	const menuToggle = document.querySelector('.menu-toggle');
-	const navLinks = document.querySelector('.nav-links');
-	const hamburgerIcon = document.querySelector('.hamburger-icon');
-	const closeIcon = document.querySelector('.close-icon');
-	menuToggle.addEventListener('click', () => {
-		navLinks.classList.toggle('is-open');
-		const isExpanded = navLinks.classList.contains('is-open');
-		menuToggle.setAttribute('aria-expanded', String(isExpanded)); // Use String() for clarity
-
-		// The if/else block for icon display is no longer needed!
-	});
-</script>
