@@ -28,7 +28,7 @@ import logoImage from '../assets/logo.svg';
 				<HeaderLink href="/tutors">Tutors</HeaderLink>
 				<HeaderLink href="/why-choose-us">Why Choose Us?</HeaderLink>
 				<HeaderLink href="/resources">Resources</HeaderLink>
-				<HeaderLink href="/pricing">Pricing</HeaderLink>
+				<HeaderLink href="/pric">Pricing</HeaderLink>
 				<HeaderLink href="/contact">Contact Us</HeaderLink>
 				<HeaderLink href="/about">About</HeaderLink>
 				<HeaderLink href="/FAQs">FAQs</HeaderLink>
@@ -105,32 +105,37 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 
 	/* --- Default Desktop Styles --- */
 	.nav-links {
-		display: flex;
-		align-items: center;
-		gap: 1.5em;
-	}
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
 
-	.internal-links {
-		display: flex;
-		align-items: center;
-		gap: 0.8em;
-	}
-	
-	.social-links a {
-		color: var(--accent);
-		transition: color 0.3s ease;
-		text-decoration: none;
-	}
+.internal-links {
+    display: flex;
+    align-items: center;
+-   gap: 0.8em;
++   /* The gap will shrink from 0.8em to 0.4em between 1350px and 1150px */
++   gap: clamp(0.4em, 3vw - 1.5em, 0.8em);
+}
 
-	.social-links a:hover {
-		color: #5d7fe9;
-	}
+.social-links a {
+    color: var(--accent);
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
 
-	.internal-links > :global(a) {
-		border-left: 1px solid #ddd;
-		padding-left: 1em;
-		font-size: 0.8em;
-	}
+.social-links a:hover {
+    color: #5d7fe9;
+}
+
+.internal-links > :global(a) {
+
+    padding-left: 1em;
+-   font-size: 0.8em;
++   /* The font size will shrink from 0.9em to 0.75em between 1350px and 1150px */
++   font-size: clamp(0.75em, 4vw - 2.2em, 0.9em);
++   white-space: nowrap; /* Ensures text never wraps */
+}
 
 	.internal-links > :global(a:first-child) {
 		border-left: none;
@@ -152,16 +157,17 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 
 	/* --- Responsive Styles for smaller desktops / laptops --- */
 	@media (max-width: 1350px) {
-		.logo-container a {
-			/* font-size: 1.5em; This is no longer needed as we size elements individually */
-		}
-		.internal-links > :global(a) {
-			font-size: 0.9em;
-		}
-		.internal-links {
-			gap: 0.8em;
-		}
-	}
+    .logo-container a {
+        /* font-size: 1.5em; This is no longer needed as we size elements individually */
+    }
+-   .internal-links > :global(a) {
+-       font-size: 0.9em;
+-   }
+-   .internal-links {
+-       gap: 0.8em;
+-   }
++   /* No styles are needed here anymore! The clamp() function handles this range. */
+}
 
 	/* --- Mobile and Tablet Styles --- */
 	@media (max-width: 1150px) {
