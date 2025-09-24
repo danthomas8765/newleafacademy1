@@ -223,27 +223,28 @@ import marcusReesImage from '../assets/marcusrees.png';
 	
 	/* --- Media Query for Mobile/Tablet Optimization --- */
 	@media (max-width: 650px) {
-		.tutor-card {
-			flex-direction: column;
-			text-align: center;
-			gap: 15px;
-            padding-bottom: 3.5em;
-		}
+		 .tutor-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding-bottom: 3.5em;
+    }
 
-		.tutor-headshot {
-			margin-bottom: 0.5em;
-		}
+    .tutor-headshot {
+        margin-bottom: 0.5em;
+    }
 
-        .tutor-info {
-            padding-bottom: 0;
-        }
+    .tutor-info {
+        padding-bottom: 0;
+    }
 
-        .more-info-link {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 1em;
-            width: fit-content;
-        }
+    .more-info-link {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 1em;
+        top: auto; /* <-- Add this line */
+        width: fit-content;
+    }
 	}
 </style>
