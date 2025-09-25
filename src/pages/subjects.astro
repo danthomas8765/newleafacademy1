@@ -7,79 +7,101 @@ import Footer from '../components/Footer.astro';
 
 <html lang="en">
 <head>
-<BaseHead title="Subjects We Offer | New Leaf Academy" description="Explore the wide range of subjects and levels offered at New Leaf Academy, from 11+ and GCSE to A-Level." />
+<BaseHead title="Subjects & Pricing | New Leaf Academy" description="Explore the subjects, levels, and transparent pricing offered at New Leaf Academy, from 11+ and GCSE to A-Level." />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <Header />
 <main>
-<h1>Subjects We Offer</h1>
+<h1>Subjects & Pricing</h1>
 <p class="intro-text">
 We provide expert, one-to-one online tuition across a wide range of subjects and levels. Our tutors tailor each session to the individual student, focusing on building both subject mastery and confidence. Explore our offerings below to find the perfect fit for your needs.
 </p>
 
 		<div class="subjects-container">
 			<div class="subject-card">
-				<h2>Entrance Exams (11+ & 13+)</h2>
-				<p>Comprehensive preparation for selective school admissions, building core skills and exam technique.</p>
-				<ul class="subject-list">
-					<li>11+ & 13+ Preparation</li>
-					<li>English</li>
-					<li>Verbal Reasoning</li>
-					<li>Mathematics</li>
-					<li>Non-Verbal Reasoning</li>
-				</ul>
+                <div class="card-content">
+                    <h2>Entrance Exams (11+ & 13+)</h2>
+                    <p>Comprehensive preparation for selective school admissions, building core skills and exam technique.</p>
+                    <ul class="subject-list">
+                        <li>11+ & 13+ Preparation</li>
+                        <li>English</li>
+                        <li>Verbal Reasoning</li>
+                        <li>Mathematics</li>
+                        <li>Non-Verbal Reasoning</li>
+                    </ul>
+                </div>
+				<div class="price-section">
+					<div class="price">
+						£35<span class="per-hour">/ hour</span>
+					</div>
+					<p class="price-note">Prices start from £35 per hour.</p>
+				</div>
 			</div>
 
 			<div class="subject-card">
-				<h2>GCSE</h2>
-				<p>Targeted support to help students excel in their GCSEs and build a strong foundation for future studies.</p>
-				<div class="exam-boards-container">
-					<span class="exam-board-tag">AQA</span>
-					<span class="exam-board-tag">Edexcel</span>
-					<span class="exam-board-tag">OCR</span>
-					<span class="exam-board-tag">WJEC</span>
-					<span class="exam-board-tag">CCEA</span>
+                <div class="card-content">
+                    <h2>GCSE</h2>
+                    <p>Targeted support to help students excel in their GCSEs and build a strong foundation for future studies.</p>
+                    <div class="exam-boards-container">
+                        <span class="exam-board-tag">AQA</span>
+                        <span class="exam-board-tag">Edexcel</span>
+                        <span class="exam-board-tag">OCR</span>
+                        <span class="exam-board-tag">WJEC</span>
+                        <span class="exam-board-tag">CCEA</span>
+                    </div>
+                    <ul class="subject-list">
+                        <li>Mathematics</li>
+                        <li>Further Mathematics</li>
+                        <li>Triple Science (Biology, Chemistry, Physics)</li>
+                        <li>Combined Science</li>
+                        <li>English Literature</li>
+                        <li>English Language</li>
+                        <li>Business Studies</li>
+                    </ul>
+                </div>
+				<div class="price-section">
+					<div class="price">
+						£40<span class="per-hour">/ hour</span>
+					</div>
+					<p class="price-note">Prices start from £40 per hour.</p>
 				</div>
-				<ul class="subject-list">
-					<li>Mathematics</li>
-					<li>Further Mathematics</li>
-					<li>Triple Science (Biology, Chemistry, Physics)</li>
-					<li>Combined Science</li>
-					<li>English Literature</li>
-					<li>English Language</li>
-					<li>Business Studies</li>
-					<li>French</li>
-				</ul>
 			</div>
 
 			<div class="subject-card">
-				<h2>A-Level</h2>
-				<p>In-depth, specialist tutoring for A-Level students aiming to achieve top grades for university and beyond.</p>
-				<div class="exam-boards-container">
-					<span class="exam-board-tag">AQA</span>
-					<span class="exam-board-tag">Edexcel</span>
-					<span class="exam-board-tag">OCR</span>
-					<span class="exam-board-tag">WJEC</span>
-					<span class="exam-board-tag">CCEA</span>
+                <div class="card-content">
+                    <h2>A-Level</h2>
+                    <p>In-depth, specialist tutoring for A-Level students aiming to achieve top grades for university and beyond.</p>
+                    <div class="exam-boards-container">
+                        <span class="exam-board-tag">AQA</span>
+                        <span class="exam-board-tag">Edexcel</span>
+                        <span class="exam-board-tag">OCR</span>
+                        <span class="exam-board-tag">WJEC</span>
+                        <span class="exam-board-tag">CCEA</span>
+                    </div>
+                    <ul class="subject-list">
+                        <li>Mathematics</li>
+                        <li>Further Mathematics</li>
+                        <li>Physics</li>
+                        <li>English</li>
+                        <li>Economics</li>
+                    </ul>
+                </div>
+				<div class="price-section">
+					<div class="price">
+						£45<span class="per-hour">/ hour</span>
+					</div>
+					<p class="price-note">Prices start from £45 per hour.</p>
 				</div>
-				<ul class="subject-list">
-					<li>Mathematics</li>
-					<li>Further Mathematics</li>
-					<li>Physics</li>
-					<li>English</li>
-					<li>Economics</li>
-				</ul>
 			</div>
 		</div>
 		<div class="cta-section">
-				<h2>Still Need Help?</h2>
-				<p>Our expert tutors are ready to provide the one-to-one support your child needs. Book a free consultation to get started today!</p>
+				<h2>Ready to Start?</h2>
+				<p>Our expert tutors are ready to provide the one-to-one support your child needs. Book a free consultation to get started!</p>
 				<a href="/consultations" class="cta-button">
 					Book Your Free Consultation and Taster Session
 				</a>
 			</div>
-			
 </main>
 <Footer />
 </body>
@@ -91,6 +113,7 @@ We provide expert, one-to-one online tuition across a wide range of subjects and
 --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 --tag-bg-color: #e9eafc;
 --exam-board-tag-bg: #d0e7ff;
+--border-color: #e9eafc;
 }
 
 main {
@@ -108,21 +131,30 @@ h1, .intro-text {
 .intro-text {
 	max-width: 700px;
 	margin: 0 auto 2.5em;
-	font-size: clamp(1em, 2vw, 1.1em);
+	font-size: 1.1rem;
 }
 
 .subjects-container {
 	display: grid;
 	gap: 2em;
-    /* Default to a single column */
     grid-template-columns: 1fr;
+    align-items: stretch;
 }
 
 .subject-card {
-	background-color: var(--card-bg-color);
-	padding: 2em;
+	background-color: white;
+	padding: 2.5em;
 	border-radius: 12px;
 	box-shadow: var(--box-shadow);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-content {
+    flex-grow: 1; /* This is the key change to push the price down */
 }
 
 .subject-card h2 {
@@ -141,6 +173,7 @@ h1, .intro-text {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.75em;
+    justify-content: center;
 }
 
 .subject-list li {
@@ -148,16 +181,66 @@ h1, .intro-text {
 	color: var(--accent);
 	padding: 0.5em 1em;
 	border-radius: 20px;
-	font-size: 0.9em;
+	font-size: 0.9rem;
 	font-weight: 500;
 }
+
+.exam-boards-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	margin-bottom: 1.5em;
+    justify-content: center;
+}
+
+.exam-board-tag {
+	background-color: var(--exam-board-tag-bg);
+	color: var(--accent);
+	padding: 0.3em 0.8em;
+	border-radius: 15px;
+	font-size: 0.8rem;
+	font-weight: 600;
+	border: 1px solid #c0d7f0;
+}
+
+/* Pricing Section Styles */
+.price-section {
+    padding-top: 1.5em;
+    margin-top: 2em; /* This creates the gap you wanted */
+    border-top: 1px solid var(--border-color);
+}
+
+.price {
+    font-family: 'Atkinson', sans-serif;
+    font-size: clamp(2.5em, 6vw, 4em);
+    font-weight: bold;
+    color: var(--accent-pop);
+    margin-bottom: 0.25em;
+}
+
+.per-hour {
+    font-size: 0.4em;
+    font-weight: 500;
+    color: var(--accent);
+    display: inline-block;
+    vertical-align: super;
+}
+
+.price-note {
+    font-size: 0.9rem !important;
+    color: var(--accent);
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* CTA Section Styles */
 .cta-section {
 	text-align: center;
 	margin-top: 4em;
 	padding: 2.5em;
 	background-color: white;
 	border-radius: 12px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	box-shadow: var(--box-shadow);
 	color: var(--accent);
 }
 
@@ -188,25 +271,6 @@ h1, .intro-text {
 	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.exam-boards-container {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5em;
-	margin-top: -1em;
-	margin-bottom: 1.5em;
-}
-
-.exam-board-tag {
-	background-color: var(--exam-board-tag-bg);
-	color: var(--accent);
-	padding: 0.3em 0.8em;
-	border-radius: 15px;
-	font-size: 0.8em;
-	font-weight: 600;
-	border: 1px solid #c0d7f0;
-}
-
-/* This is the new layout logic */
 @media (min-width: 1200px) {
     .subjects-container {
         grid-template-columns: repeat(3, 1fr);

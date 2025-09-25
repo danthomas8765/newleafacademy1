@@ -65,15 +65,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'IM Fell Double Pica', serif; /* <-- CHANGE THIS LINE */
+  font-family: 'Libre Baskerville', sans-serif; /* <-- CHANGE THIS LINE */
   margin: 0 0 0.5rem 0;
   color: rgb(var(--black));
   line-height: 1.2;
 }
 
+
 .site-title,
 .tagline {
-    font-family: 'IM Fell Double Pica', serif; /* <-- ADD THIS RULE */
+    font-family: 'Libre Baskerville', serif; /* <-- ADD THIS RULE */
 }
 
 h1 {
