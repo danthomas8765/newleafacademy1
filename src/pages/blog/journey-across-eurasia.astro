@@ -151,13 +151,13 @@ import journey4 from '../../assets/journey-4.png';
 		text-align: center;
 	}
 
-	 .image-wrapper img {
-     width: 100%; /* Add this line */
-     max-width: 100%;
-     height: auto;
-     border-radius: 8px;
-     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
- }
+	 .image-wrapper :global(img) {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 	
 	/* Final CTA Section */
 	.cta-section {
