@@ -8,6 +8,14 @@
 			<p class="author">Evan C. - GCSE Student</p>
 		</div>
 		<div class="testimonial-slide">
+			<p>"Marcus is an amazing tutor and has helped me over the years with my Maths and Further Maths GCSE’s, and IB Higher level Maths (AA). He is great at explaining complex concepts, making tough topics much easier to process. I always feel more confident going into exams after his sessions."</p>
+			<p class="author">Pari L.- IB Student</p>
+		</div>
+		<div class="testimonial-slide">
+			<p>"Kai has been tutoring my daughter, who is currently in Year 10, to prepare her for GCSE English for the past few months. I have found him to be highly motivated, meticulous, and knowledgeable. My daughter thoroughly enjoys his lessons and I can already see a positive impact on her understanding and confidence in such a short period. I am more than happy to recommend him as an excellent tutor."</p>
+			<p class="author">Thoibe T. - Parent of a GCSE Student</p>
+		</div>
+		<div class="testimonial-slide">
 			<p>"Thank-you for all your help running up to my A level. You were able to make me understand things clearer and I felt more confident going into my exam. I was able to achieve 2 grades higher than what I was predicted. Thanks again and I would highly recommend you to other students."</p>
 			<p class="author">Evie D. - A-Level Student</p>
 		</div>
@@ -22,10 +30,6 @@
 		<div class="testimonial-slide">
 			<p>"Dan has been tutoring me for a few months now, and he's been amazing. We cover all the sciences and maths, which is really helpful when the teachers at school aren’t very clear. Each lesson, I choose one of the four subjects to focus on, and we go over things I find difficult or that would be useful for future exams. What I like most is that he never makes me feel bad for not knowing something or getting a question wrong. Instead, we work together to find ways to help me remember how to solve it or structure an answer."</p>
 			<p class="author">Mina J. - GCSE Student</p>
-		</div>
-		<div class="testimonial-slide">
-			<p>"Kai has been tutoring my daughter, who is currently in Year 10, to prepare her for GCSE English for the past few months. I have found him to be highly motivated, meticulous, and knowledgeable. My daughter thoroughly enjoys his lessons and I can already see a positive impact on her understanding and confidence in such a short period. I am more than happy to recommend him as an excellent tutor."</p>
-			<p class="author">Thoibe T. - Parent of a GCSE Student</p>
 		</div>
 		<div class="testimonial-slide">
 			<p>"I enjoyed my sessions with Dan a lot, he really helped with my general understanding of physics as well as how to answer exam questions. Overall I would definitely recommend Dan as he is also a very nice person to talk to as work with."</p>
@@ -167,11 +171,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	
 	if (!track || !container) return;
 
+	const transitionDuration = 500;
+
 	let slides = Array.from(track.children);
 	const originalSlideCount = slides.length;
 	let isTransitioning = false;
 	
-	const clonesCount = 2;
+	const clonesCount = 1;
 
 	for (let i = 0; i < clonesCount; i++) {
 		const index = originalSlideCount - 1 - i;
@@ -242,12 +248,30 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 	
 	const moveTo = (newIndex) => {
-		if (isTransitioning) return;
-		isTransitioning = true;
-		currentIndex = newIndex;
-		setPosition();
-		updateSlideClasses();
-	};
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex = newIndex;
+    
+    setPosition(); // Start the animation
+    updateSlideClasses();
+
+    // After the animation duration, check if a reset is needed
+    setTimeout(() => {
+        // If we are on the final clone (at the end)
+        if (currentIndex >= originalSlideCount + clonesCount) {
+            currentIndex = clonesCount; // Reset to the first real slide
+            setPosition(true);      // Do an instant jump
+            updateSlideClasses();
+        }
+        // If we are on the first clone (at the beginning)
+        else if (currentIndex < clonesCount) {
+            currentIndex = originalSlideCount; // Reset to the last real slide
+            setPosition(true);         // Do an instant jump
+            updateSlideClasses();
+        }
+        isTransitioning = false;
+    }, transitionDuration); // Wait for the animation to finish
+};
 
 	const startAutoPlay = () => {
 		clearInterval(autoPlayInterval);
@@ -280,19 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
-	track.addEventListener('transitionend', () => {
-		if (currentIndex >= originalSlideCount + clonesCount) {
-			currentIndex = clonesCount;
-			setPosition(true);
-			updateSlideClasses();
-		}
-		if (currentIndex < clonesCount) {
-			currentIndex = originalSlideCount + clonesCount - 1;
-			setPosition(true);
-			updateSlideClasses();
-		}
-		isTransitioning = false;
-	});
+	
 
 	container.addEventListener('mouseenter', () => {
 		clearInterval(autoPlayInterval);
