@@ -65,10 +65,17 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: 'IM Fell Double Pica', serif; /* <-- CHANGE THIS LINE */
   margin: 0 0 0.5rem 0;
   color: rgb(var(--black));
   line-height: 1.2;
 }
+
+.site-title,
+.tagline {
+    font-family: 'IM Fell Double Pica', serif; /* <-- ADD THIS RULE */
+}
+
 h1 {
   font-size: 3.052em;
   color: var(--accent);
