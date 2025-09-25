@@ -6,178 +6,188 @@ import Footer from '../components/Footer.astro';
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <BaseHead title="Our Pricing" description="Transparent pricing for our one-to-one tutoring services at New Leaf Academy." />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <Header />
-        <main>
-            <h1>Our Pricing</h1>
-            <p class="intro-text">
-                At New Leaf Academy, we believe in transparent and fair pricing for our high-quality, personalized tutoring. Our rates are based on the level of complexity and preparation required for each subject. All sessions are one-to-one and tailored to the individual student's needs.
-            </p>
+	<head>
+		<BaseHead title="Our Pricing | New Leaf Academy" description="Transparent pricing for our one-to-one tutoring services at New Leaf Academy." />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Our Pricing</h1>
+			<p class="intro-text">
+				At New Leaf Academy, we believe in transparent and fair pricing for our high-quality, personalized tutoring. Our rates are based on the level of complexity and preparation required for each subject. All sessions are one-to-one and tailored to the individual student's needs.
+			</p>
 
-            <div class="pricing-container">
-                <div class="pricing-card">
-                    <h2 class="card-title">11+, 13+ & KS3</h2>
-                    <p class="level-description">For students in Key Stage 3 and those preparing for selective school entrance exams.</p>
-                    <div class="price">
-                        £35<span class="per-hour">/ hour</span>
-                    </div>
-                    <p class="price-note">Prices start from £35 per hour.</p>
-                </div>
+			<div class="pricing-container">
+				<div class="pricing-card">
+					<h2 class="card-title">11+, 13+ & KS3</h2>
+					<p class="level-description">For students in Key Stage 3 and those preparing for selective school entrance exams.</p>
+					<div class="price">
+						£35<span class="per-hour">/ hour</span>
+					</div>
+					<p class="price-note">Prices start from £35 per hour.</p>
+				</div>
 
-                <div class="pricing-card">
-                    <h2 class="card-title">GCSE</h2>
-                    <p class="level-description">Tailored support for all GCSE subjects and exam boards.</p>
-                    <div class="price">
-                        £40<span class="per-hour">/ hour</span>
-                    </div>
-                    <p class="price-note">Prices start from £40 per hour.</p>
-                </div>
+				<div class="pricing-card">
+					<h2 class="card-title">GCSE</h2>
+					<p class="level-description">Tailored support for all GCSE subjects and exam boards.</p>
+					<div class="price">
+						£40<span class="per-hour">/ hour</span>
+					</div>
+					<p class="price-note">Prices start from £40 per hour.</p>
+				</div>
 
-                <div class="pricing-card">
-                    <h2 class="card-title">A-Level</h2>
-                    <p class="level-description">Specialist, in-depth tutoring for A-Level students aiming for top grades.</p>
-                    <div class="price">
-                        £45<span class="per-hour">/ hour</span>
-                    </div>
-                    <p class="price-note">Prices start from £45 per hour.</p>
-                </div>
-            </div>
+				<div class="pricing-card">
+					<h2 class="card-title">A-Level</h2>
+					<p class="level-description">Specialist, in-depth tutoring for A-Level students aiming for top grades.</p>
+					<div class="price">
+						£45<span class="per-hour">/ hour</span>
+					</div>
+					<p class="price-note">Prices start from £45 per hour.</p>
+				</div>
+			</div>
 
-            <div class="cta-section">
-                <h2>Ready to Start?</h2>
-                <p>We're here to help you or your child succeed. Book a free consultation today to discuss your specific needs and create a personalized plan.</p>
-                <a href="/consultations" class="cta-button">Book a Free Consultation and Taster Session</a>
-            </div>
-        </main>
-        <Footer />
-    </body>
+			<div class="cta-section">
+				<h2>Ready to Start?</h2>
+				<p>We're here to help you or your child succeed. Book a free consultation today to discuss your specific needs and create a personalized plan.</p>
+				<a href="/consultations" class="cta-button">Book a Free Consultation and Taster Session</a>
+			</div>
+		</main>
+		<Footer />
+	</body>
 </html>
 
 <style>
-    :root {
-        --card-bg-color: #f9f9f9;
-        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        --tag-bg-color: #e9eafc;
-    }
-    
-    main {
-        color: var(--accent);
-        max-width: 1200px;
-        margin: 2em auto;
-        padding: 0 2em;
-        box-sizing: border-box;
-    }
+	:root {
+		--card-bg-color: #f9f9f9;
+		--box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		--tag-bg-color: #e9eafc;
+	}
+	
+	main {
+		color: var(--accent);
+		max-width: 1200px;
+		margin: 2em auto;
+		padding: 0 2em;
+		box-sizing: border-box;
+	}
 
-    h1, .intro-text {
-        text-align: center;
-    }
-    
-    h1 {
-        font-size: clamp(2em, 5vw, 3em);
-        margin-bottom: 0.5em;
-    }
+	h1, .intro-text {
+		text-align: center;
+	}
+	
+	h1 {
+		font-size: clamp(2em, 5vw, 3em);
+		margin-bottom: 0.5em;
+	}
 
-    .intro-text {
-        max-width: 700px;
-        margin: 0 auto 3em;
-        font-size: clamp(1em, 2vw, 1.1em);
-        line-height: 1.7;
-    }
+	.intro-text {
+		max-width: 700px;
+		margin: 0 auto 3em;
+		font-size: clamp(1em, 2vw, 1.1em);
+		line-height: 1.7;
+	}
 
-    .pricing-container {
-        display: grid;
-        gap: 2em;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        justify-content: center;
-        align-items: stretch;
-    }
+	.pricing-container {
+		display: grid;
+		gap: 2em;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		justify-content: center;
+		align-items: stretch;
+	}
 
-    .pricing-card {
-        background-color: var(--card-bg-color);
-        padding: 2.5em;
-        border-radius: 12px;
-        box-shadow: var(--box-shadow);
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        color: #333;
-    }
+	.pricing-card {
+		background-color: var(--card-bg-color);
+		padding: 2.5em;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		color: #333;
+	}
 
-    .card-title {
-        font-size: clamp(1.5em, 4vw, 2em);
-        color: var(--accent);
-        margin-top: 0;
-        margin-bottom: 0.5em;
-    }
+	.card-title {
+		font-size: clamp(1.5em, 4vw, 2em);
+		color: var(--accent);
+		margin-top: 0;
+		margin-bottom: 0.5em;
+	}
 
-    .level-description {
-        font-size: 0.9em;
-        line-height: 1.6;
-        margin-bottom: 1.5em;
-        flex-grow: 1;
-    }
+	.level-description {
+		font-size: 0.9em;
+		line-height: 1.6;
+		margin-bottom: 1.5em;
+		flex-grow: 1;
+	}
 
-    .price {
-        font-size: clamp(2.5em, 6vw, 4em);
-        font-weight: bold;
-        color: var(--accent-pop);
-        margin-bottom: 0.25em;
-    }
+	.price {
+		font-size: clamp(2.5em, 6vw, 4em);
+		font-weight: bold;
+		color: var(--accent-pop);
+		margin-bottom: 0.25em;
+	}
 
-    .per-hour {
-        font-size: 0.4em;
-        font-weight: 500;
-        color: var(--accent);
-        display: inline-block;
-        vertical-align: super;
-    }
+	.per-hour {
+		font-size: 0.4em;
+		font-weight: 500;
+		color: var(--accent);
+		display: inline-block;
+		vertical-align: super;
+	}
 
-    .price-note {
-        font-size: 0.8em;
-        color: var(--accent);
-        margin-top: 0;
-        opacity: 0.8;
-    }
+	.price-note {
+		font-size: 0.8em;
+		color: var(--accent);
+		margin-top: 0;
+		opacity: 0.8;
+	}
 
-    /* CTA Section */
-    .cta-section {
-        text-align: center;
-        margin-top: 4em;
-        padding: 2.5em;
-        background-color: white;
-        border-radius: 12px;
-        box-shadow: var(--box-shadow);
-        color: var(--accent);
-    }
+	/* CTA Section */
+	.cta-section {
+		text-align: center;
+		margin-top: 4em;
+		padding: 2.5em;
+		background-color: white;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
+		color: var(--accent);
+	}
 
-    .cta-section h2 {
-        font-size: clamp(1.5em, 4vw, 1.8em);
-        margin-top: 0;
-        color: var(--accent);
-    }
-    .cta-section p {
-        margin-bottom: 1.5em;
-    }
+	.cta-section h2 {
+		font-size: clamp(1.5em, 4vw, 1.8em);
+		margin-top: 0;
+		color: var(--accent);
+	}
+	.cta-section p {
+		margin-bottom: 1.5em;
+	}
 
-    .cta-button {
-        display: inline-block;
-        padding: 1em 2em;
-        background-color: var(--accent-pop);
-        color: white;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+	.cta-button {
+		display: inline-block;
+		padding: 1em 2em;
+		background-color: var(--accent-pop);
+		color: white;
+		font-weight: bold;
+		text-decoration: none;
+		border-radius: 8px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
 
-    .cta-button:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+	.cta-button:hover,
+    .cta-button:focus-visible {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+	}
+
+    /* This is the new code that fixes the layout */
+    @media (max-width: 1024px) {
+      .pricing-container {
+        grid-template-columns: 1fr;
+        max-width: 500px; /* Optional: Constrain width for a cleaner look */
+        margin: 0 auto; /* Center the single column */
+      }
     }
 </style>

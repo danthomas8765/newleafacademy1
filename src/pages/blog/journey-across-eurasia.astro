@@ -2,17 +2,16 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import { Image } from 'astro:assets'; 
-import journey1 from '../../assets/journey-1.png';
-import journey2 from '../../assets/journey-2.png'; 
-import journey3 from '../../assets/journey-3.png'; 
-import journey4 from '../../assets/journey-4.png';
+import { Image } from 'astro:assets';
+import journey1 from '../../assets/journey-1.jpg';
+import journey3 from '../../assets/journey-3.jpg';
+import journey4 from '../../assets/journey-4.jpg';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title="Journey Across Eurasia" description="A story of our team's overland adventure from Southeast Asia to the UK and the lessons we learned along the way." />
+		<BaseHead title="Journey Across Eurasia | New Leaf Academy" description="A story of our team's overland adventure from Southeast Asia to the UK and the lessons we learned along the way." />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
@@ -31,7 +30,7 @@ import journey4 from '../../assets/journey-4.png';
 					<div class="image-wrapper">
 						<Image
 							src={journey1}
-							alt="A picture of the tutors on their journey"
+							alt="New Leaf Academy tutors Dan, Kai, and Marcus in Varansi, India"
 							widths={[300, 600, 900]}
 							sizes="(max-width: 600px) 100vw, 600px"
 							loading="lazy"
@@ -53,7 +52,7 @@ import journey4 from '../../assets/journey-4.png';
 					<div class="image-wrapper">
 						<Image
 							src={journey3}
-							alt="A picture of the tutors on their journey"
+							alt="The New Leaf Academy tutors posing by a river in Kazakhstan"
 							widths={[300, 600, 900]}
 							sizes="(max-width: 600px) 100vw, 600px"
 							loading="lazy"
@@ -69,7 +68,7 @@ import journey4 from '../../assets/journey-4.png';
 					<div class="image-wrapper">
 						<Image
 							src={journey4}
-							alt="A picture of the tutors on their journey"
+							alt="The New Leaf Academy tutors in a cave in Cappadocia, Turkey"
 							widths={[300, 600, 900]}
 							sizes="(max-width: 600px) 100vw, 600px"
 							loading="lazy"
@@ -147,7 +146,7 @@ import journey4 from '../../assets/journey-4.png';
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
+	}
 	
 	/* Final CTA Section */
 	.cta-section {
@@ -181,7 +180,8 @@ import journey4 from '../../assets/journey-4.png';
 		transition: transform 0.3s ease, box-shadow 0.3s ease;
 	}
 
-	.cta-button:hover {
+	.cta-button:hover,
+    .cta-button:focus-visible {
 		transform: translateY(-5px);
 		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 	}
