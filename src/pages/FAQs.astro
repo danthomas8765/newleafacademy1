@@ -19,7 +19,6 @@ import Footer from '../components/Footer.astro';
 			</p>
 
 			<div class="faq-container">
-				<!-- Section: Getting Started & The Sessions -->
 				<div class="faq-heading">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
 					<h2>Getting Started & The Sessions</h2>
@@ -55,7 +54,6 @@ import Footer from '../components/Footer.astro';
 					</div>
 				</details>
 
-				<!-- Section: Pricing & Payments -->
 				<div class="faq-heading">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
 					<h2>Pricing & Payments</h2>
@@ -79,7 +77,6 @@ import Footer from '../components/Footer.astro';
 					</div>
 				</details>
 
-				<!-- Section: Progress & Communication -->
 				<div class="faq-heading">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
 					<h2>Progress & Communication</h2>
@@ -98,7 +95,6 @@ import Footer from '../components/Footer.astro';
 				</details>
 			</div>
 
-			<!-- Final Call to Action -->
 			<div class="cta-section">
 				<h2>Still Have Questions?</h2>
 				<p>Your questions are important to us. If there's anything else you'd like to discuss, we'd love to hear from you. Book a friendly, no-obligation chat today.</p>
@@ -108,8 +104,10 @@ import Footer from '../components/Footer.astro';
 			</div>
 		</main>
 		<Footer />
-		
-		<style>
+	</body>
+</html>
+
+<style>
 	:root {
 		--card-bg-color: #f9f9f9;
 		--box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -153,7 +151,7 @@ import Footer from '../components/Footer.astro';
 
 	.faq-heading h2 {
 		color: var(--accent);
-		font-size: clamp(1.3em, 3vw, 1.6em); /* Smaller font size */
+		font-size: clamp(1.3em, 3vw, 1.6em);
 		margin: 0;
 	}
 
@@ -172,11 +170,6 @@ import Footer from '../components/Footer.astro';
 		border-radius: 12px;
 		border: 1px solid var(--border-color);
 		box-shadow: var(--box-shadow);
-		transition: margin 0.3s ease;
-	}
-
-	.faq-item[open] {
-		margin-bottom: 1em;
 	}
 	
 	.faq-item summary {
@@ -198,7 +191,6 @@ import Footer from '../components/Footer.astro';
 		color: var(--accent-dark);
 	}
 
-	/* Custom animated arrow */
 	.faq-item summary::after {
 		content: '›';
 		font-size: 2em;
@@ -211,13 +203,16 @@ import Footer from '../components/Footer.astro';
 		transform: rotate(-90deg);
 	}
 
-	.faq-answer {
-		padding: 0 1.5em 1.5em;
-		line-height: 1.7;
-	}
+    /* --- NEW ANIMATION STYLES --- */
+    .faq-answer {
+        overflow: hidden;
+        transition: height 0.5s ease-out; /* Slower animation */
+    }
 	
 	.faq-answer p {
+        padding: 0 1.5em 1.5em;
 		margin: 0;
+        line-height: 1.7;
 	}
 
 	/* Final CTA Section */
@@ -255,8 +250,31 @@ import Footer from '../components/Footer.astro';
 		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 	}
 </style>
-	</body>
-</html>
 
+<script>
+  document.querySelectorAll('.faq-item summary').forEach((summary) => {
+    summary.addEventListener('click', (e) => {
+      e.preventDefault();
+      const details = summary.parentElement;
+      const answer = summary.nextElementSibling;
 
-
+      if (details.hasAttribute('open')) {
+        // Closing animation
+        const closeAnimation = answer.animate(
+          { height: [answer.scrollHeight + 'px', '0'] },
+          { duration: 400, easing: 'ease-out' }
+        );
+        closeAnimation.onfinish = () => {
+          details.removeAttribute('open');
+        };
+      } else {
+        // Opening animation
+        details.setAttribute('open', '');
+        answer.animate(
+          { height: ['0', answer.scrollHeight + 'px'] },
+          { duration: 400, easing: 'ease-out' }
+        );
+      }
+    });
+  });
+</script>

@@ -1,20 +1,18 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
-import { Image } from 'astro:assets';
-import logoImage from '../assets/logo.svg';
 ---
 
 <header>
 	<nav>
 		<div class="logo-container">
 			<a href="/">
-				<Image
-					src={logoImage}
-					alt="New Leaf Academy Logo"
-					class="logo"
-					width={150}
-					height={150}
+				<img
+    				src="/logo.svg"
+    				alt="New Leaf Academy Logo"
+    				class="logo"
+   					width="150"
+    				height="150"
 				/>
 				<span class="site-title">{SITE_TITLE}</span>
 			</a>

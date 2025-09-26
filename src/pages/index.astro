@@ -4,9 +4,6 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import TestimonialCarousel from '../components/TestimonialCarousel.astro';
-
-import { Image } from 'astro:assets';
-import logoimage from '../assets/logo.svg';
 ---
 
 <!doctype html>
@@ -17,8 +14,8 @@ import logoimage from '../assets/logo.svg';
     <body>
         <Header />
         <main>
-            <Image
-                src={logoimage}
+            <img
+                src="/logo.svg"
                 alt="New Leaf Academy Logo"
                 class="banner-image"
             />
