@@ -54,6 +54,34 @@ body {
   font-size: 20px;
   line-height: 1.7;
 }
+/* libre-baskerville-regular - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/libre-baskerville-v14-latin-regular.woff2') format('woff2'), 
+       url('/fonts/libre-baskerville-v14-latin-regular.woff') format('woff'); 
+}
+/* libre-baskerville-italic - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Libre Baskerville';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/fonts/libre-baskerville-v14-latin-italic.woff2') format('woff2'), 
+       url('/fonts/libre-baskerville-v14-latin-italic.woff') format('woff'); 
+}
+/* libre-baskerville-700 - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/libre-baskerville-v14-latin-700.woff2') format('woff2'), 
+       url('/fonts/libre-baskerville-v14-latin-700.woff') format('woff'); 
+}
+
 main {
   max-width: 720px;
   margin: auto;
