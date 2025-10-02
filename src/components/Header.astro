@@ -6,231 +6,295 @@ import logoImage from '../assets/logo.svg';
 ---
 
 <header>
-	<nav>
-		<div class="logo-container">
-			<a href="/">
-				<Image
-					src={logoImage}
-					alt="New Leaf Academy Logo"
-					class="logo"
-					width={150}
-					height={150}
-				/>
-				<span class="site-title">{SITE_TITLE}</span>
-			</a>
-		</div>
+    <nav>
+        <div class="logo-container">
+            <a href="/">
+                <Image
+                    src={logoImage}
+                    alt="New Leaf Academy Logo"
+                    class="logo"
+                    width={150}
+                    height={150}
+                />
+                <span class="site-title">{SITE_TITLE}</span>
+            </a>
+        </div>
 
-		<div class="nav-links">
-			<div class="internal-links">
-				<HeaderLink href="/">Home</HeaderLink>
-				<HeaderLink href="/subjects/">Subjects</HeaderLink>
-				<HeaderLink href="/tutors/">Tutors</HeaderLink>
-				<HeaderLink href="/how-it-works/">How it Works</HeaderLink>
-				<HeaderLink href="/why-choose-us/">Why Choose Us?</HeaderLink>
-				<HeaderLink href="/resources/">Resources</HeaderLink>
-				<HeaderLink href="/blog/">Blog</HeaderLink>
-				<HeaderLink href="/contact/">Contact Us</HeaderLink>
-				<HeaderLink href="/about/">About</HeaderLink>
-				<HeaderLink href="/FAQs/">FAQs</HeaderLink>
-			</div>
-			<div class="social-links">
-				<a href="https://www.facebook.com/newleafacademyuk" target="_blank" aria-label="Facebook">
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-				</a>
-				<a href="https://wa.me/447599511507" target="_blank" aria-label="WhatsApp">
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-				</a>
-			</div>
-		</div>
+        <div class="nav-links">
+            <div class="internal-links">
+                <HeaderLink href="/">Home</HeaderLink>
+                <HeaderLink href="/subjects/">Subjects</HeaderLink>
+                <HeaderLink href="/tutors/">Tutors</HeaderLink>
+                <HeaderLink href="/how-it-works/">How it Works</HeaderLink>
+                <HeaderLink href="/why-choose-us/">Why Choose Us?</HeaderLink>
+                <HeaderLink href="/resources/">Resources</HeaderLink>
+                <HeaderLink href="/blog/">Blog</HeaderLink>
+                <HeaderLink href="/contact/">Contact Us</HeaderLink>
+                <HeaderLink href="/about/">About</HeaderLink>
+                <HeaderLink href="/FAQs/">FAQs</HeaderLink>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/newleafacademyuk" target="_blank" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
+                <a href="https://wa.me/447599511507" target="_blank" aria-label="WhatsApp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </a>
+            </div>
+        </div>
 
-		<button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
-			<svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+            <svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-			<svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-		</button>
-	</nav>
+            <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+    </nav>
 </header>
 <style>
-	/* --- Global Header Styles --- */
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-		position: sticky;
-		top: 0;
-		z-index: 1000;
-	}
+    /* --- Global Header Styles --- */
+    header {
+        margin: 0;
+        padding: 0 1em; /* Overall horizontal padding for the header */
+        background: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        --header-height: 4.5rem;
+        height: var(--header-height);
+        display: flex;
+        align-items: center;
+    }
 
-	nav {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    height: 4.5rem;
-}
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Distributes space between major sections */
+        width: 100%;
+        height: 100%;
+        flex-wrap: nowrap; /* CRITICAL: All nav content MUST stay on one line */
+        /* min-width: 0; */ /* Removed as it can sometimes over-compress its children */
+    }
 
-	.logo-container a {
-		text-decoration: none;
-		display: flex;
-		align-items: center;
-		gap: 0.5em;
-		color: var(--accent);
-		margin: 0;
-	}
+    .logo-container {
+        flex-shrink: 0; /* Logo and title should not shrink their *container* size easily */
+        display: flex;
+        align-items: center;
+        /* margin-right: 1em; */ /* Use gap on nav instead for this separation */
+        min-width: min-content; /* Ensure logo/title container respects its content's minimum width */
+    }
 
-	img.logo {
-		height: 2.2em;
-		width: auto;
-	}
+    .logo-container a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        color: var(--accent);
+        margin: 0;
+    }
 
-	.site-title {
-    font-weight: bold;
-    white-space: nowrap;
-    font-size: clamp(1em, 1.5vw + 0.5em, 1.5em);
-	}
+    img.logo {
+        height: 2.2em;
+        width: auto;
+        flex-shrink: 0; /* Image should not shrink below its intrinsic size */
+    }
 
-	/* --- Desktop & Laptop Link Styles --- */
-	.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    min-width: 0;
-    margin-left: auto;
-}
+    .site-title {
+        font-weight: bold;
+        white-space: nowrap;
+        /* ✅ DYNAMIC FONT SIZE FOR SITE TITLE - Adjusted for more aggressive shrink */
+        font-size: clamp(0.75em, 1.4vw, 1.5em); /* Min 0.75em, Max 1.5em */
+        flex-shrink: 1; /* Allow title font to shrink */
+        min-width: min-content; /* Ensure it respects content's minimum width (no ellipsis) */
+    }
 
-	.internal-links {
-		display: flex;
-		align-items: center;
-		flex-wrap: nowrap;
-		gap: clamp(0.4em, 1vw - 0.2em, 0.7em);
-	}
+    /* --- Desktop & Laptop Link Styles --- */
+    .nav-links {
+        display: flex;
+        align-items: center;
+        flex-grow: 1; /* Takes up available space between logo and its content */
+        justify-content: flex-end; /* Pushes internal links and social links to the right */
+        gap: 0.8em; /* Space between internal-links and social-links */
+        min-width: 0; /* Allows this container to shrink its internal content */
+        flex-shrink: 1; /* Allow nav-links container to shrink */
+        margin-left: 1em; /* Add a bit of margin to prevent overlap with logo-container when shrinking */
+    }
 
-	.internal-links > :global(a) {
-    font-family: 'Libre Baskerville', serif;
-    white-space: nowrap;
-    font-size: clamp(0.75em, 0.5vw + 0.5em, 1em);
-    padding-left: 0.4em;
-    /* ✅ ADDED transition for smoothness */
-    transition: transform 0.2s ease-out, color 0.2s ease-out;
-}
+    .internal-links {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap; /* Internal links MUST stay on one line */
+        gap: clamp(0.2em, 0.4vw, 0.5em); /* ✅ EVEN SMALLER GAP for ultra-tight fit */
+        flex-shrink: 3; /* ✅ VERY EAGER TO SHRINK its overall footprint */
+        min-width: min-content; /* Ensure internal links container respects its content's minimum width */
+    }
 
-	/* ✅ UPDATED hover effect */
-	.internal-links > :global(a:hover) {
-		color: var(--accent-pop);
-		transform: translateY(-2px);
-        /* This creates a bold effect without changing the layout */
-		text-shadow: -0.04em 0 currentColor, 0.04em 0 currentColor;
-	}
+    .internal-links > :global(a) {
+        font-family: 'Libre Baskerville', serif;
+        white-space: nowrap;
+        /* ✅ DYNAMIC FONT SIZE FOR NAV LINKS - Adjusted for more aggressive shrink */
+        font-size: clamp(0.65em, 0.8vw + 0.2em, 1.2em); /* Min 0.65em, Max 1.2em */
+        padding: 0.2em 0.4em;
+        transition: transform 0.2s ease-out, color 0.2s ease-out;
+        flex-shrink: 1; /* Allow individual links' font size to shrink */
+        min-width: min-content; /* Ensure it respects its content's minimum width (no ellipsis) */
+    }
 
-    /* Make the active link bold */
-	.internal-links > :global(a.active) {
-		font-weight: bold;
-	}
+    .internal-links > :global(a:hover) {
+        color: var(--accent-pop);
+        transform: translateY(-2px);
+        text-shadow: -0.04em 0 currentColor, 0.04em 0 currentColor;
+    }
 
-	.social-links {
-		display: flex;
-	}
+    .internal-links > :global(a.active) {
+        font-weight: bold;
+    }
 
-	.social-links a {
-		color: var(--accent);
-		transition: color 0.3s ease;
-		text-decoration: none;
-	}
+    .social-links {
+        display: flex;
+        flex-shrink: 0; /* Ensure social links retain their size (icons themselves shrink) */
+        gap: 0.6em; /* ✅ EVEN SMALLER GAP between social icons */
+        align-items: center;
+        /* margin-left: 0.8em; */ /* Use gap on nav-links instead */
+        min-width: min-content; /* Ensure social links container respects its content's minimum width */
+    }
 
-	.social-links a:hover {
-		color: var(--accent-pop);
-	}
+    .social-links a {
+        color: var(--accent);
+        transition: color 0.3s ease;
+        text-decoration: none;
+    }
 
-	/* --- Hamburger Menu & Icons --- */
-	.menu-toggle {
-		display: none;
-		background: none;
-		border: none;
-		cursor: pointer;
-		padding: 0;
-		z-index: 1001;
-	}
+    /* ✅ DYNAMIC SIZE FOR SOCIAL ICONS - Adjusted for more aggressive shrink */
+    .social-links a svg {
+        width: clamp(16px, 1.6vw, 24px); /* Min 16px, Max 24px */
+        height: clamp(16px, 1.6vw, 24px); /* Min 16px, Max 24px */
+        flex-shrink: 1; /* Allow SVG to shrink */
+    }
 
-	.menu-toggle .hamburger-icon {
-		display: block;
-	}
-	.menu-toggle .close-icon {
-		display: none;
-	}
+    .social-links a:hover {
+        color: var(--accent-pop);
+        transform: translateY(-2px);
+        text-shadow: -0.04em 0 currentColor, 0.04em 0 currentColor;
+    }
 
-	.menu-toggle[aria-expanded='true'] .hamburger-icon {
-		display: none;
-	}
-	.menu-toggle[aria-expanded='true'] .close-icon {
-		display: block;
-	}
+    /* --- Hamburger Menu & Icons --- */
+    .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+        color: var(--accent);
+        flex-shrink: 0; /* Don't let toggle shrink */
+        margin-left: 1em; /* Space between social links/nav-links and toggle */
+    }
 
-	/* --- Mobile and Tablet Styles --- */
-	@media (max-width: 1150px) {
-		.menu-toggle {
-			display: block;
-		}
-		nav {
-    gap: 0;
-}
-.menu-toggle {
-    margin-left: auto;
-}
+    .menu-toggle .hamburger-icon { display: block; }
+    .menu-toggle .close-icon { display: none; }
+    .menu-toggle[aria-expanded='true'] .hamburger-icon { display: none; }
+    .menu-toggle[aria-expanded='true'] .close-icon { display: block; }
 
-		.nav-links {
-			position: fixed;
-			top: 0;
-			right: 0;
-			width: 65%;
-			max-width: 300px;
-			height: 100vh;
-			background: white;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			gap: 2em;
-			transform: translateX(100%);
-			transition: transform 0.3s ease-in-out, visibility 0.3s;
+    /* --- Mobile and Tablet Styles --- */
+    /* This breakpoint will hide the desktop navigation */
+    @media (max-width: 990px) { /* ✅ TARGET BREAKPOINT */
+        .nav-links {
+            display: none; /* Hide desktop nav links and social links */
+        }
+        .menu-toggle {
+            display: block; /* Show hamburger menu */
+            margin-left: auto; /* Push toggle to far right */
+        }
+
+        /* Mobile Menu Overlay Styles (when active) */
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 70%;
+            max-width: 350px;
+            height: 100vh;
+            background: white;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out, visibility 0.3s;
             visibility: hidden;
-		}
+            box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
 
-		.nav-links.is-open {
-			transform: translateX(0);
+        .nav-links.is-open {
+            transform: translateX(0);
             visibility: visible;
-		}
+            display: flex; /* Override display: none when menu is open */
+        }
         
         .nav-links .internal-links,
         .nav-links .social-links {
+            display: flex; /* Override display: none within the mobile menu */
             opacity: 0;
             transition: opacity 0.3s ease-in-out 0.2s;
+            flex-direction: column;
+            gap: 1.5em;
+            width: 100%;
+            text-align: center;
         }
 
         .nav-links.is-open .internal-links,
         .nav-links.is-open .social-links {
             opacity: 1;
-		}
+        }
+        
+        .nav-links.is-open .internal-links > :global(a) {
+            font-size: 1.2em;
+            padding-left: 0;
+            white-space: normal; /* Allow wrapping in mobile menu */
+            overflow: visible;
+            text-overflow: clip;
+            min-width: auto; /* Reset */
+        }
+        .nav-links.is-open .internal-links > :global(a:first-child) {
+            border-left: none;
+        }
+        .nav-links.is-open .social-links a svg {
+            width: 24px; /* Full size in mobile menu */
+            height: 24px;
+        }
+    }
 
-		.internal-links {
-			flex-direction: column;
-			gap: 1.5em;
-			width: 100%;
-			text-align: center;
-		}
-
-		.internal-links > :global(a) {
-    white-space: nowrap;
-    font-size: clamp(0.8em, 0.5vw + 0.6em, 1.2em);
-    padding-left: 1em;
-		}
-
-		.internal-links > :global(a:first-child) {
-    border-left: none;
-    padding-left: 0;
-}
-
-		.social-links {
-			margin-top: 1em;
-			gap: 1.5em;
-		}
-	}
+    @media (max-width: 480px) {
+        .nav-links {
+            width: 85%;
+        }
+    }
 </style>
+<script is:inline>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('is-open');
+            const isExpanded = navLinks.classList.contains('is-open');
+            menuToggle.setAttribute('aria-expanded', String(isExpanded));
+
+            if (isExpanded) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+
+        navLinks.addEventListener('click', (event) => {
+            if (event.target.tagName === 'A') {
+                navLinks.classList.remove('is-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+</script>
