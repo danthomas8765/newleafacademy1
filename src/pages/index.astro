@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import TestimonialCarousel from '../components/TestimonialCarousel.astro';
 
-import { Image } from 'astro:assets'; 
+import { Image } from 'astro:assets';
 // Assuming your banner image is in the 'src/assets/' directory
 import bannerImage from '../assets/banner.jpg';
 // Your logo image
@@ -44,7 +44,7 @@ import logoImage from '../assets/logo.svg';
 			</div>
 		</div>
 
-		<main class="content-area"> {/* ✅ ADDED 'content-area' class */}
+		<main class="content-area">
 			<section class="our-promise">
 				<h2>Our Promise to You</h2>
 				<p>
@@ -58,10 +58,10 @@ import logoImage from '../assets/logo.svg';
 		<path d="M12 5v14m-7-7l7 7 7-7" />
 	</svg>
 			</div>
-	
-			<h2 class="testimonial-heading">What our students and parents have to say</h2>
-			<TestimonialCarousel />
 		</main>
+
+		<h2 class="testimonial-heading">What our students and parents have to say</h2>
+		<TestimonialCarousel />
 
 		<Footer />
 	</body>
@@ -81,7 +81,7 @@ import logoImage from '../assets/logo.svg';
 		background-position: center;
 		background-repeat: no-repeat;
 		color: var(--accent);
-        /* Ensure the header doesn't hide the top of the hero */
+		/* Ensure the header doesn't hide the top of the hero */
         padding-top: var(--header-height, 4rem); /* Assuming header has a height variable or fixed height */
         box-sizing: border-box; /* Include padding in height calculation */
         height: calc(100vh - var(--header-height, 4.5rem)); /* Adjust full height for header */
@@ -184,7 +184,7 @@ import logoImage from '../assets/logo.svg';
 	
 	.testimonial-heading {
 		text-align: center;
-		color: var(--accent);
+		color: var(--accent-light);
 		font-size: clamp(1.5em, 4vw, 1.8em);
 		margin: 3em 1em 1em;
 	}
@@ -205,7 +205,7 @@ import logoImage from '../assets/logo.svg';
         background-color: rgba(255, 255, 255, 0.82);
         border-radius: 12px;
 		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        padding: 1em;
+		padding: 1em;
 	}
 
 	.scroll-arrow {

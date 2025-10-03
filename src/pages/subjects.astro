@@ -24,11 +24,13 @@ We provide expert, one-to-one online tuition across a wide range of subjects and
                     <h2>Entrance Exams (11+ & 13+)</h2>
                     <p>Comprehensive preparation for selective school admissions, building core skills and exam technique.</p>
                     <ul class="subject-list">
-                        <li>11+ & 13+ Preparation</li>
+     
+                   <li>11+ & 13+ Preparation</li>
                         <li>English</li>
                         <li>Verbal Reasoning</li>
                         <li>Mathematics</li>
-                        <li>Non-Verbal Reasoning</li>
+     
+                   <li>Non-Verbal Reasoning</li>
                     </ul>
                 </div>
 				<div class="price-section">
@@ -41,23 +43,28 @@ We provide expert, one-to-one online tuition across a wide range of subjects and
 
 			<div class="subject-card">
                 <div class="card-content">
-                    <h2>GCSE</h2>
+                
+     <h2>GCSE</h2>
                     <p>Targeted support to help students excel in their GCSEs and build a strong foundation for future studies.</p>
                     <div class="exam-boards-container">
                         <span class="exam-board-tag">AQA</span>
-                        <span class="exam-board-tag">Edexcel</span>
+              
+           <span class="exam-board-tag">Edexcel</span>
                         <span class="exam-board-tag">OCR</span>
                         <span class="exam-board-tag">WJEC</span>
                         <span class="exam-board-tag">CCEA</span>
-                    </div>
+              
+       </div>
                     <ul class="subject-list">
                         <li>Mathematics</li>
                         <li>Further Mathematics</li>
-                        <li>Triple Science (Biology, Chemistry, Physics)</li>
+                        
+ <li>Triple Science (Biology, Chemistry, Physics)</li>
                         <li>Combined Science</li>
                         <li>English Literature</li>
                         <li>English Language</li>
-                        <li>Business Studies</li>
+                     
+    <li>Business Studies</li>
                     </ul>
                 </div>
 				<div class="price-section">
@@ -71,19 +78,23 @@ We provide expert, one-to-one online tuition across a wide range of subjects and
 			<div class="subject-card">
                 <div class="card-content">
                     <h2>A-Level</h2>
-                    <p>In-depth, specialist tutoring for A-Level students aiming to achieve top grades for university and beyond.</p>
+            
+         <p>In-depth, specialist tutoring for A-Level students aiming to achieve top grades for university and beyond.</p>
                     <div class="exam-boards-container">
                         <span class="exam-board-tag">AQA</span>
                         <span class="exam-board-tag">Edexcel</span>
-                        <span class="exam-board-tag">OCR</span>
+       
+                 <span class="exam-board-tag">OCR</span>
                         <span class="exam-board-tag">WJEC</span>
                         <span class="exam-board-tag">CCEA</span>
                     </div>
-                    <ul class="subject-list">
+            
+         <ul class="subject-list">
                         <li>Mathematics</li>
                         <li>Further Mathematics</li>
                         <li>Physics</li>
-                        <li>English</li>
+                  
+       <li>English</li>
                         <li>Economics</li>
                     </ul>
                 </div>
@@ -121,11 +132,12 @@ main {
 	margin: 2em auto;
 	padding: 0 2em;
 	box-sizing: border-box;
-	color: var(--accent);
+	color: var(--accent-light);
 }
 
 h1, .intro-text {
 	text-align: center;
+	color: var(--accent-light);
 }
 
 .intro-text {
@@ -146,11 +158,12 @@ h1, .intro-text {
 	padding: 2.5em;
 	border-radius: 12px;
 	box-shadow: var(--box-shadow);
-    border: 1px solid var(--border-color);
+	border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+	color: var(--accent);
 }
 
 .card-content {
@@ -165,6 +178,7 @@ h1, .intro-text {
 
 .subject-card p {
 	margin-bottom: 1.5em;
+	color: var(--accent);
 }
 
 .subject-list {
@@ -206,7 +220,7 @@ h1, .intro-text {
 /* Pricing Section Styles */
 .price-section {
     padding-top: 1.5em;
-    margin-top: 2em; /* This creates the gap you wanted */
+    margin-top: 2em;
     border-top: 1px solid var(--border-color);
 }
 
@@ -236,12 +250,15 @@ h1, .intro-text {
 /* CTA Section Styles */
 .cta-section {
 	text-align: center;
-	margin-top: 4em;
 	padding: 2.5em;
 	background-color: white;
 	border-radius: 12px;
 	box-shadow: var(--box-shadow);
 	color: var(--accent);
+	/* --- FIX STARTS HERE --- */
+	max-width: 900px; /* Constrain the width */
+    margin: 4em auto 0;  /* Center the block and keep top margin */
+	/* --- FIX ENDS HERE --- */
 }
 
 .cta-section h2 {

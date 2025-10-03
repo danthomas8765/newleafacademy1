@@ -81,7 +81,7 @@ import Footer from '../components/Footer.astro';
 	.form-group label {
 		margin-bottom: 0.5em;
 		font-weight: bold;
-		color: var(--accent);
+		color: var(--accent-light);
 	}
 	.form-group input,
 	.form-group textarea {
@@ -121,22 +121,23 @@ import Footer from '../components/Footer.astro';
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1em;
+		color: var(--accent-light)
 	}
 	.contact-item a {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.75em;
 		padding: 0.8em 1.2em;
-		border: 2px solid var(--accent);
+		border: 2px solid var(--accent-light);
 		border-radius: 8px;
 		text-decoration: none;
-		color: var(--accent);
+		color: var(--accent-light);
 		font-weight: bold;
 		transition: all 0.3s ease;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	}
 	.contact-item a:hover {
-		background-color: var(--accent);
+		background-color: var(--accent-pop);
 		color: white;
 		transform: translateY(-5px);
 		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
@@ -148,7 +149,7 @@ import Footer from '../components/Footer.astro';
 	}
 	main > h1,
 	main > p:first-of-type {
-		color: var(--accent);
+		color: var(--accent-light);
 		text-align: center;
 	}
 	main > p:first-of-type {

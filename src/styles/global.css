@@ -8,8 +8,8 @@
 :root {
   --accent: #345bb6; /* A slightly softer blue */
   --accent-dark: #162293; /* Darker blue */
-  --accent-pop: #0ab084; /* Vibrant teal for CTAs */
-  --black: 15, 18, 25;
+  --accent-pop: #0ab084;
+  --accent-light: #f2f9ff; 
   --gray: 96, 115, 159;
   --gray-light: 229, 233, 240;
   --gray-dark: 34, 41, 57;
@@ -81,7 +81,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: left;
-  background: linear-gradient(to bottom, var(--background-blue), #ccfbff);
+  background: linear-gradient(to bottom, #1a3587, #406e7d);
   word-wrap: break-word;
   overflow-wrap: break-word;
   color: rgb(var(--gray-dark));
