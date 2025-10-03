@@ -103,7 +103,7 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
         font-weight: bold;
         white-space: nowrap;
         /* ✅ DYNAMIC FONT SIZE FOR SITE TITLE - Adjusted for more aggressive shrink */
-        font-size: clamp(0.75em, 1.4vw, 1.5em); /* Min 0.75em, Max 1.5em */
+        font-size: clamp(1.1em, 1.4vw, 1.5em); /* Min 0.75em, Max 1.5em */
         flex-shrink: 1; /* Allow title font to shrink */
         min-width: min-content; /* Ensure it respects content's minimum width (no ellipsis) */
     }
@@ -198,79 +198,90 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 
     /* --- Mobile and Tablet Styles --- */
     /* This breakpoint will hide the desktop navigation */
-    @media (max-width: 990px) { /* ✅ TARGET BREAKPOINT */
-        .nav-links {
-            display: none; /* Hide desktop nav links and social links */
-        }
-        .menu-toggle {
-            display: block; /* Show hamburger menu */
-            margin-left: auto; /* Push toggle to far right */
-        }
+    /* --- Mobile and Tablet Styles --- */
+	@media (max-width: 1125px) {
+		.nav-links {
+			display: none;
+		}
+		.menu-toggle {
+			display: block;
+			margin-left: auto;
+		}
 
-        /* Mobile Menu Overlay Styles (when active) */
-        .nav-links {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 70%;
-            max-width: 350px;
-            height: 100vh;
-            background: white;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 2em;
-            transform: translateX(100%);
-            transition: transform 0.3s ease-in-out, visibility 0.3s;
-            visibility: hidden;
-            box-shadow: -4px 0 15px rgba(0,0,0,0.1);
-            z-index: 999;
-        }
+		/* Mobile Menu Overlay Styles (when active) */
+		.nav-links {
+			position: fixed;
+			top: 0;
+			right: 0;
+			width: 70%;
+			max-width: 350px;
+			height: 100vh;
+			background: white;
+			flex-direction: column;
+			justify-content: flex-start; /* ✅ Align items to the top */
+			align-items: center;
+			gap: 1.5em; /* ✅ Reduced gap */
+			transform: translateX(100%);
+			transition: transform 0.3s ease-in-out, visibility 0.3s;
+			visibility: hidden;
+			box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+			z-index: 999;
+			padding-top: 1.5em; /* ✅ Add padding at the top */
+			overflow-y: auto; /* ✅ Allow vertical scrolling */
+            padding-bottom: 1.5em; /* Add padding at the bottom for scroll space */
+            box-sizing: border-box; /* Ensure padding is included in height */
+		}
 
-        .nav-links.is-open {
-            transform: translateX(0);
-            visibility: visible;
-            display: flex; /* Override display: none when menu is open */
-        }
-        
-        .nav-links .internal-links,
+		.nav-links.is-open {
+			transform: translateX(0);
+			visibility: visible;
+			display: flex;
+		}
+		
+		.nav-links .internal-links,
+		.nav-links .social-links {
+			display: flex;
+			opacity: 0;
+			transition: opacity 0.3s ease-in-out 0.2s;
+			flex-direction: column;
+			gap: 1.2em; /* ✅ Reduced gap */
+			width: 100%;
+			text-align: center;
+		}
+
+        /* ✅ Make social icons horizontal in mobile menu */
         .nav-links .social-links {
-            display: flex; /* Override display: none within the mobile menu */
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out 0.2s;
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: center;
             gap: 1.5em;
-            width: 100%;
-            text-align: center;
+            margin-top: 1em;
         }
 
-        .nav-links.is-open .internal-links,
-        .nav-links.is-open .social-links {
-            opacity: 1;
-        }
-        
-        .nav-links.is-open .internal-links > :global(a) {
-            font-size: 1.2em;
-            padding-left: 0;
-            white-space: normal; /* Allow wrapping in mobile menu */
-            overflow: visible;
-            text-overflow: clip;
-            min-width: auto; /* Reset */
-        }
-        .nav-links.is-open .internal-links > :global(a:first-child) {
-            border-left: none;
-        }
+		.nav-links.is-open .internal-links,
+		.nav-links.is-open .social-links {
+			opacity: 1;
+		}
+		
+		.nav-links.is-open .internal-links > :global(a) {
+			font-size: 1em; /* ✅ Reduced font size */
+			padding-left: 0;
+			white-space: normal;
+		}
+		.nav-links.is-open .internal-links > :global(a:first-child) {
+			border-left: none;
+		}
+
         .nav-links.is-open .social-links a svg {
-            width: 24px; /* Full size in mobile menu */
-            height: 24px;
+            width: 32px; /* ✅ Slightly larger icons for touch targets */
+            height: 32px;
         }
-    }
+	}
 
-    @media (max-width: 480px) {
-        .nav-links {
-            width: 85%;
-        }
-    }
+	@media (max-width: 480px) {
+		.nav-links {
+			width: 85%;
+		}
+	}
 </style>
 <script is:inline>
     const menuToggle = document.querySelector('.menu-toggle');
