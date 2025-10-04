@@ -4,6 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { Image } from 'astro:assets';
 import marcusReesImage from '../assets/marcusrees.jpg';
+// Import the new images for the bio content
+import marcusCourseImage from '../assets/marcuscourse1.jpg';
+import marcusGradImage from '../assets/marcusgrad.jpg';
+import marcusFarmImage from '../assets/marcusfarm.jpg';
 ---
 <!doctype html>
 
@@ -34,12 +38,23 @@ height={200}
 				<p>
 					Having achieved straight A's and A*'s at GCSE and A-Level, I went on to study Mathematics at the University of Bath, where I completed my Master's degree, specialising in mathematical modelling, analysis, and maths communication.
 				</p>
+				<div class="image-wrapper">
+					<Image src={marcusGradImage} alt="Marcus Rees at his graduation" />
+				</div>
 				<p>
 					My communicating mathematics course was one of the most enjoyable and insightful courses of my time at university, and it equipped me with the ability to consider any student, young or old, and decipher the best way to meet them where they are and communicate an idea in a way they'll understand. It also made me love teaching!
 				</p>
+				
+				<div class="image-wrapper">
+					<Image src={marcusCourseImage} alt="Marcus Rees teaching or in a university setting" />
+				</div>
+
 				<p>
 					After graduating, I decided it was a good time to broaden my horizons and get a sense for the real world outside of academia. During this time, I lived on and restored a canal boat, trained to run a small farm and started my own market garden, and crossed the width of Asia and Europe (mostly) without flying.
 				</p>
+				<div class="image-wrapper">
+					<Image src={marcusFarmImage} alt="Marcus working on his market garden" />
+				</div>
 				<p>
 					I've been tutoring a range of GCSE and A-Level students throughout my adventures and have consistently found it a grounding and enriching experience, noticing that often my endeavours and my teaching overlap in thought-provoking ways. I'm a strong believer in the value of experience in the wider world when it comes to teaching, and always aim to balance the natural curiosity of how a student's learning can be applied with achieving academic success.
 				</p>
@@ -125,6 +140,22 @@ main {
 	line-height: 1.8;
 	margin-bottom: 1.5em;
 }
+
+/* --- STYLES FOR IMAGES --- */
+.image-wrapper {
+	margin: 2em auto;
+	max-width: 600px;
+	text-align: center;
+}
+
+.image-wrapper :global(img) {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+/* --- END STYLES --- */
 
 	.cta-section {
 	text-align: center;

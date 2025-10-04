@@ -3,9 +3,10 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { Image } from 'astro:assets';
-// Add your new images here
+// Add all your images here
 import howItWorks1 from '../assets/howitworks1.jpg';
 import howItWorks2 from '../assets/howitworks2.jpg';
+import howItWorks3 from '../assets/howitworks3.jpg';
 ---
 
 <!doctype html>
@@ -39,13 +40,6 @@ import howItWorks2 from '../assets/howitworks2.jpg';
 								<p>We'll schedule a friendly, informal chat to discuss your child's specific needs, learning style, and academic goals in detail.</p>
 							</div>
 						</div>
-						<div class="step">
-							<div class="step-number">3</div>
-							<div class="step-content">
-								<h3>Free Taster Session</h3>
-								<p>We'll book a complimentary 30-minute taster session. This is a great chance for your child to meet their tutor and experience our teaching style firsthand, with no obligation.</p>
-							</div>
-						</div>
 					</div>
 					<div class="image-column">
 						<Image src={howItWorks1} alt="A student engaged in an online tutoring session" class="process-image" />
@@ -58,12 +52,24 @@ import howItWorks2 from '../assets/howitworks2.jpg';
 					</div>
 					<div class="steps-column">
 						<div class="step">
+							<div class="step-number">3</div>
+							<div class="step-content">
+								<h3>Free Taster Session</h3>
+								<p>We'll book a complimentary 30-minute taster session. This is a great chance for your child to meet their tutor and experience our teaching style firsthand, with no obligation.</p>
+							</div>
+						</div>
+						<div class="step">
 							<div class="step-number">4</div>
 							<div class="step-content">
 								<h3>Tailored Learning Plan</h3>
-								<p>After the taster session, we'll work with you to decide on the best course of action and create a personalized learning plan tailored to your child's goals.</p>
+								<p>After the taster session, we'll work with you to decide on the best course of action and create a personalised learning plan tailored to your child's goals.</p>
 							</div>
 						</div>
+					</div>
+				</div>
+
+				<div class="process-row">
+					<div class="steps-column">
 						<div class="step">
 							<div class="step-number">5</div>
 							<div class="step-content">
@@ -78,6 +84,9 @@ import howItWorks2 from '../assets/howitworks2.jpg';
 								<p>We believe in a partnership. You'll receive consistent progress updates and we'll stay in close communication to ensure we're always working together for your child's success.</p>
 							</div>
 						</div>
+					</div>
+					<div class="image-column">
+						<Image src={howItWorks3} alt="A student and tutor celebrating a success" class="process-image" />
 					</div>
 				</div>
 			</div>
@@ -101,7 +110,7 @@ import howItWorks2 from '../assets/howitworks2.jpg';
 	}
 
 	main {
-		max-width: 1200px; /* Widen the main container for the new layout */
+		max-width: 1200px;
 		margin: 2em auto;
 		padding: 0 1em;
 		box-sizing: border-box;
@@ -189,8 +198,8 @@ import howItWorks2 from '../assets/howitworks2.jpg';
 		}
 
 		/* This makes the second row reverse its column order */
-		.process-row:nth-child(2) .steps-column {
-			order: 2;
+		.process-row:nth-child(2) .image-column {
+			order: -1;
 		}
 
 		.process-image {

@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { Image } from 'astro:assets';
 import kaiMcKimImage from '../assets/kaimckim.jpg';
+// Add the new image for the Royal Academy feature
+import kaiRaImage from '../assets/kai-ra.jpg';
 ---
 
 <!doctype html>
@@ -32,16 +34,22 @@ import kaiMcKimImage from '../assets/kaimckim.jpg';
 				<div class="bio-content">
 					<h2>About Kai</h2>
 					<p>
-						Having received top grades in my GCSEs and A-Levels, including A*s in English Literature and Language, I went on to study architecture at The Bartlett at UCL.					
+						Having received top grades in my GCSEs and A-Levels, including A*s in English Literature and Language, I went on to study architecture at The Bartlett at UCL.
 					</p>
 					<p>
-						Towards the end of my degree, I was asked to give lectures to first-year students. It was then that I discovered how much I enjoyed teaching and passing on knowledge. Since starting to tutor online in 2024, my love of English has only deepened. With a passion for the subject that keeps me constantly reading and writing, I find it easy to share my enthusiasm with my students.					
+						Towards the end of my degree, I was asked to give lectures to first-year students. It was then that I discovered how much I enjoyed teaching and passing on knowledge. Since starting to tutor online in 2024, my love of English has only deepened. With a passion for the subject that keeps me constantly reading and writing, I find it easy to share my enthusiasm with my students.
 					</p>
 					<p>
-						I am proud that my students have often achieved results better than anyone expected. It’s incredibly rewarding to help them realise their potential. I believe every student has the ability to succeed in English, and I am committed to helping them do just that.					
+						Beyond tutoring, I am also a practicing artist. My passion for creative expression culminated in my final-year architectural project at university being selected for exhibition at the prestigious Royal Academy of Arts in London, where it won the 'Drawing of the Year 2024' award. This experience reinforced my belief in the power of creativity and dedication—principles I bring to every tutoring session.
+					</p>
+					<div class="image-wrapper">
+						<Image src={kaiRaImage} alt="Kai McKim's award-winning project at the Royal Academy of Arts" />
+					</div>
+					<p>
+						I am proud that my students have often achieved results better than anyone expected. It’s incredibly rewarding to help them realise their potential. I believe every student has the ability to succeed in English, and I am committed to helping them do just that.
 					</p>
 					<p>
-						When I’m not tutoring, I enjoy putting my architectural skills to practical use. I recently completed a project building a studio in my garden from scratch, which was an amazing test of patience, hard work, and creative design.					
+						When I’m not tutoring, I enjoy putting my architectural skills to practical use. I recently completed a project building a studio in my garden from scratch, which was an amazing test of patience, hard work, and creative design.
 					</p>
 				</div>
                 <div class="cta-section">
@@ -60,7 +68,7 @@ import kaiMcKimImage from '../assets/kaimckim.jpg';
 <style>
 	:root {
 		--card-bg-color: #f9f9f9;
-        --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		--box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 	}
 
 	main {
@@ -123,7 +131,21 @@ import kaiMcKimImage from '../assets/kaimckim.jpg';
 		margin-bottom: 1.5em;
 	}
 
-        .cta-section {
+	.image-wrapper {
+		margin: 2em auto;
+		max-width: 600px;
+		text-align: center;
+	}
+
+	.image-wrapper :global(img) {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	}
+
+    .cta-section {
 		text-align: center;
 		margin-top: 2em;
 		padding: 2em;

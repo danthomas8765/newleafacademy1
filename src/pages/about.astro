@@ -2,6 +2,10 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+
+// Import the new image
+import danPic1 from '../assets/danpic1.jpg';
 ---
 
 <!doctype html>
@@ -21,14 +25,17 @@ import Footer from '../components/Footer.astro';
             <section class="content-box">
                 <h2>Our Story</h2>
                 <p>
-                    New Leaf Academy was founded by Dan Thomas out of a personal experience with the challenges of the traditional education system. After seeing so many bright and talented students struggling in the classroom, it became clear that a more personal, adaptive approach was needed. We started this academy to create a space where learning is not about memorization, but about understanding, and where every student's unique way of thinking is celebrated.
+                    New Leaf Academy was founded by Dan Thomas out of a personal experience with the challenges of the traditional education system. After seeing so many bright and talented students struggling in the classroom, it became clear that a more personal, adaptive approach was needed. We started this academy to create a space where learning is not about memorisation, but about understanding, and where every student's unique way of thinking is celebrated.
                 </p>
+				<div class="image-wrapper">
+					<Image src={danPic1} alt="A snapshot of the New Leaf Academy team" />
+				</div>
             </section>
 
             <section class="content-box">
                 <h2>Our Mission</h2>
                 <p>
-                    Our mission is simple: to empower students to become confident, capable, and curious lifelong learners. We believe that the right support can transform a student's relationship with education, turning "I can't" into "I can." We are driven to make a real difference by providing high-quality, personalized tutoring that blends the latest research-driven techniques with genuine passion. Our goal isn't just to improve grades, but to build the self-esteem and resilience needed for success far beyond the classroom.
+                    Our mission is simple: to empower students to become confident, capable, and curious lifelong learners. We believe that the right support can transform a student's relationship with education, turning "I can't" into "I can." We are driven to make a real difference by providing high-quality, personalised tutoring that blends the latest research-driven techniques with genuine passion. Our goal isn't just to improve grades, but to build the self-esteem and resilience needed for success far beyond the classroom.
                 </p>
             </section>
             
@@ -93,7 +100,6 @@ import Footer from '../components/Footer.astro';
         margin-bottom: 2em;
     }
 
-    /* Style for the new white boxes and text color */
     .content-box {
         background-color: white;
         padding: 2em;
@@ -102,4 +108,20 @@ import Footer from '../components/Footer.astro';
         margin-bottom: 2em;
         color: var(--accent);
     }
+	
+	.image-wrapper {
+		margin: 2em auto 0;
+		max-width: 350px; /* Reduced max-width for a smaller image */
+		text-align: center;
+	}
+
+	.image-wrapper :global(img) {
+		width: 100%; /* Ensures it scales down within the max-width */
+		height: auto;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+		display: block; /* Essential for centering with margin auto */
+		margin: 0 auto; /* Centers the image */
+	}
+
 </style>
