@@ -29,7 +29,13 @@ import marcusCourseThumbnail from '../assets/marcuscourse1.jpg';
 				<a href="/blog/journey-across-eurasia" class="resource-card-link">
 					<div class="resource-card">
 						<div class="card-image-wrapper">
-							<Image src={journeyThumbnail} alt="Thumbnail for Journey Across Eurasia blog post" width="300" height="200" />
+							<Image 
+								src={journeyThumbnail} 
+								alt="Thumbnail for Journey Across Eurasia blog post" 
+								widths={[400, 800]}
+								sizes="(max-width: 768px) 90vw, 400px"
+								quality={85}
+							/>
 						</div>
 						<h2 class="resource-heading">Journey Across Eurasia</h2>
 						<p>Follow along on an incredible journey of discovery, learning, and cultural exchange across the vast landscapes of Europe and Asia.</p>
@@ -39,7 +45,13 @@ import marcusCourseThumbnail from '../assets/marcuscourse1.jpg';
 				<a href="/blog/dan-teaching-award" class="resource-card-link">
 					<div class="resource-card">
 						<div class="card-image-wrapper">
-							<Image src={danAwardThumbnail} alt="Thumbnail for Dan's Teaching Excellence Award blog post" width="300" height="200" />
+							<Image 
+								src={danAwardThumbnail} 
+								alt="Thumbnail for Dan's Teaching Excellence Award blog post" 
+								widths={[400, 800]}
+								sizes="(max-width: 768px) 90vw, 400px"
+								quality={85}
+							/>
 						</div>
 						<h2 class="resource-heading">Dan's Teaching Excellence Award</h2>
 						<p>Discover the story behind Dan's recent award for excellence and his philosophy on what makes a truly impactful teacher.</p>
@@ -49,7 +61,13 @@ import marcusCourseThumbnail from '../assets/marcuscourse1.jpg';
 				<a href="/blog/kai-studio-project" class="resource-card-link">
 					<div class="resource-card">
 						<div class="card-image-wrapper">
-							<Image src={kaiStudioThumbnail} alt="Thumbnail for Kai's Studio Building Project blog post" width="300" height="200" />
+							<Image 
+								src={kaiStudioThumbnail} 
+								alt="Thumbnail for Kai's Studio Building Project blog post" 
+								widths={[400, 800]}
+								sizes="(max-width: 768px) 90vw, 400px"
+								quality={85}
+							/>
 						</div>
 						<h2 class="resource-heading">Kai's Studio Building Project</h2>
 						<p>From design to construction, see how Kai is building a creative space from the ground up, blending practical skills with artistic vision.</p>
@@ -59,7 +77,13 @@ import marcusCourseThumbnail from '../assets/marcuscourse1.jpg';
 				<a href="/blog/marcus-maths-course" class="resource-card-link">
 					<div class="resource-card">
 						<div class="card-image-wrapper">
-							<Image src={marcusCourseThumbnail} alt="Thumbnail for Marcus' Communicating Maths Course blog post" width="300" height="200" />
+							<Image 
+								src={marcusCourseThumbnail} 
+								alt="Thumbnail for Marcus' Communicating Maths Course blog post" 
+								widths={[400, 800]}
+								sizes="(max-width: 768px) 90vw, 400px"
+								quality={85}
+							/>
 						</div>
 						<h2 class="resource-heading">Marcus' Communicating Maths Course</h2>
 						<p>Explore Marcus' latest professional development course focused on making complex mathematical ideas clear and accessible to all.</p>
@@ -126,7 +150,6 @@ import marcusCourseThumbnail from '../assets/marcuscourse1.jpg';
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		/* Align content to start, not space-between, to keep image at top */
 		justify-content: flex-start; 
 	}
 
@@ -136,22 +159,20 @@ import marcusCourseThumbnail from '../assets/marcuscourse1.jpg';
 		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 	}
 
-	/* --- NEW STYLES FOR CARD IMAGES --- */
 	.card-image-wrapper {
-		width: 100%; /* Ensure it takes full width of the card */
-		height: 200px; /* Fixed height for consistency */
-		overflow: hidden; /* Hide overflow for rounded corners */
-		border-radius: 8px; /* Slightly rounded corners for the image itself */
-		margin-bottom: 1.5em; /* Space below the image */
+		width: 100%;
+		height: 200px;
+		overflow: hidden;
+		border-radius: 8px;
+		margin-bottom: 1.5em;
 	}
 
 	.card-image-wrapper :global(img) {
 		width: 100%;
 		height: 100%;
-		object-fit: cover; /* Cover the area, cropping if necessary */
-		display: block; /* Remove extra space below image */
+		object-fit: cover;
+		display: block;
 	}
-	/* --- END NEW STYLES --- */
 
 	.resource-heading {
 		font-size: clamp(1.5em, 4vw, 1.6em);
@@ -208,9 +229,9 @@ import marcusCourseThumbnail from '../assets/marcuscourse1.jpg';
 
 	/* This is the new code that fixes the mobile layout */
 	@media (max-width: 768px) {
-		.resources-container {
-			grid-template-columns: 1fr;
-			padding: 0; /* Optional: remove side padding on mobile for more space */
-		}
+	  .resources-container {
+		grid-template-columns: 1fr;
+		padding: 0; /* Optional: remove side padding on mobile for more space */
+	  }
 	}
 </style>
