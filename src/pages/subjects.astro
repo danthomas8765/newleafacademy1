@@ -177,7 +177,7 @@ h1, .intro-text {
 
 .subject-card {
 	background-color: white;
-	padding: 0; /* Remove padding to allow image to be flush */
+	padding: 0;
 	border-radius: 12px;
 	box-shadow: var(--box-shadow);
 	border: 1px solid var(--border-color);
@@ -186,24 +186,26 @@ h1, .intro-text {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 	color: var(--accent);
-	overflow: hidden; /* This is key to contain the image within the card's rounded corners */
+	overflow: hidden;
 }
 
+/* --- CHANGE STARTS HERE --- */
 .card-image-wrapper {
 	width: 100%;
-	height: 200px; /* Or your desired height */
+	aspect-ratio: 16 / 9; /* Use aspect ratio instead of fixed height */
 	overflow: hidden;
 }
 
 .card-image-wrapper :global(img) {
 	width: 100%;
 	height: 100%;
-	object-fit: cover; /* This will crop the image to fit without distortion */
+	object-fit: cover; /* This will fill the container without squashing */
 	display: block;
 }
+/* --- CHANGE ENDS HERE --- */
 
 .card-content {
-	padding: 2.5em; /* Add padding back to the content area */
+	padding: 2.5em;
     flex-grow: 1;
 }
 
@@ -254,10 +256,9 @@ h1, .intro-text {
 	border: 1px solid #c0d7f0;
 }
 
-/* Pricing Section Styles */
 .price-section {
-    padding: 1.5em 2.5em 2.5em; /* Add padding back */
-    margin-top: auto; /* Push to the bottom */
+    padding: 1.5em 2.5em 2.5em;
+    margin-top: auto;
     border-top: 1px solid var(--border-color);
 }
 
@@ -284,7 +285,6 @@ h1, .intro-text {
     opacity: 0.8;
 }
 
-/* CTA Section Styles */
 .cta-section {
 	text-align: center;
 	padding: 2.5em;
