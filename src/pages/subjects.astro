@@ -2,6 +2,12 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+
+// Import the images for each subject card
+import entranceExamImage from '../assets/11+13+.jpg';
+import gcseImage from '../assets/gcse.jpg';
+import alevelImage from '../assets/alevel.jpg';
 ---
 <!doctype html>
 
@@ -20,19 +26,20 @@ We provide expert, one-to-one online tuition across a wide range of subjects and
 
 		<div class="subjects-container">
 			<div class="subject-card">
-                <div class="card-content">
-                    <h2>Entrance Exams (11+ & 13+)</h2>
-                    <p>Comprehensive preparation for selective school admissions, building core skills and exam technique.</p>
-                    <ul class="subject-list">
-     
-                   <li>11+ & 13+ Preparation</li>
-                        <li>English</li>
-                        <li>Verbal Reasoning</li>
-                        <li>Mathematics</li>
-     
-                   <li>Non-Verbal Reasoning</li>
-                    </ul>
-                </div>
+				<div class="card-image-wrapper">
+					<Image src={entranceExamImage} alt="Entrance Exams Preparation" />
+				</div>
+				<div class="card-content">
+					<h2>Entrance Exams (11+ & 13+)</h2>
+					<p>Comprehensive preparation for selective school admissions, building core skills and exam technique.</p>
+					<ul class="subject-list">
+						<li>11+ & 13+ Preparation</li>
+						<li>English</li>
+						<li>Verbal Reasoning</li>
+						<li>Mathematics</li>
+						<li>Non-Verbal Reasoning</li>
+					</ul>
+				</div>
 				<div class="price-section">
 					<div class="price">
 						£35<span class="per-hour">/ hour</span>
@@ -42,31 +49,29 @@ We provide expert, one-to-one online tuition across a wide range of subjects and
 			</div>
 
 			<div class="subject-card">
-                <div class="card-content">
-                
-     <h2>GCSE</h2>
-                    <p>Targeted support to help students excel in their GCSEs and build a strong foundation for future studies.</p>
-                    <div class="exam-boards-container">
-                        <span class="exam-board-tag">AQA</span>
-              
-           <span class="exam-board-tag">Edexcel</span>
-                        <span class="exam-board-tag">OCR</span>
-                        <span class="exam-board-tag">WJEC</span>
-                        <span class="exam-board-tag">CCEA</span>
-              
-       </div>
-                    <ul class="subject-list">
-                        <li>Mathematics</li>
-                        <li>Further Mathematics</li>
-                        
- <li>Triple Science (Biology, Chemistry, Physics)</li>
-                        <li>Combined Science</li>
-                        <li>English Literature</li>
-                        <li>English Language</li>
-                     
-    <li>Business Studies</li>
-                    </ul>
-                </div>
+				<div class="card-image-wrapper">
+					<Image src={gcseImage} alt="GCSE Subjects" />
+				</div>
+				<div class="card-content">
+					<h2>GCSE</h2>
+					<p>Targeted support to help students excel in their GCSEs and build a strong foundation for future studies.</p>
+					<div class="exam-boards-container">
+						<span class="exam-board-tag">AQA</span>
+						<span class="exam-board-tag">Edexcel</span>
+						<span class="exam-board-tag">OCR</span>
+						<span class="exam-board-tag">WJEC</span>
+						<span class="exam-board-tag">CCEA</span>
+					</div>
+					<ul class="subject-list">
+						<li>Mathematics</li>
+						<li>Further Mathematics</li>
+						<li>Triple Science (Biology, Chemistry, Physics)</li>
+						<li>Combined Science</li>
+						<li>English Literature</li>
+						<li>English Language</li>
+						<li>Business Studies</li>
+					</ul>
+				</div>
 				<div class="price-section">
 					<div class="price">
 						£40<span class="per-hour">/ hour</span>
@@ -76,28 +81,27 @@ We provide expert, one-to-one online tuition across a wide range of subjects and
 			</div>
 
 			<div class="subject-card">
-                <div class="card-content">
-                    <h2>A-Level</h2>
-            
-         <p>In-depth, specialist tutoring for A-Level students aiming to achieve top grades for university and beyond.</p>
-                    <div class="exam-boards-container">
-                        <span class="exam-board-tag">AQA</span>
-                        <span class="exam-board-tag">Edexcel</span>
-       
-                 <span class="exam-board-tag">OCR</span>
-                        <span class="exam-board-tag">WJEC</span>
-                        <span class="exam-board-tag">CCEA</span>
-                    </div>
-            
-         <ul class="subject-list">
-                        <li>Mathematics</li>
-                        <li>Further Mathematics</li>
-                        <li>Physics</li>
-                  
-       <li>English</li>
-                        <li>Economics</li>
-                    </ul>
-                </div>
+				<div class="card-image-wrapper">
+					<Image src={alevelImage} alt="A-Level Subjects" />
+				</div>
+				<div class="card-content">
+					<h2>A-Level</h2>
+					<p>In-depth, specialist tutoring for A-Level students aiming to achieve top grades for university and beyond.</p>
+					<div class="exam-boards-container">
+						<span class="exam-board-tag">AQA</span>
+						<span class="exam-board-tag">Edexcel</span>
+						<span class="exam-board-tag">OCR</span>
+						<span class="exam-board-tag">WJEC</span>
+						<span class="exam-board-tag">CCEA</span>
+					</div>
+					<ul class="subject-list">
+						<li>Mathematics</li>
+						<li>Further Mathematics</li>
+						<li>Physics</li>
+						<li>English</li>
+						<li>Economics</li>
+					</ul>
+				</div>
 				<div class="price-section">
 					<div class="price">
 						£45<span class="per-hour">/ hour</span>
@@ -155,7 +159,7 @@ h1, .intro-text {
 
 .subject-card {
 	background-color: white;
-	padding: 2.5em;
+	padding: 0; /* Remove padding to allow image to be flush */
 	border-radius: 12px;
 	box-shadow: var(--box-shadow);
 	border: 1px solid var(--border-color);
@@ -164,10 +168,25 @@ h1, .intro-text {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 	color: var(--accent);
+	overflow: hidden; /* This is key to contain the image within the card's rounded corners */
+}
+
+.card-image-wrapper {
+	width: 100%;
+	height: 200px; /* Or your desired height */
+	overflow: hidden;
+}
+
+.card-image-wrapper :global(img) {
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* This will crop the image to fit without distortion */
+	display: block;
 }
 
 .card-content {
-    flex-grow: 1; /* This is the key change to push the price down */
+	padding: 2.5em; /* Add padding back to the content area */
+    flex-grow: 1;
 }
 
 .subject-card h2 {
@@ -219,8 +238,8 @@ h1, .intro-text {
 
 /* Pricing Section Styles */
 .price-section {
-    padding-top: 1.5em;
-    margin-top: 2em;
+    padding: 1.5em 2.5em 2.5em; /* Add padding back */
+    margin-top: auto; /* Push to the bottom */
     border-top: 1px solid var(--border-color);
 }
 
@@ -255,10 +274,8 @@ h1, .intro-text {
 	border-radius: 12px;
 	box-shadow: var(--box-shadow);
 	color: var(--accent);
-	/* --- FIX STARTS HERE --- */
-	max-width: 900px; /* Constrain the width */
-    margin: 4em auto 0;  /* Center the block and keep top margin */
-	/* --- FIX ENDS HERE --- */
+	max-width: 900px;
+	margin: 4em auto 0;
 }
 
 .cta-section h2 {

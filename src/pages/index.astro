@@ -20,11 +20,11 @@ import logoImage from '../assets/logo.svg';
 	<body>
 		<Header />
 		
-		<div class="hero" style={`background-image: url(${bannerImage.src})`}>
-			<div class="hero-overlay"></div>
+		<div class="hero">
+			<div class="hero-background" style={`background-image: url(${bannerImage.src})`}></div>
+
 			<div class="hero-content">
-				
-                <div class="tagline-wrapper">
+				<div class="tagline-wrapper">
 					<Image
 						src={logoImage}
 						alt="New Leaf Academy Logo"
@@ -34,7 +34,6 @@ import logoImage from '../assets/logo.svg';
 						Grow with Confidence
 					</h1>
 				</div>
-
 				<p class="sub-tagline">
 					Unlock potential with expert online tutoring. 🎓 Personalized, confidence-building tuition in Maths, English, Science, & more, from KS3 to A-level.
 				</p>
@@ -54,7 +53,7 @@ import logoImage from '../assets/logo.svg';
 			
 			<div class="scroll-prompt" id="scroll-prompt">
 				<p>Scroll down to see <br> what our students <br> say about us</p>
-				<svg class="scroll-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<svg class="scroll-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 		<path d="M12 5v14m-7-7l7 7 7-7" />
 	</svg>
 			</div>
@@ -71,29 +70,30 @@ import logoImage from '../assets/logo.svg';
 	/* --- Hero Section Styles --- */
 	.hero {
 		position: relative;
-		height: 100vh;
+		height: calc(100vh - var(--header-height, 4.5rem));
 		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
 		color: var(--accent);
-		/* Ensure the header doesn't hide the top of the hero */
-        padding-top: var(--header-height, 4rem); /* Assuming header has a height variable or fixed height */
-        box-sizing: border-box; /* Include padding in height calculation */
-        height: calc(100vh - var(--header-height, 4.5rem)); /* Adjust full height for header */
+        padding-top: var(--header-height, 4rem);
+        box-sizing: border-box;
+		overflow: hidden;
 	}
 
-	.hero-overlay {
+	.hero-background {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.3);
+		background-size: cover;
+		background-position: center;
+		filter: brightness(0.7);
+		mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+		-webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+		z-index: 1;
 	}
 
 	.hero-content {
@@ -104,6 +104,7 @@ import logoImage from '../assets/logo.svg';
 		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 		max-width: 90%;
 		width: 700px;
+		z-index: 2;
 	}
 
     .tagline-wrapper {
@@ -152,12 +153,12 @@ import logoImage from '../assets/logo.svg';
 	}
 
 	/* --- Main Content Styles --- */
-	.content-area { /* ✅ NEW class selector */
-		padding: 4em 1em; /* Added horizontal padding */
-		max-width: 1200px; /* Constrain max width for better readability */
-		margin: 0 auto; /* Center the content area */
-		text-align: center; /* Keep main content centered */
-		color: var(--accent);
+	.content-area {
+		padding: 4em 1em;
+		max-width: 1200px;
+		margin: 0 auto;
+		text-align: center;
+		color: var(--accent-light);
 	}
 
 	.our-promise {
@@ -180,6 +181,7 @@ import logoImage from '../assets/logo.svg';
 		font-size: clamp(1em, 2vw, 1.1em);
 		margin-bottom: 0;
         text-align: center;
+		color: var(--accent);
 	}
 	
 	.testimonial-heading {
@@ -206,6 +208,7 @@ import logoImage from '../assets/logo.svg';
         border-radius: 12px;
 		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 		padding: 1em;
+		z-index: 10; /* This lifts it above the other elements */
 	}
 
 	.scroll-arrow {

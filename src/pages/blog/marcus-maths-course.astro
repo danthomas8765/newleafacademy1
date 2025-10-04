@@ -2,6 +2,12 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import { Image } from 'astro:assets';
+
+// Import your new images here
+import marcusCourse1 from '../../assets/marcuscourse1.jpg';
+import marcusCourse2 from '../../assets/marcuscourse2.jpg';
+import marcusCourse3 from '../../assets/marcuscourse3.jpg';
 ---
 
 <!doctype html>
@@ -25,6 +31,11 @@ import Footer from '../../components/Footer.astro';
 						Maths is no one's first language, and for anyone who has interacted with mathematics at school or outside of the classroom, it's evident that the way it is communicated can easily create a language barrier that can seem impenetrable.
 						As someone who has always had a natural fluency with mathematics, I wanted to understand what lay at the heart of this misunderstanding and learn how to bridge the gap between those who "get" maths and those who might as well be speaking French.
 					</p>
+
+					<div class="image-wrapper">
+						<Image src={marcusCourse1} alt="Marcus teaching a maths masterclass" />
+					</div>
+
 					<p>
 						Effectively communicating an idea in maths or any subject has to start with the student. Developing a rapport and meeting whoever you might be teaching for whatever reason where they are currently is so foundational to understanding that I can't understate its importance. 
 						During my course, we were consistently reminded when planning lessons or creating resources that it all needs to point to your audience. 
@@ -32,12 +43,22 @@ import Footer from '../../components/Footer.astro';
 						What do they know about the topic? Do they understand it's relevance and how it fits into their wider understanding of maths? How have they been taught about it before? 
 						Only once equipped with this can I truly tailor my teaching in a way that doesn't feel disjointed or invite the glossy-eyed feeling we've all felt when someone is speaking at you rather than to you. 
 					</p>
+
+					<div class="image-wrapper">
+						<Image src={marcusCourse2} alt="A student working on a maths problem" />
+					</div>
+
 					<p>
 						As part of the course, my coursemates and I designed, planned, and delivered a mathematics masterclass to a group of Year 12s. Not only was this good fun, it was a great opportunity to exercise what we'd learned.
 						We paid close attention to the topics the students had completed in school and chose an area of maths that would be approachable but different, designing the exercise and presentation in a way that would appeal to a group of 17 year olds. 
 						This took place during one of the breaks in the coronavirus pandemic, which brought the added challenge of communicating maths with a mask on. Despite this handicap limiting the expression we could bring to our presentation, by chatting to the students and grasping what they'd understood we could address any questions and clarify any sections effectively. 
 						I was delighted to end the lesson with a class of content students who felt like they'd learned something new and come away with a broader understanding of mathematics. 
 					</p>
+
+					<div class="image-wrapper">
+						<Image src={marcusCourse3} alt="Close-up of a complex maths equation on a whiteboard" />
+					</div>
+
 					<p>
 						The teachers giving the course did an excellent job of both explaining how to effectively communicate and exemplifying how a fun and empathetic approach is paramount to developing the trust and understanding that is the basis for effective communication.
 					</p>
@@ -60,7 +81,7 @@ import Footer from '../../components/Footer.astro';
 
 <style>
 	main {
-		color: var(--accent);
+		color: var(--accent-light);
 		max-width: 900px;
 		margin: 2em auto;
 		padding: 0 1em;
@@ -69,12 +90,18 @@ import Footer from '../../components/Footer.astro';
 
 	.blog-post-container {
 		text-align: left;
+		background-color: white;
+		color: var(--accent);
+		padding: 2em;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
 	}
 
 	.blog-post-container h1 {
 		font-size: clamp(1.8em, 5vw, 2.5em);
 		margin-bottom: 0.5em;
 		text-align: center;
+		color: var(--accent);
 	}
 
 	.intro-text {
@@ -83,13 +110,31 @@ import Footer from '../../components/Footer.astro';
 		font-size: clamp(1em, 2vw, 1.1em);
 		line-height: 1.7;
 		text-align: center;
+		color: var(--accent);
 	}
 
 	article p {
 		font-size: clamp(1em, 2vw, 1.1em);
 		line-height: 1.8;
 		margin-bottom: 1.5em;
+		color: var(--accent);
 	}
+
+	/* --- NEW STYLES START --- */
+	.image-wrapper {
+		margin: 2em auto;
+		max-width: 600px;
+		text-align: center;
+	}
+
+	.image-wrapper :global(img) {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	}
+	/* --- NEW STYLES END --- */
 	
 	/* Final CTA Section */
 	.cta-section {
@@ -108,8 +153,8 @@ import Footer from '../../components/Footer.astro';
 		color: var(--accent);
 	}
 	.cta-section p {
-        margin-bottom: 1.5em;
-    }
+		margin-bottom: 1.5em;
+	}
 
 	.cta-button {
 		display: inline-block;

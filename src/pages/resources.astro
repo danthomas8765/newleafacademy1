@@ -2,6 +2,11 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+// We no longer need the <Image> component here, but we still import the paths
+import mathsIcon from '../assets/mathsicon.png';
+import englishIcon from '../assets/englishicon.png';
+import scienceIcon from '../assets/scienceicon.webp';
+import studyIcon from '../assets/studyicon.png';
 ---
 
 <!doctype html>
@@ -21,6 +26,7 @@ import Footer from '../components/Footer.astro';
 			<div class="resources-container">
 				<a href="/maths-resources" class="resource-card-link">
 					<div class="resource-card">
+						<div class="icon-container" style={`-webkit-mask-image: url(${mathsIcon.src}); mask-image: url(${mathsIcon.src});`}></div>
 						<h2 class="resource-heading">Mathematics</h2>
 						<p>Explore revision videos, in-depth guides, and practice questions to master key mathematical concepts from GCSE to A-Level.</p>
 					</div>
@@ -28,6 +34,7 @@ import Footer from '../components/Footer.astro';
 				
 				<a href="/english-resources" class="resource-card-link">
 					<div class="resource-card">
+						<div class="icon-container" style={`-webkit-mask-image: url(${englishIcon.src}); mask-image: url(${englishIcon.src});`}></div>
 						<h2 class="resource-heading">English</h2>
 						<p>Access guides on deconstructing poetry, creative writing prompts, and techniques to help you excel in English Literature and Language.</p>
 					</div>
@@ -35,6 +42,7 @@ import Footer from '../components/Footer.astro';
 
 				<a href="/science-resources" class="resource-card-link">
 					<div class="resource-card">
+						<div class="icon-container" style={`-webkit-mask-image: url(${scienceIcon.src}); mask-image: url(${scienceIcon.src});`}></div>
 						<h2 class="resource-heading">Science</h2>
 						<p>Find video demonstrations of practicals and detailed explanations of scientific principles for all GCSE and A-Level topics.</p>
 					</div>
@@ -42,6 +50,7 @@ import Footer from '../components/Footer.astro';
 
 				<a href="/general-resources" class="resource-card-link">
 					<div class="resource-card">
+						<div class="icon-container" style={`-webkit-mask-image: url(${studyIcon.src}); mask-image: url(${studyIcon.src});`}></div>
 						<h2 class="resource-heading">General Learning & Revision</h2>
 						<p>Discover powerful study methods like the Feynman Technique and Spaced Repetition to make your revision more efficient and effective.</p>
 					</div>
@@ -106,12 +115,28 @@ import Footer from '../components/Footer.astro';
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		align-items: center;
 	}
 
 	.resource-card-link:hover .resource-card {
 		transform: translateY(-5px);
 		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+	}
+
+	/* --- UPDATED ICON STYLES --- */
+	.icon-container {
+		width: 48px;
+		height: 48px;
+		margin-bottom: 1em;
+		background-color: var(--accent); /* This sets the icon color */
+		
+		/* These properties apply the image as a mask */
+		mask-size: contain;
+		mask-repeat: no-repeat;
+		mask-position: center;
+		-webkit-mask-size: contain;
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-position: center;
 	}
 
 	.resource-heading {
@@ -124,9 +149,10 @@ import Footer from '../components/Footer.astro';
 
 	.resource-card p {
 		font-size: clamp(1em, 2vw, 1.1em);
-		margin-bottom: 1.5em;
+		margin-bottom: 0;
 		line-height: 1.6;
 		text-align: center;
+		flex-grow: 1;
 	}
 	
 	/* Final CTA Section */
@@ -146,8 +172,8 @@ import Footer from '../components/Footer.astro';
 		color: var(--accent);
 	}
 	.cta-section p {
-        margin-bottom: 1.5em;
-    }
+		margin-bottom: 1.5em;
+	}
 
 	.cta-button {
 		display: inline-block;
