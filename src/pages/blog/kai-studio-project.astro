@@ -17,12 +17,12 @@ import kaiStudio5 from '../../assets/kai-studio-project-5.jpg';
 	<body>
 		<Header />
 		<main>
-			<div class="blog-post-container">
-				<h1>My Studio Building Project</h1>
-				<p class="intro-text">
-					My architecture degree taught me how to think creatively and solve complex problems. I put those skills to the ultimate test when I decided to build my own studio from scratch in my garden.
-				</p>
+			<h1>My Studio Building Project</h1>
+			<p class="intro-text">
+				My architecture degree taught me how to think creatively and solve complex problems. I put those skills to the ultimate test when I decided to build my own studio from scratch in my garden.
+			</p>
 
+			<div class="blog-post-container">
 				<article>
 					<p>
 						In 2024, I began the journey of designing a studio to replace the old shed in my back garden. Drawing on my unique experience from architecture school, I created a detailed and creative design. I went through the process of gaining planning permission, which was an interesting challenge that I had some experience with from previous building projects.
@@ -46,7 +46,7 @@ import kaiStudio5 from '../../assets/kai-studio-project-5.jpg';
 					<div class="image-wrapper">
 						<Image
 							src={kaiStudio4}
-							alt="A picture of the tutors on their journey"
+							alt="An interior shot of the studio during construction"
 							widths={[300, 600, 900]}
 							sizes="(max-width: 600px) 100vw, 600px"
 							loading="lazy"
@@ -59,7 +59,7 @@ import kaiStudio5 from '../../assets/kai-studio-project-5.jpg';
 					<div class="image-wrapper">
 						<Image
 							src={kaiStudio5}
-							alt="A picture of the tutors on their journey"
+							alt="Kai standing in front of his nearly completed studio project"
 							widths={[300, 600, 900]}
 							sizes="(max-width: 600px) 100vw, 600px"
 							loading="lazy"
@@ -85,21 +85,18 @@ import kaiStudio5 from '../../assets/kai-studio-project-5.jpg';
 
 <style>
 	main {
-		color: var(--accent);
+		color: var(--accent-light);
 		max-width: 900px;
 		margin: 2em auto;
 		padding: 0 1em;
 		box-sizing: border-box;
 	}
 
-	.blog-post-container {
-		text-align: left;
-	}
-
-	.blog-post-container h1 {
+	h1 {
 		font-size: clamp(1.8em, 5vw, 2.5em);
 		margin-bottom: 0.5em;
 		text-align: center;
+		color: var(--accent-light);
 	}
 
 	.intro-text {
@@ -108,12 +105,22 @@ import kaiStudio5 from '../../assets/kai-studio-project-5.jpg';
 		font-size: clamp(1em, 2vw, 1.1em);
 		line-height: 1.7;
 		text-align: center;
+		color: var(--accent-light);
+	}
+
+	.blog-post-container {
+		background-color: white;
+		color: var(--accent);
+		padding: 2.5em;
+		border-radius: 12px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 	}
 
 	article p {
 		font-size: clamp(1em, 2vw, 1.1em);
 		line-height: 1.8;
 		margin-bottom: 1.5em;
+		color: var(--accent);
 	}
 
 	.image-wrapper {
@@ -122,7 +129,7 @@ import kaiStudio5 from '../../assets/kai-studio-project-5.jpg';
 		text-align: center;
 	}
 
-	.image-wrapper img {
+	.image-wrapper :global(img) {
 		max-width: 100%;
 		height: auto;
 		border-radius: 8px;

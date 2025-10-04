@@ -42,7 +42,7 @@ height={200}
 					<Image src={marcusGradImage} alt="Marcus Rees at his graduation" />
 				</div>
 				<p>
-					My communicating mathematics course was one of the most enjoyable and insightful courses of my time at university, and it equipped me with the ability to consider any student, young or old, and decipher the best way to meet them where they are and communicate an idea in a way they'll understand. It also made me love teaching!
+					<a href="/blog/marcus-maths-course/">My communicating mathematics course</a> was one of the most enjoyable and insightful courses of my time at university, and it equipped me with the ability to consider any student, young or old, and decipher the best way to meet them where they are and communicate an idea in a way they'll understand. It also made me love teaching!
 				</p>
 				
 				<div class="image-wrapper">
@@ -140,6 +140,17 @@ main {
 	line-height: 1.8;
 	margin-bottom: 1.5em;
 }
+
+/* --- NEW STYLES FOR THE LINK --- */
+.bio-content p a {
+	color: var(--accent-pop);
+	text-decoration: underline;
+	font-weight: bold;
+}
+.bio-content p a:hover {
+	color: var(--accent-dark);
+}
+/* --- END NEW STYLES --- */
 
 /* --- STYLES FOR IMAGES --- */
 .image-wrapper {

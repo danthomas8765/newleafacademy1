@@ -56,7 +56,7 @@ import teachingAwardImage from '../assets/teaching-award-2.jpg';
 						<Image src={danBio3} alt="Dan Thomas studying remotely" />
 					</div>
 					<p>
-						My dedication to my students was recognised in 2023 when the Thai Ministry of Education awarded me a certificate for exceptional teaching. That same year, I started tutoring online, and I was amazed by the potential of digital tools—including AI—to make learning more engaging and effective. The feeling of helping a student one-on-one, and seeing them build confidence and achieve success, was incredibly rewarding.
+						My dedication to my students was recognised in 2023 when the <a href="/blog/dan-teaching-award/">Thai Ministry of Education awarded me a certificate</a> for exceptional teaching. That same year, I started tutoring online, and I was amazed by the potential of digital tools—including AI—to make learning more engaging and effective. The feeling of helping a student one-on-one, and seeing them build confidence and achieve success, was incredibly rewarding.
 					</p>
 					<div class="image-wrapper">
 						<Image src={teachingAwardImage} alt="Dan Thomas receiving his teaching award" />
@@ -148,7 +148,17 @@ import teachingAwardImage from '../assets/teaching-award-2.jpg';
 		margin-bottom: 1.5em;
 	}
 
-	/* --- NEW STYLES FOR IMAGES --- */
+	/* --- NEW STYLES FOR THE LINK --- */
+	.bio-content p a {
+		color: var(--accent-pop);
+		text-decoration: underline;
+		font-weight: bold;
+	}
+	.bio-content p a:hover {
+		color: var(--accent-dark);
+	}
+	/* --- END NEW STYLES --- */
+
 	.image-wrapper {
 		margin: 2em auto;
 		max-width: 600px;
@@ -162,7 +172,6 @@ import teachingAwardImage from '../assets/teaching-award-2.jpg';
 		border-radius: 8px;
 		box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 	}
-	/* --- END NEW STYLES --- */
 
 	.cta-section {
 		text-align: center;

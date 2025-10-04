@@ -19,12 +19,12 @@ import marcusCourse3 from '../../assets/marcuscourse3.jpg';
 	<body>
 		<Header />
 		<main>
+			<h1>My Communicating Maths Course</h1>
+			<p class="intro-text">
+				During my time at university, I took a course that fundamentally shaped how I approach teaching mathematics. This is a reflection on how it developed my skills, broadened my perspective, and made me a more effective tutor.
+			</p>
+			
 			<div class="blog-post-container">
-				<h1>My Communicating Maths Course</h1>
-				<p class="intro-text">
-					During my time at university, I took a course that fundamentally shaped how I approach teaching mathematics. This is a reflection on how it developed my skills, broadened my perspective, and made me a more effective tutor.
-				</p>
-
 				<article>	
 					<p>
 						In the final year of my Master's degree in Mathematics, I chose to take course which departed from the hardcore mathematical rigour and instead focused on a topic which appealed more to my humanity. How do we communicate? 
@@ -88,29 +88,28 @@ import marcusCourse3 from '../../assets/marcuscourse3.jpg';
 		box-sizing: border-box;
 	}
 
-	.blog-post-container {
-		text-align: left;
-		background-color: white;
-		color: var(--accent);
-		padding: 2em;
-		border-radius: 12px;
-		box-shadow: var(--box-shadow);
-	}
-
-	.blog-post-container h1 {
+	h1 {
 		font-size: clamp(1.8em, 5vw, 2.5em);
 		margin-bottom: 0.5em;
 		text-align: center;
-		color: var(--accent);
+		color: var(--accent-light);
 	}
-
+	
 	.intro-text {
 		max-width: 700px;
 		margin: 0 auto 3em;
 		font-size: clamp(1em, 2vw, 1.1em);
 		line-height: 1.7;
 		text-align: center;
+		color: var(--accent-light);
+	}
+
+	.blog-post-container {
+		background-color: white;
 		color: var(--accent);
+		padding: 2.5em;
+		border-radius: 12px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 	}
 
 	article p {
@@ -119,8 +118,7 @@ import marcusCourse3 from '../../assets/marcuscourse3.jpg';
 		margin-bottom: 1.5em;
 		color: var(--accent);
 	}
-
-	/* --- NEW STYLES START --- */
+	
 	.image-wrapper {
 		margin: 2em auto;
 		max-width: 600px;
@@ -134,7 +132,6 @@ import marcusCourse3 from '../../assets/marcuscourse3.jpg';
 		border-radius: 8px;
 		box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 	}
-	/* --- NEW STYLES END --- */
 	
 	/* Final CTA Section */
 	.cta-section {
@@ -168,9 +165,9 @@ import marcusCourse3 from '../../assets/marcuscourse3.jpg';
 		transition: transform 0.3s ease, box-shadow 0.3s ease;
 	}
 
-	.cta-button:hover {
+	.cta-button:hover,
+	.cta-button:focus-visible {
 		transform: translateY(-5px);
 		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 	}
-
 </style>
