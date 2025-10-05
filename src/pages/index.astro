@@ -53,7 +53,7 @@ import logoImage from '../assets/logo.svg';
 			
 			<div class="scroll-prompt" id="scroll-prompt">
 				<p>Scroll down to see <br> what our students <br> say about us</p>
-				<svg class="scroll-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<svg class="scroll-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 		<path d="M12 5v14m-7-7l7 7 7-7" />
 	</svg>
 			</div>
@@ -77,8 +77,8 @@ import logoImage from '../assets/logo.svg';
 		align-items: center;
 		text-align: center;
 		color: var(--accent);
-        padding-top: var(--header-height, 4rem);
-        box-sizing: border-box;
+		padding-top: var(--header-height, 4rem);
+		box-sizing: border-box;
 		overflow: hidden;
 	}
 
@@ -107,29 +107,29 @@ import logoImage from '../assets/logo.svg';
 		z-index: 2;
 	}
 
-    .tagline-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1.5em;
-        margin-bottom: 1em;
-    }
+	.tagline-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5em;
+		margin-bottom: 1em;
+	}
 
-    .hero-logo {
-        width: 160px;
-        height: auto;
-        flex-shrink: 0;
-    }
+	.hero-logo {
+		width: 160px;
+		height: auto;
+		flex-shrink: 0;
+	}
 
 	.tagline {
 		font-size: clamp(2em, 6vw, 3.2em);
 		line-height: 1.1;
-        margin: 0;
+		margin: 0;
 		font-weight: 700;
-        text-align: left;
+		text-align: left;
 	}
-    
-    .sub-tagline {
+	
+	.sub-tagline {
 		font-size: clamp(1.1em, 2.5vw, 1.3em);
 		margin: 0 auto 1.5em;
 	}
@@ -174,13 +174,13 @@ import logoImage from '../assets/logo.svg';
 		font-size: clamp(1.5em, 4vw, 1.8em);
 		margin-top: 0;
 		color: var(--accent);
-        text-align: center;
+		text-align: center;
 	}
 
 	.our-promise p {
 		font-size: clamp(1em, 2vw, 1.1em);
 		margin-bottom: 0;
-        text-align: center;
+		text-align: center;
 		color: var(--accent);
 	}
 	
@@ -204,11 +204,11 @@ import logoImage from '../assets/logo.svg';
 		font-weight: bold;
 		text-align: center;
 		transition: opacity 0.5s ease-in-out;
-        background-color: rgba(255, 255, 255, 0.82);
-        border-radius: 12px;
+		background-color: rgba(255, 255, 255, 0.82);
+		border-radius: 12px;
 		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 		padding: 1em;
-		z-index: 10; /* This lifts it above the other elements */
+		z-index: 10;
 	}
 
 	.scroll-arrow {
@@ -217,6 +217,10 @@ import logoImage from '../assets/logo.svg';
 		margin-top: -0.5em;
 		animation: bounce 2s infinite;
 		color: var(--accent-pop);
+		/* --- NEW CODE START --- */
+		display: block;
+		margin: -0.5em auto 0; /* Center the arrow horizontally */
+		/* --- NEW CODE END --- */
 	}
 
 	@keyframes bounce {
@@ -237,16 +241,16 @@ import logoImage from '../assets/logo.svg';
 			display: none;
 		}
 	}
-    
-    @media (max-width: 600px) {
-        .tagline-wrapper {
-            flex-direction: column;
-            gap: 1em;
-        }
-        .tagline {
-            text-align: center;
-        }
-    }
+	
+	@media (max-width: 600px) {
+		.tagline-wrapper {
+			flex-direction: column;
+			gap: 1em;
+		}
+		.tagline {
+			text-align: center;
+		}
+	}
 </style>
 
 <script>
