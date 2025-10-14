@@ -1,0 +1,66 @@
+---
+const today = new Date();
+---
+
+<footer>
+	<div class="footer-links">
+		<a href="/">Home</a>
+		<a href="/subjects/">Subjects</a>
+		<a href="/tutors/">Tutors</a>
+		<a href="/how-it-works/">How it Works</a>
+		<a href="/why-choose-us/">Why Choose Us</a>
+		<a href="/resources/">Resources</a>
+		<a href="/blog/">Blog</a>	 
+		<a href="/contact/">Contact Us</a>
+		<a href="/about/">About</a>
+		<a href="/FAQs/">FAQs</a>
+	</div>
+	<div class="social-links">
+    <a href="https://www.facebook.com/newleafacademyuk" target="_blank" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </a>
+	<a href="https://wa.me/447599511507" target="_blank" aria-label="WhatsApp">
+  		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 
+0 1 2 2z"></path></svg>
+	</a>
+	</div>
+	<div class="copyright">
+		&copy; {today.getFullYear()} New Leaf Academy. All rights reserved.
+	</div>
+</footer>
+<style>
+	footer {
+		padding: 1em 1em 2em 1em;
+		background: white;
+		color: rgb(var(--gray));
+		text-align: center;
+	}
+	.footer-links {
+		margin-bottom: 1.5em;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1em 1.5em;
+	}
+	.footer-links a {
+		text-decoration: none;
+		color: rgb(var(--gray));
+		font-weight: bold;
+	}
+	.footer-links a:hover {
+		color: var(--accent);
+	}
+	.social-links {
+		display: flex;
+		justify-content: center;
+		gap: 1em;
+		margin-bottom: 1.5em;
+	}
+	.social-links a {
+		text-decoration: none;
+		color: rgb(var(--gray));
+	}
+	.social-links a:hover {
+		color: var(--accent);
+	}
+</style>

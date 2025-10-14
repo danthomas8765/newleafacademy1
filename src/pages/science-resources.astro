@@ -1,0 +1,212 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+
+<html lang="en">
+<head>
+<BaseHead title="Science Resources | New Leaf Academy" description="Discover our curated collection of resources for Science to help you learn and revise effectively." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<Header />
+<main>
+<div class="resource-intro-container">
+<h1>Science Resources</h1>
+<p>
+Science is a dynamic subject that comes to life with practical application. Our hand-picked resources are designed to help you tackle everything from core biological principles to the laws of physics. Dive in and find guides, videos, and tips to help you excel in your exams.
+</p>
+</div>
+
+		<div class="resources-container">
+			<section class="resource-section">
+                    <h2 class="resource-heading">TedEd Science Videos</h2>
+                    <ul class="resource-list">
+                        <li>
+                            <strong>How I Teach Kids to Love Science - Cesar Harada</strong>
+                            <p>A great video to show how science could be engaging and fun.</p>
+                            <a href="https://www.youtube.com/watch?v=jAemh_JxgOk" class="resource-link">Watch Now →</a>
+                        </li>
+                        <li>
+                            <strong>Teach Science Like Sports - Ron Dantowitz</strong>
+                            <p>How curiosity can lead kids into science.</p>
+                            <a href="https://www.youtube.com/watch?v=Jo0kKNxsBho" class="resource-link">Watch Now →</a>
+                        </li>
+                        <li>
+                            <strong>Teaching science: we're doing it wrong - Danny Doucette</strong>
+                            <p>The problems with current science education, and how it could be better.</p>
+                            <a href="https://www.youtube.com/watch?v=5duz42kHqPs" class="resource-link">Watch Now →</a>
+                        </li>
+                        <li>
+                            <strong>Hey science teachers -- make it fun - Tyler DeWitt</strong>
+                            <p>Exciting ideas for how science can be enjoyable for all students.</p>
+                            <a href="https://www.youtube.com/watch?v=9r3yGCq4InA" class="resource-link">Watch Now →</a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="resource-section">
+                    <h2 class="resource-heading">Interesting Science Channels</h2>
+                    <ul class="resource-list">
+                        <li>
+                            <strong>Vsauce</strong>
+                            <p>Engaging videos that make science and maths a subject of wonder.</p>
+                            <a href="https://www.youtube.com/@Vsauce" class="resource-link">Watch Now →</a>
+                        </li>
+                        <li>
+                            <strong>Veritasium</strong>
+                            <p>Full of experiments and visualisations of scienctific and mathetmatical concepts.</p>
+                            <a href="https://www.youtube.com/veritasium" class="resource-link">Watch Now →</a>
+                        </li>
+                    </ul>
+                </section>
+			
+		</div>
+
+		<div class="cta-section">
+			<h2>Need Personalized Science Help?</h2>
+			<p>Our expert science tutors are ready to help you master challenging concepts. Book a free consultation today to create a customized learning plan.</p>
+			<a href="/consultations" class="cta-button">
+				Book Your Free Consultation
+			</a>
+		</div>
+	</main>
+	<Footer />
+</body>
+</html>
+
+<style>
+main {
+color: var(--accent);
+max-width: 900px;
+margin: 2em auto;
+padding: 0 1em;
+box-sizing: border-box;
+}
+
+.resource-intro-container {
+	text-align: center;
+	margin-bottom: 3em;
+	color: var(--accent-light)
+}
+
+.resource-intro-container h1 {
+	font-size: clamp(1.8em, 5vw, 2.5em);
+	margin-bottom: 0.5em;
+	color: var(--accent-light)
+}
+
+.resource-intro-container p {
+	max-width: 700px;
+	margin: 0 auto;
+	font-size: clamp(1em, 2vw, 1.1em);
+	line-height: 1.7;
+}
+
+.resources-container {
+	display: grid;
+	gap: 2.5em;
+	padding: 0 1em;
+}
+
+.resource-section {
+	border-bottom: 2px solid var(--gray-light);
+	padding-bottom: 2em;
+}
+
+.resource-section:last-of-type {
+	border-bottom: none;
+}
+
+.resource-heading {
+	font-size: clamp(1.5em, 4vw, 1.8em);
+	color: var(--accent-light);
+	margin-top: 0;
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+.resource-list {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	gap: 1.5em;
+}
+
+.resource-list li {
+	background-color: var(--card-bg-color);
+	padding: 1.5em;
+	border-radius: 12px;
+	box-shadow: var(--box-shadow);
+	background-color: white;
+}
+
+.resource-list li strong {
+	display: block;
+	font-size: clamp(1.1em, 2.5vw, 1.25em);
+	color: var(--accent);
+	margin-bottom: 0.5em;
+}
+
+.resource-list li p {
+	margin: 0 0 1em;
+	font-size: clamp(1em, 2vw, 1.1em);
+}
+
+.resource-link {
+	color: var(--accent-pop);
+	font-weight: bold;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.resource-link:hover {
+	color: var(--accent-dark);
+	text-decoration: underline;
+}
+
+/* Final CTA Section */
+.cta-section {
+	text-align: center;
+	margin-top: 4em;
+	padding: 2.5em;
+	background-color: white;
+	border-radius: 12px;
+	box-shadow: var(--box-shadow);
+	color: var(--accent);
+}
+
+.cta-section h2 {
+	font-size: clamp(1.5em, 4vw, 1.8em);
+	margin-top: 0;
+	color: var(--accent);
+}
+.cta-section p {
+    margin-bottom: 1.5em;
+}
+
+.cta-button {
+	display: inline-block;
+	padding: 1em 2em;
+	background-color: var(--accent-pop);
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 8px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+	.resources-container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+</style>

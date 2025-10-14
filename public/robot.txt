@@ -1,0 +1,6 @@
+# Allow all crawlers to access all content
+User-agent: *
+Allow: /
+
+# Provide a link to your sitemap
+Sitemap: https://new-leaf-academy.co.uk/sitemap-index.xml

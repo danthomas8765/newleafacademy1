@@ -1,0 +1,219 @@
+Code snippet
+
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <BaseHead title="Maths Resources | New Leaf Academy" description="Discover our curated collection of resources for Maths to help you learn and revise effectively." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <Header />
+        <main>
+            <div class="resource-intro-container">
+                <h1>Mathematics Resources</h1>
+                <p>
+                    Mathematics is all about practice and understanding the core concepts. Our hand-picked resources are designed to help you tackle everything from foundational algebra to complex calculus. Dive in and find guides, videos, and tips to help you excel in your exams.
+                </p>
+            </div>
+
+            <div class="resources-container">
+                <section class="resource-section">
+                    <h2 class="resource-heading">TedEd Maths Videos</h2>
+                    <ul class="resource-list">
+                        <li>
+                            <strong>Five Principles of Extraordinary Math Teaching - Dan Finkel</strong>
+                            <p>These are some amazing ideas which we try to stick to as much as possible in our teaching.</p>
+                            <a href="https://www.youtube.com/watch?v=ytVneQUA5-c" class="resource-link">Watch Now →</a>
+                        </li>
+                        <li>
+                            <strong>4 Steps to Unlock Your Kid's Math Potential - Shalinee Sharma</strong>
+                            <p>A way you as a parent can help your child with maths.</p>
+                            <a href="https://www.youtube.com/watch?v=hg_xzFJ4ZAA" class="resource-link">Watch Now →</a>
+                        </li>
+                        <li>
+                            <strong>Why Do people get so anxious about math? - Orly Rubinsten</strong>
+                            <p>A delve into understanding the anxiety some students face around maths.</p>
+                            <a href="https://www.youtube.com/watch?v=7snnRaC4t5c" class="resource-link">Watch Now →</a>
+                        </li>
+                        <li>
+                            <strong>What Makes People Engage With Math - Grant Sanderson</strong>
+                            <p>How to make maths engaging and breakthrough to kids who can't connect with the subject.</p>
+                            <a href="https://www.youtube.com/watch?v=s_L-fp8gDzY" class="resource-link">Watch Now →</a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="resource-section">
+                    <h2 class="resource-heading">Interesting Maths Channels</h2>
+                    <ul class="resource-list">
+                        <li>
+                            <strong>3Blue1Brown</strong>
+                            <p>A great channel full of engaging topics to change how your child thinks about maths.</p>
+                            <a href="https://www.youtube.com/@3blue1brown" class="resource-link">Watch Now →</a>
+                        </li>
+                        <li>
+                            <strong>Numberphile</strong>
+                            <p>Full of interesting maths ideas which can show the beauty and wonder in maths.</p>
+                            <a href="https://www.youtube.com/@numberphile" class="resource-link">Explore the Channel →</a>
+                        </li>
+                        <li>
+                            <strong>blackpenredpen</strong>
+                            <p>Sharing the fun of solving maths, a great channel to help with GCSE and A level revision.</p>
+                            <a href="https://www.youtube.com/c/blackpenredpen" class="resource-link">Watch Now →</a>
+                        </li>
+                    </ul>
+                </section>
+                
+                
+            </div>
+
+            <div class="cta-section">
+                <h2>Need Personalized Maths Help?</h2>
+                <p>Our expert maths tutors are ready to help you with your specific challenges. Book a free consultation today to create a customized learning plan.</p>
+                <a href="/consultations" class="cta-button">
+                    Book Your Free Consultation
+                </a>
+            </div>
+        </main>
+        <Footer />
+    </body>
+</html>
+
+<style>
+main {
+color: var(--accent);
+max-width: 900px;
+margin: 2em auto;
+padding: 0 1em;
+box-sizing: border-box;
+}
+
+.resource-intro-container {
+	text-align: center;
+	margin-bottom: 3em;
+	color: var(--accent-light)
+}
+
+.resource-intro-container h1 {
+	font-size: clamp(1.8em, 5vw, 2.5em);
+	margin-bottom: 0.5em;
+	color: var(--accent-light)
+}
+
+.resource-intro-container p {
+	max-width: 700px;
+	margin: 0 auto;
+	font-size: clamp(1em, 2vw, 1.1em);
+	line-height: 1.7;
+}
+
+.resources-container {
+	display: grid;
+	gap: 2.5em;
+	padding: 0 1em;
+}
+
+.resource-section {
+	border-bottom: 2px solid var(--gray-light);
+	padding-bottom: 2em;
+}
+
+.resource-section:last-of-type {
+	border-bottom: none;
+}
+
+.resource-heading {
+	font-size: clamp(1.5em, 4vw, 1.8em);
+	color: var(--accent-light);
+	margin-top: 0;
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+.resource-list {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	gap: 1.5em;
+}
+
+.resource-list li {
+	background-color: var(--card-bg-color);
+	padding: 1.5em;
+	border-radius: 12px;
+	box-shadow: var(--box-shadow);
+	background-color: white;
+}
+
+.resource-list li strong {
+	display: block;
+	font-size: clamp(1.1em, 2.5vw, 1.25em);
+	color: var(--accent);
+	margin-bottom: 0.5em;
+}
+
+.resource-list li p {
+	margin: 0 0 1em;
+	font-size: clamp(1em, 2vw, 1.1em);
+}
+
+.resource-link {
+	color: var(--accent-pop);
+	font-weight: bold;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.resource-link:hover {
+	color: var(--accent-dark);
+	text-decoration: underline;
+}
+
+/* Final CTA Section */
+.cta-section {
+	text-align: center;
+	margin-top: 4em;
+	padding: 2.5em;
+	background-color: white;
+	border-radius: 12px;
+	box-shadow: var(--box-shadow);
+	color: var(--accent);
+}
+
+.cta-section h2 {
+	font-size: clamp(1.5em, 4vw, 1.8em);
+	margin-top: 0;
+	color: var(--accent);
+}
+.cta-section p {
+    margin-bottom: 1.5em;
+}
+
+.cta-button {
+	display: inline-block;
+	padding: 1em 2em;
+	background-color: var(--accent-pop);
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 8px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+	.resources-container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+</style>

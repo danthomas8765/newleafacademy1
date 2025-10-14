@@ -1,0 +1,158 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title="Contact Us" description="Get in touch with New Leaf Academy." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Contact Us</h1>
+			<p>Have a question? Fill out the form below and we'll get back to you as soon as possible.</p>
+
+			<div class="contact-details">
+				<div class="contact-item">
+					<a href="mailto:info@new-leaf-academy.co.uk">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+						<span>info@new-leaf-academy.co.uk</span>
+					</a>
+				</div>
+				<div class="contact-item">
+					<a href="tel:+447599511507">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 
+						0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+						<span>+44 7599 511507</span>
+					</a>
+				</div>
+				<div class="contact-item">
+					<a href="https://wa.me/447599511507" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+						<span>Message on WhatsApp</span>
+					</a>
+				</div>
+				<div class="contact-item">
+					<a href="https://www.facebook.com/newleafacademyuk" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+						<span>Follow on Facebook</span>
+					</a>
+				</div>
+			</div>
+
+			<form action="https://api.web3forms.com/submit" 
+			method="POST" class="contact-form">
+				<input type="hidden" name="access_key" value="a5d9784e-6e34-43a8-b0ff-3473a68acbc6">
+				<input type="hidden" name="redirect" value="https://new-leaf-academy.co.uk/thank-you">
+				<input type="hidden" name="subject" value="New Contact Form Submission from your Website">
+
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name" required />
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" required />
+				</div>
+				<div class="form-group">
+					<label for="message">Message</label>
+					<textarea id="message" name="message" rows="5" required></textarea>
+				</div>
+				<button type="submit" class="submit-btn">Send Message</button>
+			</form>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.contact-form {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5em;
+		margin-top: 2em;
+	}
+	.form-group {
+		display: flex;
+		flex-direction: column;
+	}
+	.form-group label {
+		margin-bottom: 0.5em;
+		font-weight: bold;
+		color: var(--accent-light);
+	}
+	.form-group input,
+	.form-group textarea {
+		padding: 0.8em;
+		border: 1px solid #ccc;
+		border-radius: 6px;
+		font-family: 'Atkinson', sans-serif;
+		font-size: 1rem;
+		width: 100%;
+	}
+	.form-group input:focus,
+	.form-group textarea:focus {
+		outline: none;
+		border-color: var(--accent);
+		box-shadow: 0 0 0 2px rgba(44, 79, 185, 0.2);
+	}
+	.submit-btn {
+		background-color: var(--accent-pop);
+		color: white;
+		border: none;
+		padding: 1em 1.5em;
+		font-size: 1rem;
+		font-weight: bold;
+		border-radius: 6px;
+		cursor: pointer;
+		align-self: flex-start;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+	}
+	.submit-btn:hover {
+		background-color: var(--accent-pop);
+		transform: translateY(-5px);
+		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+	}
+	.contact-details {
+		margin: 2.5em 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1em;
+		color: var(--accent-light)
+	}
+	.contact-item a {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.75em;
+		padding: 0.8em 1.2em;
+		border: 2px solid var(--accent-light);
+		border-radius: 8px;
+		text-decoration: none;
+		color: var(--accent-light);
+		font-weight: bold;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+	.contact-item a:hover {
+		background-color: var(--accent-pop);
+		color: white;
+		transform: translateY(-5px);
+		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+	}
+	.contact-item svg {
+		flex-shrink: 0;
+		width: 20px;
+		height: 20px;
+	}
+	main > h1,
+	main > p:first-of-type {
+		color: var(--accent-light);
+		text-align: center;
+	}
+	main > p:first-of-type {
+		font-size: 1.2rem;
+	}
+</style>

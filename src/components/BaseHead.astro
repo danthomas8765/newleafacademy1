@@ -1,0 +1,74 @@
+---
+// 1. Import global styles and constants for site-wide defaults
+import '../styles/global.css';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+// 2. Define your site's full URL for creating absolute links for social media
+const SITE_URL = "https://new-leaf-academy.co.uk"; // Replace with your actual domain
+
+// 3. Define the props for page-specific titles, descriptions, and images
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+}
+
+// 4. Set default values, pointing to a dedicated social preview image
+const {
+	title = SITE_TITLE,
+	description = SITE_DESCRIPTION,
+	image = '/social-preview.png', // This should be a 1200x630px image in your /public folder
+} = Astro.props;
+
+// 5. Create the full, absolute URLs required by social media platforms
+const canonicalURL = new URL(Astro.url.pathname, SITE_URL);
+const imageUrl = new URL(image, SITE_URL).href;
+---
+
+<!-- Basic Meta Tags -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Favicons and Icons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#4957d6" />
+
+<!-- SEO and Performance -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph / Facebook & Messaging App Previews -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={SITE_TITLE} />
+
+<!-- Twitter Card Preview -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={imageUrl} />
+
+<link
+  rel="preload"
+  href="/fonts/libre-baskerville-v14-latin-regular.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/fonts/libre-baskerville-v14-latin-700.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>

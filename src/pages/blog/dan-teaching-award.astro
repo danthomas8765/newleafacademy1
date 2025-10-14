@@ -1,0 +1,156 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { Image } from 'astro:assets';
+import teachingAward1 from '../../assets/teaching-award-1.jpg';
+import teachingAward2 from '../../assets/teaching-award-2.jpg';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Dan's Teaching Excellence Award | New Leaf Academy" description="Read about Dan's journey to receiving an award for exceptional teaching from the Thai Ministry of Education." />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>My Teaching Excellence Award</h1>
+			<p class="intro-text">
+				A significant moment in my journey as an educator was receiving an award for exceptional teaching from the Thai Ministry of Education. It was a proud moment and a wonderful confirmation that I was truly on the right path.
+			</p>
+
+			<div class="blog-post-container">
+				<article>
+					<p>
+						After two fulfilling years working for an EFL school in Chiang Mai, I was incredibly honoured to be nominated by the school for an award from the Thai Ministry of Education. It came as a wonderful surprise, and I was later selected for my dedication and passion for teaching. I've always believed in constantly improving, so I regularly sought advice from my peers and more experienced colleagues, and I spent a great deal of time preparing for lessons and trialling new techniques.
+					</p>
+					<div class="image-wrapper">
+						<Image
+							src={teachingAward2}
+							alt="Dan holding his teaching award certificate"
+							widths={[300, 600, 900]}
+							sizes="(max-width: 600px) 100vw, 600px"
+							loading="lazy"
+							decoding="async"
+						/>
+					</div>
+					<p>
+						To have this commitment recognised first by the school, and then by the Thai Ministry of Education when I was presented with the award, was truly special. It was a proud moment for me and felt like a powerful confirmation that I was genuinely on the right path in life. Seeing my efforts acknowledged in such a significant way made all the hard work feel incredibly worthwhile. This experience certainly fueled my passion further and reinforced my belief in the impact dedicated teaching can have.
+					</p>
+					<div class="image-wrapper">
+						<Image
+							src={teachingAward1}
+							alt="Dan receiving a teaching award"
+							widths={[300, 600, 900]}
+							sizes="(max-width: 600px) 100vw, 600px"
+							loading="lazy"
+							decoding="async"
+						/>
+					</div>
+				</article>
+			</div>
+			<div class="cta-section">
+				<h2>Inspired by Dedicated Teaching?</h2>
+				<p>My commitment to continuous improvement and effective teaching is at the heart of New Leaf Academy. Book a free consultation to see how our passion can benefit your child's learning.</p>
+				<a href="/consultations" class="cta-button">
+					Book Your Free Consultation and Taster Session	
+				</a>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		color: var(--accent-light); /* Default text color is light */
+		max-width: 900px;
+		margin: 2em auto;
+		padding: 0 1em;
+		box-sizing: border-box;
+	}
+
+	h1 {
+		font-size: clamp(1.8em, 5vw, 2.5em);
+		margin-bottom: 0.5em;
+		text-align: center;
+		color: var(--accent-light); /* Title is light */
+	}
+
+	.intro-text {
+		max-width: 700px;
+		margin: 0 auto 3em;
+		font-size: clamp(1em, 2vw, 1.1em);
+		line-height: 1.7;
+		text-align: center;
+		color: var(--accent-light); /* Intro text is light */
+	}
+
+	.blog-post-container {
+		background-color: white;
+		color: var(--accent); /* Text inside the box is dark blue */
+		padding: 2.5em;
+		border-radius: 12px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	}
+
+	article p {
+		font-size: clamp(1em, 2vw, 1.1em);
+		line-height: 1.8;
+		margin-bottom: 1.5em;
+		color: var(--accent); /* Paragraphs inside the box are dark blue */
+	}
+
+	.image-wrapper {
+		margin: 2em auto;
+		max-width: 600px;
+		text-align: center;
+	}
+
+	.image-wrapper :global(img) {
+		max-width: 100%;
+		height: auto;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	}
+	
+	/* Final CTA Section */
+	.cta-section {
+		text-align: center;
+		margin-top: 4em;
+		padding: 2.5em;
+		background-color: white;
+		border-radius: 12px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		color: var(--accent);
+	}
+	
+	.cta-section h2 {
+		font-size: clamp(1.5em, 4vw, 1.8em);
+		margin-top: 0;
+		color: var(--accent);
+	}
+	.cta-section p {
+        margin-bottom: 1.5em;
+    }
+
+	.cta-button {
+		display: inline-block;
+		padding: 1em 2em;
+		background-color: var(--accent-pop);
+		color: white;
+		font-weight: bold;
+		text-decoration: none;
+		border-radius: 8px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.cta-button:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+	}
+
+</style>

@@ -1,0 +1,331 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+
+// Import the images for each subject card
+import entranceExamImage from '../assets/11+13+.jpg';
+import gcseImage from '../assets/gcse.jpg';
+import alevelImage from '../assets/alevel.jpg';
+---
+<!doctype html>
+
+<html lang="en">
+<head>
+<BaseHead title="Subjects & Pricing | New Leaf Academy" description="Explore the subjects, levels, and transparent pricing offered at New Leaf Academy, from 11+ and GCSE to A-Level." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<Header />
+<main>
+<h1>Subjects & Pricing</h1>
+<p class="intro-text">
+We provide expert, one-to-one online tuition across a wide range of subjects and levels. Our tutors tailor each session to the individual student, focusing on building both subject mastery and confidence. Explore our offerings below to find the perfect fit for your needs.
+</p>
+
+		<div class="subjects-container">
+			<div class="subject-card">
+				<div class="card-image-wrapper">
+					<Image 
+						src={entranceExamImage} 
+						alt="Entrance Exams Preparation"
+						widths={[400, 800]}
+						sizes="(max-width: 1200px) 100vw, 400px"
+						quality={85}
+					/>
+				</div>
+				<div class="card-content">
+					<h2>Entrance Exams (11+ & 13+)</h2>
+					<p>Comprehensive preparation for selective school admissions, building core skills and exam technique.</p>
+					<ul class="subject-list">
+						<li>11+ & 13+ Preparation</li>
+						<li>English</li>
+						<li>Verbal Reasoning</li>
+						<li>Mathematics</li>
+						<li>Non-Verbal Reasoning</li>
+					</ul>
+				</div>
+				<div class="price-section">
+					<div class="price">
+						£35<span class="per-hour">/ hour</span>
+					</div>
+					<p class="price-note">Prices start from £35 per hour.</p>
+				</div>
+			</div>
+
+			<div class="subject-card">
+				<div class="card-image-wrapper">
+					<Image 
+						src={gcseImage} 
+						alt="GCSE Subjects"
+						widths={[400, 800]}
+						sizes="(max-width: 1200px) 100vw, 400px"
+						quality={85}
+					/>
+				</div>
+				<div class="card-content">
+					<h2>GCSE</h2>
+					<p>Targeted support to help students excel in their GCSEs and build a strong foundation for future studies.</p>
+					<div class="exam-boards-container">
+						<span class="exam-board-tag">AQA</span>
+						<span class="exam-board-tag">Edexcel</span>
+						<span class="exam-board-tag">OCR</span>
+						<span class="exam-board-tag">WJEC</span>
+						<span class="exam-board-tag">CCEA</span>
+					</div>
+					<ul class="subject-list">
+						<li>Mathematics</li>
+						<li>Further Mathematics</li>
+						<li>Triple Science (Biology, Chemistry, Physics)</li>
+						<li>Combined Science</li>
+						<li>English Literature</li>
+						<li>English Language</li>
+						<li>Business Studies</li>
+					</ul>
+				</div>
+				<div class="price-section">
+					<div class="price">
+						£40<span class="per-hour">/ hour</span>
+					</div>
+					<p class="price-note">Prices start from £40 per hour.</p>
+				</div>
+			</div>
+
+			<div class="subject-card">
+				<div class="card-image-wrapper">
+					<Image 
+						src={alevelImage} 
+						alt="A-Level Subjects"
+						widths={[400, 800]}
+						sizes="(max-width: 1200px) 100vw, 400px"
+						quality={85}
+					/>
+				</div>
+				<div class="card-content">
+					<h2>A-Level</h2>
+					<p>In-depth, specialist tutoring for A-Level students aiming to achieve top grades for university and beyond.</p>
+					<div class="exam-boards-container">
+						<span class="exam-board-tag">AQA</span>
+						<span class="exam-board-tag">Edexcel</span>
+						<span class="exam-board-tag">OCR</span>
+						<span class="exam-board-tag">WJEC</span>
+						<span class="exam-board-tag">CCEA</span>
+					</div>
+					<ul class="subject-list">
+						<li>Mathematics</li>
+						<li>Further Mathematics</li>
+						<li>Physics</li>
+						<li>English</li>
+						<li>Economics</li>
+					</ul>
+				</div>
+				<div class="price-section">
+					<div class="price">
+						£45<span class="per-hour">/ hour</span>
+					</div>
+					<p class="price-note">Prices start from £45 per hour.</p>
+				</div>
+			</div>
+		</div>
+		<div class="cta-section">
+				<h2>Ready to Start?</h2>
+				<p>Our expert tutors are ready to provide the one-to-one support your child needs. Book a free consultation to get started!</p>
+				<a href="/consultations" class="cta-button">
+					Book Your Free Consultation and Taster Session
+				</a>
+			</div>
+</main>
+<Footer />
+</body>
+</html>
+
+<style>
+:root {
+--card-bg-color: #f9f9f9;
+--box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+--tag-bg-color: #e9eafc;
+--exam-board-tag-bg: #d0e7ff;
+--border-color: #e9eafc;
+}
+
+main {
+	max-width: 1500px;
+	margin: 2em auto;
+	padding: 0 2em;
+	box-sizing: border-box;
+	color: var(--accent-light);
+}
+
+h1, .intro-text {
+	text-align: center;
+	color: var(--accent-light);
+}
+
+.intro-text {
+	max-width: 700px;
+	margin: 0 auto 2.5em;
+	font-size: 1.1rem;
+}
+
+.subjects-container {
+	display: grid;
+	gap: 2em;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+}
+
+.subject-card {
+	background-color: white;
+	padding: 0;
+	border-radius: 12px;
+	box-shadow: var(--box-shadow);
+	border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+	color: var(--accent);
+	overflow: hidden;
+}
+
+/* --- CHANGE STARTS HERE --- */
+.card-image-wrapper {
+	width: 100%;
+	aspect-ratio: 16 / 9; /* Use aspect ratio instead of fixed height */
+	overflow: hidden;
+}
+
+.card-image-wrapper :global(img) {
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* This will fill the container without squashing */
+	display: block;
+}
+/* --- CHANGE ENDS HERE --- */
+
+.card-content {
+	padding: 2.5em;
+    flex-grow: 1;
+}
+
+.subject-card h2 {
+	color: var(--accent);
+	margin-top: 0;
+	font-size: clamp(1.5em, 4vw, 1.8em);
+}
+
+.subject-card p {
+	margin-bottom: 1.5em;
+	color: var(--accent);
+}
+
+.subject-list {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75em;
+    justify-content: center;
+}
+
+.subject-list li {
+	background-color: var(--tag-bg-color);
+	color: var(--accent);
+	padding: 0.5em 1em;
+	border-radius: 20px;
+	font-size: 0.9rem;
+	font-weight: 500;
+}
+
+.exam-boards-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	margin-bottom: 1.5em;
+    justify-content: center;
+}
+
+.exam-board-tag {
+	background-color: var(--exam-board-tag-bg);
+	color: var(--accent);
+	padding: 0.3em 0.8em;
+	border-radius: 15px;
+	font-size: 0.8rem;
+	font-weight: 600;
+	border: 1px solid #c0d7f0;
+}
+
+.price-section {
+    padding: 1.5em 2.5em 2.5em;
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+}
+
+.price {
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: clamp(2.5em, 6vw, 4em);
+    font-weight: bold;
+    color: var(--accent-pop);
+    margin-bottom: 0.25em;
+}
+
+.per-hour {
+    font-size: 0.4em;
+    font-weight: 500;
+    color: var(--accent);
+    display: inline-block;
+    vertical-align: super;
+}
+
+.price-note {
+    font-size: 0.9rem !important;
+    color: var(--accent);
+    margin: 0;
+    opacity: 0.8;
+}
+
+.cta-section {
+	text-align: center;
+	padding: 2.5em;
+	background-color: white;
+	border-radius: 12px;
+	box-shadow: var(--box-shadow);
+	color: var(--accent);
+	max-width: 900px;
+	margin: 4em auto 0;
+}
+
+.cta-section h2 {
+	font-size: clamp(1.5em, 4vw, 1.8em);
+	margin-top: 0;
+	color: var(--accent);
+}
+.cta-section p {
+    margin-bottom: 1.5em;
+}
+
+.cta-button {
+	display: inline-block;
+	padding: 1em 2em;
+	background-color: var(--accent-pop);
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 8px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover,
+.cta-button:focus-visible {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 1200px) {
+    .subjects-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+</style>

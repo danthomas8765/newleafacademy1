@@ -1,0 +1,127 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+
+// Import the new image
+import danPic1 from '../assets/danpic1.jpg';
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <BaseHead title="About Us | New Leaf Academy" description="Learn about the mission and story behind New Leaf Academy." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <Header />
+        <main>
+            <h1>About New Leaf Academy</h1>
+            <p class="intro">
+                Welcome to New Leaf Academy. We're more than just a tutoring service; we're a community built on the belief that every student deserves the chance to grow with confidence and discover their own potential. This is our story.
+            </p>
+
+            <section class="content-box">
+                <h2>Our Story</h2>
+                <p>
+                    New Leaf Academy was founded by Dan Thomas out of a personal experience with the challenges of the traditional education system. After seeing so many bright and talented students struggling in the classroom, it became clear that a more personal, adaptive approach was needed. We started this academy to create a space where learning is not about memorisation, but about understanding, and where every student's unique way of thinking is celebrated.
+                </p>
+				<div class="image-wrapper">
+					<Image src={danPic1} alt="A snapshot of the New Leaf Academy team" />
+				</div>
+            </section>
+
+            <section class="content-box">
+                <h2>Our Mission</h2>
+                <p>
+                    Our mission is simple: to empower students to become confident, capable, and curious lifelong learners. We believe that the right support can transform a student's relationship with education, turning "I can't" into "I can." We are driven to make a real difference by providing high-quality, personalised tutoring that blends the latest research-driven techniques with genuine passion. Our goal isn't just to improve grades, but to build the self-esteem and resilience needed for success far beyond the classroom.
+                </p>
+            </section>
+            
+            <section class="content-box">
+                <h2>Our Tutors</h2>
+                <p>
+                    Our team is the heart of New Leaf Academy. We are a group of dynamic, energetic, and fully-vetted educators driven by a shared passion for making a difference. As a young team, we bring a fresh perspective to tutoring, connecting with students on their level and making learning feel relevant and exciting. Each tutor is not only an expert in their subject but is also a mentor skilled in using new ideas and inspiring techniques to unlock a student's potential. They are chosen for their empathy, their patience, and their infectious enthusiasm for learning.
+                </p>
+            </section>
+
+            <section class="content-box">
+                <h2>A Family of Educators</h2>
+                <p>
+                    While I founded this company, the real strength of New Leaf Academy comes from the close bond between myself, Kai, and Marcus. We've been friends since school and our relationship is like that of brothers. We speak regularly, and this deep trust allows us to openly discuss and share insights about students we all work with. We're able to give each other advice on what teaching methods are most effective and how each student works best, which means the support we provide is even more tailored and effective. This family-like dynamic gives our online school a unique, supportive atmosphere that our students benefit from every day.
+                </p>
+            </section>
+
+        </main>
+        <Footer />
+    </body>
+</html>
+<style>
+    main {
+        color: var(--accent-light);
+        max-width: 800px;
+        margin: 2em auto;
+        padding: 0 1em;
+        box-sizing: border-box;
+    }
+
+    h1, h2 {
+        color: var(--accent);
+        text-align: center;
+    }
+
+    h1 {
+        font-size: clamp(1.8em, 5vw, 2.5em);
+        margin-bottom: 0.5em;
+        color: var(--accent-light)
+    }
+
+    p.intro {
+        font-size: clamp(1.1em, 2.5vw, 1.2em);
+        text-align: center;
+        margin-bottom: 3em;
+    }
+
+    h2 {
+        font-size: clamp(1.5em, 4vw, 1.8em);
+        margin-top: 1em;
+        border-bottom: 2px solid rgba(var(--gray-light), 1);
+        padding-bottom: 0.5em;
+        margin-bottom: 1em;
+    }
+
+    p {
+        font-size: clamp(1em, 2vw, 1.1em);
+        line-height: 1.7;
+    }
+
+    section {
+        margin-bottom: 2em;
+    }
+
+    .content-box {
+        background-color: white;
+        padding: 2em;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2em;
+        color: var(--accent);
+    }
+	
+	.image-wrapper {
+		margin: 2em auto 0;
+		max-width: 350px; /* Reduced max-width for a smaller image */
+		text-align: center;
+	}
+
+	.image-wrapper :global(img) {
+		width: 100%; /* Ensures it scales down within the max-width */
+		height: auto;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+		display: block; /* Essential for centering with margin auto */
+		margin: 0 auto; /* Centers the image */
+	}
+
+</style>

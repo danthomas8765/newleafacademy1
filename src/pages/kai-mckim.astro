@@ -1,0 +1,207 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import kaiMcKimImage from '../assets/kaimckim.jpg';
+// Add the new images for the bio content
+import kaiRaImage from '../assets/kai-ra.jpg';
+import kaiStudioImage from '../assets/kai-studio-project-5.jpg';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Kai McKim - Tutor at New Leaf Academy " description="Meet Kai McKim, a specialist English tutor at New Leaf Academy." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="bio-container">
+				<div class="bio-header">
+					<Image
+						src={kaiMcKimImage}
+						alt="Kai McKim, Tutor at New Leaf Academy"
+						class="bio-headshot"
+						width={200}
+						height={200}
+					/>
+					<div class="header-text">
+						<h1>Kai McKim</h1>
+						<p class="role">Specialist English Tutor</p>
+					</div>
+				</div>
+
+				<div class="bio-content">
+					<h2>About Kai</h2>
+					<p>
+						Having received top grades in my GCSEs and A-Levels, including A*s in English Literature and Language, I went on to study architecture at The Bartlett at UCL.
+					</p>
+					<p>
+						Towards the end of my degree, I was asked to give lectures to first-year students. It was then that I discovered how much I enjoyed teaching and passing on knowledge. Since starting to tutor online in 2024, my love of English has only deepened. With a passion for the subject that keeps me constantly reading and writing, I find it easy to share my enthusiasm with my students.
+					</p>
+					<p>
+						Beyond tutoring, I am also a practicing artist. My passion for creative expression culminated in my final-year architectural project at university being selected for exhibition at the prestigious Royal Academy of Arts in London, where it won the 'Drawing of the Year 2024' award. This experience reinforced my belief in the power of creativity and dedication—principles I bring to every tutoring session.
+					</p>
+					<div class="image-wrapper">
+						<Image src={kaiRaImage} alt="Kai McKim's award-winning project at the Royal Academy of Arts" />
+					</div>
+					<p>
+						I am proud that my students have often achieved results better than anyone expected. It’s incredibly rewarding to help them realise their potential. I believe every student has the ability to succeed in English, and I am committed to helping them do just that.
+					</p>
+					<p>
+						When I’m not tutoring, I enjoy putting my architectural skills to practical use. I recently completed a project <a href="/blog/kai-studio-project">building a studio</a> in my garden from scratch, which was an amazing test of patience, hard work, and creative design.
+					</p>
+					<div class="image-wrapper">
+						<Image src={kaiStudioImage} alt="Kai McKim standing in front of his completed studio project" />
+					</div>
+				</div>
+                <div class="cta-section">
+                    <h2>Ready to Start Your Journey?</h2>
+                    <p>Kai is ready to help you or your child achieve academic success. Book a friendly, no-obligation chat today.</p>
+                    <a href="/consultations" class="cta-button">
+                        Book Your Free Consultation and Taster Session
+                    </a>
+                </div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	:root {
+		--card-bg-color: #f9f9f9;
+		--box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	}
+
+	main {
+		max-width: 900px;
+		margin: 2em auto;
+		padding: 0 1em;
+		box-sizing: border-box;
+		color: var(--accent);
+	}
+
+	.bio-container {
+		background-color: var(--card-bg-color);
+		padding: 2em;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
+	}
+
+	.bio-header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		margin-bottom: 2em;
+		gap: 1em;
+	}
+
+	.bio-headshot {
+		width: clamp(150px, 30vw, 200px);
+		height: clamp(150px, 30vw, 200px);
+		object-fit: cover;
+		border-radius: 50%;
+		border: 5px solid var(--accent);
+		box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+	}
+
+	.header-text h1 {
+		font-size: clamp(2em, 6vw, 2.8em);
+		margin: 0;
+		color: var(--accent);
+	}
+
+	.header-text .role {
+		font-size: clamp(1.1em, 3vw, 1.3em);
+		font-weight: bold;
+		color: var(--accent-pop);
+		margin-top: 0.25em;
+	}
+
+	.bio-content h2 {
+		font-size: clamp(1.5em, 5vw, 2em);
+		color: var(--accent);
+		border-bottom: 2px solid #e9eafc;
+		padding-bottom: 0.5em;
+		margin-bottom: 1em;
+	}
+
+	.bio-content p {
+		font-size: clamp(1em, 2vw, 1.1em);
+		line-height: 1.8;
+		margin-bottom: 1.5em;
+	}
+
+	/* --- NEW STYLES FOR THE LINK --- */
+	.bio-content p a {
+		color: var(--accent-pop);
+		text-decoration: underline;
+		font-weight: bold;
+	}
+	.bio-content p a:hover {
+		color: var(--accent-dark);
+	}
+	/* --- END NEW STYLES --- */
+
+	.image-wrapper {
+		margin: 2em auto;
+		max-width: 600px;
+		text-align: center;
+	}
+
+	.image-wrapper :global(img) {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	}
+
+    .cta-section {
+		text-align: center;
+		margin-top: 2em;
+		padding: 2em;
+		background-color: white;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
+		color: var(--accent);
+	}
+	
+	.cta-section h2 {
+		font-size: clamp(1.5em, 4vw, 1.8em);
+		margin-top: 0;
+		color: var(--accent);
+	}
+
+    .cta-section p {
+        margin-bottom: 1.5em;
+    }
+
+	.cta-button {
+		display: inline-block;
+		padding: 1em 2em;
+		background-color: var(--accent-pop);
+		color: white;
+		font-weight: bold;
+		text-decoration: none;
+		border-radius: 8px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.cta-button:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+	}
+
+	@media (min-width: 768px) {
+		.bio-header {
+			flex-direction: row;
+			text-align: left;
+			gap: 2em;
+		}
+	}
+</style>
