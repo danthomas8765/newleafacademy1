@@ -49,14 +49,32 @@ At New Leaf Academy, we believe every student has the potential to shine. We und
 			</div>
 		</div>
 		<div class="image-column">
-			<Image src={chooseUs1} alt="A friendly tutor helping a student online" class="benefit-image"/>
-		</div>
-	</div>
+        {/* === Image 1: Load Eagerly === */}
+        <Image
+          src={chooseUs1}
+          alt="A friendly tutor helping a student online"
+          class="benefit-image"
+          format="webp"      {/* Add */}
+          quality={70}        {/* Add */}
+          loading="eager"     {/* Add */}
+          sizes="(min-width: 1024px) 600px, 0px" {/* Add */}
+        />
+      </div>
+    </div>
 
 	<div class="benefit-row">
 		<div class="image-column">
-			<Image src={chooseUs2} alt="A chart showing student progress" class="benefit-image"/>
-		</div>
+        {/* === Image 2: Load Lazily === */}
+        <Image
+          src={chooseUs2}
+          alt="A chart showing student progress"
+          class="benefit-image"
+          format="webp"      {/* Add */}
+          quality={70}        {/* Add */}
+          loading="lazy"      {/* Add */}
+          sizes="(min-width: 1024px) 600px, 0px" {/* Add */}
+          />
+      </div>
 		<div class="text-column">
 			<div class="benefit-item">
 				<div class="icon-container">
@@ -101,14 +119,33 @@ At New Leaf Academy, we believe every student has the potential to shine. We und
 			</div>
 		</div>
 		<div class="image-column">
-			<Image src={chooseUs3} alt="A student smiling and feeling confident" class="benefit-image"/>
-		</div>
+        {/* === Image 3: Load Lazily === */}
+         <Image
+           src={chooseUs3}
+           alt="A student smiling and feeling confident"
+           class="benefit-image"
+           format="webp"      {/* Add */}
+           quality={70}        {/* Add */}
+           loading="lazy"      {/* Add */}
+           sizes="(min-width: 1024px) 600px, 0px" {/* Add */}
+           />
+       </div>
+    </div>
 	</div>
 
 	<div class="benefit-row">
 		<div class="image-column">
-			<Image src={chooseUs4} alt="An online tutoring session with digital notes" class="benefit-image"/>
-		</div>
+        {/* === Image 4: Load Lazily === */}
+        <Image
+          src={chooseUs4}
+          alt="An online tutoring session with digital notes"
+          class="benefit-image"
+          format="webp"      {/* Add */}
+          quality={70}        {/* Add */}
+          loading="lazy"      {/* Add */}
+          sizes="(min-width: 1024px) 600px, 0px" {/* Add */}
+          />
+      </div>
 		<div class="text-column">
 			<div class="benefit-item">
 				<div class="icon-container">

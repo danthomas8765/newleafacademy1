@@ -42,13 +42,31 @@ import howItWorks3 from '../assets/howitworks3.jpg';
 						</div>
 					</div>
 					<div class="image-column">
-						<Image src={howItWorks1} alt="A student engaged in an online tutoring session" class="process-image" />
+            {/* === Image 1: Load Eagerly === */}
+						<Image
+              src={howItWorks1}
+              alt="A student engaged in an online tutoring session"
+              class="process-image"
+              format="webp"      {/* Add */}
+              quality={70}        {/* Add */}
+              loading="eager"     {/* Add */}
+              sizes="(min-width: 1024px) 600px, 0px" {/* Add */}
+            />
 					</div>
 				</div>
 
 				<div class="process-row">
 					<div class="image-column">
-						<Image src={howItWorks2} alt="A tutor explaining a concept on a whiteboard" class="process-image" />
+            {/* === Image 2: Load Lazily === */}
+						<Image
+              src={howItWorks2}
+              alt="A tutor explaining a concept on a whiteboard"
+              class="process-image"
+              format="webp"      {/* Add */}
+              quality={70}        {/* Add */}
+              loading="lazy"      {/* Add */}
+              sizes="(min-width: 1024px) 600px, 0px" {/* Add */}
+            />
 					</div>
 					<div class="steps-column">
 						<div class="step">
@@ -86,7 +104,16 @@ import howItWorks3 from '../assets/howitworks3.jpg';
 						</div>
 					</div>
 					<div class="image-column">
-						<Image src={howItWorks3} alt="A student and tutor celebrating a success" class="process-image" />
+            {/* === Image 3: Load Lazily === */}
+						<Image
+              src={howItWorks3}
+              alt="A student and tutor celebrating a success"
+              class="process-image"
+              format="webp"      {/* Add */}
+              quality={70}        {/* Add */}
+              loading="lazy"      {/* Add */}
+              sizes="(min-width: 1024px) 600px, 0px" {/* Add */}
+            />
 					</div>
 				</div>
 			</div>
