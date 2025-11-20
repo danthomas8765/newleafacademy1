@@ -20,7 +20,7 @@ import howItWorks3 from '../assets/howitworks3.jpg';
 		<main>
 			<h1>How It Works</h1>
 			<p class="intro-text">
-				Starting your journey with us is simple, transparent, and designed to ensure the perfect fit for your child. Here’s a step-by-step look at our process, from our first chat to ongoing success.
+				Starting your journey with us is simple, transparent, and designed to ensure the perfect fit for your child. Here’s a step-by-step look at our process, from our first chat to ongoing success. We know no family or child is the same, so we are flexible and ready to adapt our process to fit your needs.
 			</p>
 
 			<div class="process-grid">
@@ -30,14 +30,14 @@ import howItWorks3 from '../assets/howitworks3.jpg';
 							<div class="step-number">1</div>
 							<div class="step-content">
 								<h3>Initial Contact</h3>
-								<p>Reach out to us via our consultation form, email, or phone. We're ready to listen and answer any initial questions you may have.</p>
+								<p>Reach out to Dan via our consultation form, email, or phone. He will guide you through the process and answer any initial questions.</p>
 							</div>
 						</div>
 						<div class="step">
 							<div class="step-number">2</div>
 							<div class="step-content">
 								<h3>Discovery Chat</h3>
-								<p>We'll schedule a friendly, informal chat to discuss your child's specific needs, learning style, and academic goals in detail.</p>
+								<p>He'll offer to schedule a friendly, informal chat to discuss your child's specific needs, learning style, and academic goals in detail.</p>
 							</div>
 						</div>
 					</div>
@@ -51,21 +51,23 @@ import howItWorks3 from '../assets/howitworks3.jpg';
               quality={70}        {/* Add */}
               loading="eager"     {/* Add */}
               sizes="(min-width: 1024px) 600px, 0px" {/* Add */}
+			  decoding="async"
             />
 					</div>
 				</div>
 
 				<div class="process-row">
 					<div class="image-column">
-            {/* === Image 2: Load Lazily === */}
+            {/* === Image 2: Load Eagerly === */}
 						<Image
               src={howItWorks2}
               alt="A tutor explaining a concept on a whiteboard"
               class="process-image"
               format="webp"      {/* Add */}
               quality={70}        {/* Add */}
-              loading="lazy"      {/* Add */}
+              loading="eager"          {/* Add */}
               sizes="(min-width: 1024px) 600px, 0px" {/* Add */}
+			  decoding="async"
             />
 					</div>
 					<div class="steps-column">
@@ -73,14 +75,14 @@ import howItWorks3 from '../assets/howitworks3.jpg';
 							<div class="step-number">3</div>
 							<div class="step-content">
 								<h3>Free Taster Session</h3>
-								<p>We'll book a complimentary 30-minute taster session. This is a great chance for your child to meet their tutor and experience our teaching style firsthand, with no obligation.</p>
+								<p>We'll book in a 30-minute taster session. This is a great chance for your child to meet their tutor and experience their teaching style firsthand, with no obligation to continue.</p>
 							</div>
 						</div>
 						<div class="step">
 							<div class="step-number">4</div>
 							<div class="step-content">
 								<h3>Tailored Learning Plan</h3>
-								<p>After the taster session, we'll work with you to decide on the best course of action and create a personalised learning plan tailored to your child's goals.</p>
+								<p>After the taster session, we'll work with you to decide on the best course of action and create a plan tailored to your child's goals.</p>
 							</div>
 						</div>
 					</div>
@@ -92,14 +94,14 @@ import howItWorks3 from '../assets/howitworks3.jpg';
 							<div class="step-number">5</div>
 							<div class="step-content">
 								<h3>Regular Tutoring Sessions</h3>
-								<p>With a plan in place, regular one-to-one sessions will begin, focusing on building knowledge, skills, and confidence in a supportive environment.</p>
+								<p>With a plan in place, regular one-to-one sessions will begin, focusing on building knowledge, skills, and confidence in a supportive environment. Your child will be encouraged to lead sessions by picking topics they struggle with.</p>
 							</div>
 						</div>
 						<div class="step">
 							<div class="step-number">6</div>
 							<div class="step-content">
 								<h3>Ongoing Support & Feedback</h3>
-								<p>We believe in a partnership. You'll receive consistent progress updates and we'll stay in close communication to ensure we're always working together for your child's success.</p>
+								<p>You'll have direct contact for the tutor and be able to ask questions about progress anytime. If you feel the focus of sessions ever needs to change, the tutor is always ready to adapt.</p>
 							</div>
 						</div>
 					</div>
@@ -113,6 +115,7 @@ import howItWorks3 from '../assets/howitworks3.jpg';
               quality={70}        {/* Add */}
               loading="lazy"      {/* Add */}
               sizes="(min-width: 1024px) 600px, 0px" {/* Add */}
+			  decoding="async"
             />
 					</div>
 				</div>
