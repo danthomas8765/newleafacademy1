@@ -4,10 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { Image } from 'astro:assets';
 // Import the images for this page
-import chooseUs1 from '../assets/chooseus1.jpg';
-import chooseUs2 from '../assets/chooseus2.jpg';
-import chooseUs3 from '../assets/chooseus3.jpg';
-import chooseUs4 from '../assets/chooseus4.jpg';
+import chooseUs1 from '../assets/resultsday.webp';
+import chooseUs2 from '../assets/safeguarding.jpg';
+import chooseUs3 from '../assets/confidence.png';
+import chooseUs4 from '../assets/shakehands.jpeg';
 ---
 
 <!doctype html>
@@ -31,6 +31,15 @@ At New Leaf Academy, we believe every student has the potential to exceed expect
 		<div class="text-column">
 			<div class="benefit-item">
 				<div class="icon-container">
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10l-10-5-10 5 10 5 10-5z"></path><path d="M6 12v5c0 1.7 1.3 3 3 3h6c1.7 0 3-1.3 3-3v-5"></path></svg>
+				</div>
+				<div class="text-container">
+					<strong>Proven Results & Expert Tutors:</strong>
+					<p>We have a strong track record of helping students achieve top grades. Our dynamic team of specialist tutors are not only experts in their subjects but are passionately dedicated to helping you succeed.</p>
+				</div>
+			</div>
+			<div class="benefit-item">
+				<div class="icon-container">
 					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 13V11z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg>
 				</div>
 				<div class="text-container">
@@ -38,15 +47,7 @@ At New Leaf Academy, we believe every student has the potential to exceed expect
 					<p>We want to ensure we're the perfect fit for your family. That's why we offer a complimentary consultation to discuss your child's needs, answer your questions, and introduce you to our approach before you commit.</p>
 				</div>
 			</div>
-			<div class="benefit-item">
-				<div class="icon-container">
-					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
-				</div>
-				<div class="text-container">
-					<strong>Safety-First Approach:</strong>
-					<p>Your child's safety is our top priority. All tutors undergo a comprehensive vetting process, including an DBS check and thorough interview, so you can have complete peace of mind.</p>
-				</div>
-			</div>
+			
 		</div>
 		<div class="image-column">
         {/* === Image 1: Load Eagerly === */}
@@ -80,20 +81,22 @@ At New Leaf Academy, we believe every student has the potential to exceed expect
 		<div class="text-column">
 			<div class="benefit-item">
 				<div class="icon-container">
-					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10l-10-5-10 5 10 5 10-5z"></path><path d="M6 12v5c0 1.7 1.3 3 3 3h6c1.7 0 3-1.3 3-3v-5"></path></svg>
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
 				</div>
 				<div class="text-container">
-					<strong>Proven Results & Expert Tutors:</strong>
-					<p>We have a strong track record of helping students achieve top grades. Our dynamic team of specialist tutors are not only experts in their subjects but are passionately dedicated to helping you succeed.</p>
+					<strong>Safety-First Approach:</strong>
+					<p>Your child's safety is our top priority. All tutors undergo a comprehensive vetting process, including an DBS check and thorough interview, so you can have complete peace of mind.</p>
 				</div>
 			</div>
 			<div class="benefit-item">
 				<div class="icon-container">
-					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m4.93 17.66 1.41-1.41"></path><path d="m17.66 4.93 1.41-1.41"></path>
+					</svg>
 				</div>
 				<div class="text-container">
-					<strong>Collaborative Parent Partnership:</strong>
-					<p>We believe in keeping you in the loop. You have direct contact with the tutor and be able to ask about your child's progress, areas of strength and opportunities for growth, ensuring we're working together as a team.</p>
+					<strong>A Fresh, Unconventional Approach:</strong>
+					<p>We are a young, energetic team with diverse experiences that have taught us how to adapt our teaching to each student’s unique needs. We break free from the traditional classroom mold, using fresh methods to make our teaching relevant and perfectly paced.</p>
 				</div>
 			</div>
 		</div>
@@ -103,20 +106,20 @@ At New Leaf Academy, we believe every student has the potential to exceed expect
 		<div class="text-column">
 			<div class="benefit-item">
 				<div class="icon-container">
-					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
-				</div>
-				<div class="text-container">
-					<strong>Empathetic & Personalized Learning:</strong>
-					<p>We have extensive experience helping students with neurodivergence, SEND, and other learning differences. Our tutors build genuine rapport and trust, ensuring every session is a supportive space where students feel understood and confident.</p>
-				</div>
-			</div>
-			<div class="benefit-item">
-				<div class="icon-container">
 					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
 				</div>
 				<div class="text-container">
 					<strong>Fostering Lifelong Confidence:</strong>
 					<p>Our goal extends beyond exam results. We work to transform a student's relationship with learning, turning anxiety and self-doubt into curiosity and unshakeable confidence that will serve them long after their time with us.</p>
+				</div>
+			</div>
+			<div class="benefit-item">
+				<div class="icon-container">
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+				</div>
+				<div class="text-container">
+					<strong>Empathetic & Personalized Learning:</strong>
+					<p>We have extensive experience helping students with neurodivergence, SEND, and other learning differences. Our tutors build genuine rapport and trust, ensuring every session is a supportive space where students feel understood and confident.</p>
 				</div>
 			</div>
 		</div>
@@ -153,13 +156,11 @@ At New Leaf Academy, we believe every student has the potential to exceed expect
 		<div class="text-column">
 			<div class="benefit-item">
 				<div class="icon-container">
-					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m4.93 17.66 1.41-1.41"></path><path d="m17.66 4.93 1.41-1.41"></path>
-					</svg>
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
 				</div>
 				<div class="text-container">
-					<strong>A Fresh, Unconventional Approach:</strong>
-					<p>We are a young, energetic team with diverse experiences that have taught us how to adapt our teaching to each student’s unique needs. We break free from the traditional classroom mold, using fresh methods to make our teaching relevant and perfectly paced.</p>
+					<strong>Collaborative Parent Partnership:</strong>
+					<p>We believe in keeping you in the loop. You have direct contact with the tutor and be able to ask about your child's progress, areas of strength and opportunities for growth, ensuring we're working together as a team.</p>
 				</div>
 			</div>
 			<div class="benefit-item">
