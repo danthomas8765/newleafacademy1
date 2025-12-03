@@ -6,6 +6,11 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   site: "https://new-leaf-academy.co.uk",
   trailingSlash: 'always',
+  redirects: {
+    '/beyond-the-classroom': '/blog', // e.g. '/resources'
+    '/beyond-the-classroom/': '/blog', // Cover both versions just in case
+  },
+
   integrations: [
     sitemap(),
   ],
