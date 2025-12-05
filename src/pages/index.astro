@@ -242,6 +242,7 @@ import logoImage from '../assets/logo.svg';
 		.scroll-prompt {
 			display: none;
 		}
+		
 	}
 	
 	@media (max-width: 600px) {
@@ -252,6 +253,13 @@ import logoImage from '../assets/logo.svg';
 		.tagline {
 			text-align: center;
 		}
+		/* Add this inside your @media (max-width: 600px) block or create a new one */
+	@media (max-width: 1024px) {
+		.hero-background {
+			/* anchored to the right, centered vertically */
+			background-position: 72% center; 
+		}
+	}
 	}
 </style>
 
