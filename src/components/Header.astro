@@ -4,8 +4,13 @@ import { SITE_TITLE } from '../consts';
 import { Image } from 'astro:assets';
 import logoImage from '../assets/logo.svg';
 ---
+<div class="sticky-bar">
+    <p>🚀 <strong>Coming Soon:</strong> Affordable Small Group Tuition for Maths & Science.</p>
+    <a href="/contact/?interest=group" class="sticky-btn">Register Interest</a>
+</div>
 
 <header>
+    
     <nav>
         <div class="logo-container">
             <a href="/">
@@ -53,6 +58,48 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
     </nav>
 </header>
 <style>
+    /* Sticky Bar Styles */
+    .sticky-bar {
+        background-color: var(--accent-dark); /* Dark blue background */
+        color: white;
+        text-align: center;
+        padding: 0.5em 1em;
+        font-size: 0.9rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        width: 100%;
+        /* Ensure it sits above the nav */
+        position: relative; 
+        z-index: 1002;
+    }
+
+    .sticky-bar p {
+        margin: 0;
+    }
+
+    .sticky-btn {
+        background-color: var(--accent-pop);
+        color: white;
+        text-decoration: none;
+        padding: 0.3em 0.8em;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 0.85rem;
+        transition: transform 0.2s;
+    }
+
+    .sticky-btn:hover {
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+        .sticky-bar {
+            flex-direction: column;
+            gap: 0.5em;
+        }
+    }
     /* --- Global Header Styles --- */
     header {
         margin: 0;

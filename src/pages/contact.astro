@@ -67,6 +67,18 @@ import Footer from '../components/Footer.astro';
 	</body>
 </html>
 
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('interest') === 'group') {
+      const messageBox = document.getElementById('message');
+      if (messageBox) {
+        messageBox.value = "Hi, I am interested in registering for the upcoming Small Group Tuition sessions. Please keep me updated on availability.";
+      }
+    }
+  });
+</script>
+
 <style>
 	.contact-form {
 		display: flex;
