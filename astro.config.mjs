@@ -8,7 +8,6 @@ export default defineConfig({
   trailingSlash: 'always',
   redirects: {
     '/beyond-the-classroom': '/blog', // e.g. '/resources'
-    '/beyond-the-classroom/': '/blog', // Cover both versions just in case
   },
 
   integrations: [
